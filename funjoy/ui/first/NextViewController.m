@@ -1,47 +1,45 @@
 //
-//  IndexViewController.m
+//  NextViewController.m
 //  funjoy
 //
-//  Created by xubojoy on 16/3/11.
+//  Created by xubojoy on 16/3/14.
 //  Copyright © 2016年 xubojoy. All rights reserved.
 //
 
-#import "IndexViewController.h"
 #import "NextViewController.h"
-@interface IndexViewController ()
+#import "ForthViewController.h"
+@interface NextViewController ()
 
 @end
 
-@implementation IndexViewController
+@implementation NextViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"新闻";
-    
+    self.fd_prefersNavigationBarHidden = YES;
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(40, 40, 100, 100);
     btn.backgroundColor = [UIColor purpleColor];
     [btn setTitle:@"点我" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(btnClcik) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
-    
+
 }
 
 - (void)btnClcik{
-    NextViewController *nvc = [[NextViewController alloc] init];
+    ForthViewController *nvc = [[ForthViewController alloc] init];
     [self.navigationController pushViewController:nvc animated:YES];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 -(NSString *)getPageName{
- return @"新闻";
+    return @"下页面";
 }
 
 /*

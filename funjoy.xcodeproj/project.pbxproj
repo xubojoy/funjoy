@@ -101,6 +101,9 @@
 		1C58B4D41C92BC9B008A2571 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B4CF1C92BC9B008A2571 /* RDVTabBar.m */; };
 		1C58B4D51C92BC9B008A2571 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B4D11C92BC9B008A2571 /* RDVTabBarController.m */; };
 		1C58B4D61C92BC9B008A2571 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B4D31C92BC9B008A2571 /* RDVTabBarItem.m */; };
+		1CE55C3E1C96C01700FFC7E9 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE55C3D1C96C01700FFC7E9 /* NextViewController.m */; };
+		1CE55C411C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE55C401C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		1CE55C441C96C30D00FFC7E9 /* ForthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE55C431C96C30D00FFC7E9 /* ForthViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -294,6 +297,12 @@
 		1C58B4D11C92BC9B008A2571 /* RDVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarController.m; sourceTree = "<group>"; };
 		1C58B4D21C92BC9B008A2571 /* RDVTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarItem.h; sourceTree = "<group>"; };
 		1C58B4D31C92BC9B008A2571 /* RDVTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarItem.m; sourceTree = "<group>"; };
+		1CE55C3C1C96C01700FFC7E9 /* NextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NextViewController.h; path = first/NextViewController.h; sourceTree = "<group>"; };
+		1CE55C3D1C96C01700FFC7E9 /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NextViewController.m; path = first/NextViewController.m; sourceTree = "<group>"; };
+		1CE55C3F1C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		1CE55C401C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		1CE55C421C96C30D00FFC7E9 /* ForthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForthViewController.h; path = first/ForthViewController.h; sourceTree = "<group>"; };
+		1CE55C431C96C30D00FFC7E9 /* ForthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForthViewController.m; path = first/ForthViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +416,10 @@
 			children = (
 				1C58B3BB1C92AD8F008A2571 /* IndexViewController.h */,
 				1C58B3BC1C92AD8F008A2571 /* IndexViewController.m */,
+				1CE55C3C1C96C01700FFC7E9 /* NextViewController.h */,
+				1CE55C3D1C96C01700FFC7E9 /* NextViewController.m */,
+				1CE55C421C96C30D00FFC7E9 /* ForthViewController.h */,
+				1CE55C431C96C30D00FFC7E9 /* ForthViewController.m */,
 			);
 			name = first;
 			sourceTree = "<group>";
@@ -441,6 +454,8 @@
 		1C58B3C71C92AF02008A2571 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				1CE55C3F1C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.h */,
+				1CE55C401C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.m */,
 				1C58B3C81C92AF02008A2571 /* NSNull+JSON.h */,
 				1C58B3C91C92AF02008A2571 /* NSNull+JSON.m */,
 				1C58B3CA1C92AF02008A2571 /* NSString+stringPlus.h */,
@@ -804,6 +819,7 @@
 				1C58B4C51C92AFE6008A2571 /* UIImage+WebP.m in Sources */,
 				1C58B4AA1C92AFE6008A2571 /* MJRefreshHeaderView.m in Sources */,
 				1C58B4A71C92AFE6008A2571 /* MJRefreshBaseView.m in Sources */,
+				1CE55C411C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				1C58B3C01C92ADA5008A2571 /* SecondViewController.m in Sources */,
 				1C58B3F01C92AF03008A2571 /* UINavigationController+Autorotate.m in Sources */,
 				1C58B4B21C92AFE6008A2571 /* HanyuPinyinOutputFormat.m in Sources */,
@@ -847,6 +863,7 @@
 				1C58B4D41C92BC9B008A2571 /* RDVTabBar.m in Sources */,
 				1C58B4AE1C92AFE6008A2571 /* UIView+MJExtension.m in Sources */,
 				1C58B4301C92AF4C008A2571 /* User.m in Sources */,
+				1CE55C3E1C96C01700FFC7E9 /* NextViewController.m in Sources */,
 				1C58B4C11C92AFE6008A2571 /* SDWebImagePrefetcher.m in Sources */,
 				1C58B49A1C92AFE6008A2571 /* JSONKit.m in Sources */,
 				1C58B4BC1C92AFE6008A2571 /* SDWebImageDecoder.m in Sources */,
@@ -876,6 +893,7 @@
 				1C58B4251C92AF4C008A2571 /* SortType.m in Sources */,
 				1C58B4241C92AF4C008A2571 /* Page.m in Sources */,
 				1C58B3EF1C92AF03008A2571 /* UILabel+Custom.m in Sources */,
+				1CE55C441C96C30D00FFC7E9 /* ForthViewController.m in Sources */,
 				1C58B4B81C92AFE6008A2571 /* MKAnnotationView+WebCache.m in Sources */,
 				1C58B4B91C92AFE6008A2571 /* NSData+ImageContentType.m in Sources */,
 				1C58B4AC1C92AFE6008A2571 /* UIScrollView+MJExtension.m in Sources */,
@@ -1035,6 +1053,7 @@
 				1C58B3A41C92A52A008A2571 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -21,6 +21,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "UIImageView+WebCache.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
 
 #define MR_SHORTHAND
 #import "AppStatus.h"

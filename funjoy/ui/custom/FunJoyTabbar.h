@@ -11,6 +11,7 @@
 #import "RDVTabBarItem.h"
 @interface FunJoyTabbar : NSObject<UINavigationControllerDelegate,RDVTabBarControllerDelegate>
 @property (nonatomic,copy)NSString *currentPageName;
+
 @property (nonatomic, strong) RDVTabBarController *tabBarController;
 
 -(id) init;

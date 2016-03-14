@@ -24,19 +24,19 @@
         UIViewController *secondViewController = [[SecondViewController alloc] init];
         UINavigationController *secondNavigationController = [[UINavigationController alloc]
                                                         initWithRootViewController:secondViewController];
-        secondNavigationController.navigationController.delegate = self;
+        secondNavigationController.delegate = self;
         secondNavigationController.title = @"服务";
         
         UIViewController *thirdViewController = [[ThirdViewController alloc] init];
         UINavigationController *thirdNavigationController = [[UINavigationController alloc]
                                                        initWithRootViewController:thirdViewController];
-        thirdNavigationController.navigationController.delegate = self;
+        thirdNavigationController.delegate = self;
         thirdNavigationController.title = @"游戏";
         
         UIViewController *userViewController = [[UserCenterViewController alloc] init];
         UINavigationController *userNavigationController = [[UINavigationController alloc]
                                                        initWithRootViewController:userViewController];
-        userNavigationController.navigationController.delegate = self;
+        userNavigationController.delegate = self;
         userNavigationController.title = @"我";
         
         self.tabBarController = [[RDVTabBarController alloc] init];
@@ -76,8 +76,14 @@
  * Tells the delegate that the user selected an item in the tab bar.
  */
 - (void)tabBarController:(RDVTabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-   
-    [((UINavigationController *)viewController) popToRootViewControllerAnimated:NO];
+    //记录页面访问日志
+//    if (self.currentPageName != nil) {
+//        NSLog(@">>>>>> 转出:%@", self.currentPageName);
+//    }
+//    self.currentPageName = [viewController getPageName];
+//    NSLog(@">>>>>> 转入:%@", self.currentPageName);
+
+//    [((UINavigationController *)viewController) popToRootViewControllerAnimated:NO];
 }
 
 -(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
