@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DomobAdProcessor.h"
 
 @interface AppDelegate ()
 
@@ -19,13 +20,18 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-
+  
     [self.window makeKeyAndVisible];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    
+
     //初始化App的底栏
     self.tabbar = [FunJoyTabbar new];
 //    [self.tabbar customizeInterface];
     self.window.rootViewController = self.tabbar.tabBarController;
+    
+    DomobAdProcessor *domobProcessor = [DomobAdProcessor new];
+    [domobProcessor initDomobAd:self.window];
     
     return YES;
 }
