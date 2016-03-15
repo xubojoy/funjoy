@@ -30,8 +30,8 @@
 //    [self.tabbar customizeInterface];
     self.window.rootViewController = self.tabbar.tabBarController;
     
-    DomobAdProcessor *domobProcessor = [DomobAdProcessor new];
-    [domobProcessor initDomobAd:self.window];
+//    DomobAdProcessor *domobProcessor = [DomobAdProcessor new];
+//    [domobProcessor initDomobAd:self.window];
     
     return YES;
 }

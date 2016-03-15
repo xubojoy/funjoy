@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface IndexViewController : UIViewController
-
+#import "DMAdView.h"
+@interface IndexViewController : UIViewController<DMAdViewDelegate>
+@property (nonatomic, strong) DMAdView *dmAdView;
 @end
