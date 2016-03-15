@@ -43,6 +43,11 @@
         [self.tabBarController setViewControllers:@[firstNavigationController, secondNavigationController,
                                                thirdNavigationController,userNavigationController]];
         self.tabBarController.delegate = self;
+        
+        UIView *upLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen_width, splite_line_height)];
+        upLineView.backgroundColor = [ColorUtils colorWithHexString:common_splite_line_color];
+        [self.tabBarController.tabBar addSubview:upLineView];
+        
         //设置各个item的图像
         [self customizeTabBarForController:self.tabBarController];
 
