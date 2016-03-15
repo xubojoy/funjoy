@@ -127,6 +127,7 @@
 		1CDEBB931C96F9AD001BB462 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDEBB921C96F9AD001BB462 /* SystemConfiguration.framework */; };
 		1CDEBB951C96F9B9001BB462 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDEBB941C96F9B9001BB462 /* Foundation.framework */; };
 		1CDEBB971C96F9C8001BB462 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDEBB961C96F9C8001BB462 /* UIKit.framework */; };
+		1CE544B51C97E3760062204E /* SIDADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE544B41C97E3760062204E /* SIDADView.m */; };
 		1CE55C3E1C96C01700FFC7E9 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE55C3D1C96C01700FFC7E9 /* NextViewController.m */; };
 		1CE55C411C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE55C401C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		1CE55C441C96C30D00FFC7E9 /* ForthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE55C431C96C30D00FFC7E9 /* ForthViewController.m */; };
@@ -356,6 +357,8 @@
 		1CDEBB921C96F9AD001BB462 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1CDEBB941C96F9B9001BB462 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1CDEBB961C96F9C8001BB462 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1CE544B31C97E3760062204E /* SIDADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDADView.h; sourceTree = "<group>"; };
+		1CE544B41C97E3760062204E /* SIDADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIDADView.m; sourceTree = "<group>"; };
 		1CE55C3C1C96C01700FFC7E9 /* NextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NextViewController.h; path = first/NextViewController.h; sourceTree = "<group>"; };
 		1CE55C3D1C96C01700FFC7E9 /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NextViewController.m; path = first/NextViewController.m; sourceTree = "<group>"; };
 		1CE55C3F1C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
@@ -485,6 +488,7 @@
 		1C58B3B31C92AB10008A2571 /* custom */ = {
 			isa = PBXGroup;
 			children = (
+				1CE544B21C97E3760062204E /* SIDADView */,
 				1C58B3B41C92AB53008A2571 /* FunJoyTabbar.h */,
 				1C58B3B51C92AB53008A2571 /* FunJoyTabbar.m */,
 			);
@@ -891,6 +895,15 @@
 			name = framework;
 			sourceTree = "<group>";
 		};
+		1CE544B21C97E3760062204E /* SIDADView */ = {
+			isa = PBXGroup;
+			children = (
+				1CE544B31C97E3760062204E /* SIDADView.h */,
+				1CE544B41C97E3760062204E /* SIDADView.m */,
+			);
+			path = SIDADView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1002,6 +1015,7 @@
 				1C58B4AF1C92AFE6008A2571 /* OpenUDID.m in Sources */,
 				1C58B4A91C92AFE6008A2571 /* MJRefreshFooterView.m in Sources */,
 				1C58B4291C92AF4C008A2571 /* ExpertFilter.m in Sources */,
+				1CE544B51C97E3760062204E /* SIDADView.m in Sources */,
 				1C58B4D51C92BC9B008A2571 /* RDVTabBarController.m in Sources */,
 				1C58B4B41C92AFE6008A2571 /* PinyinFormatter.m in Sources */,
 				1C58B4A81C92AFE6008A2571 /* MJRefreshConst.m in Sources */,

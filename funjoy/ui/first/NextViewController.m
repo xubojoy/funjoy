@@ -19,20 +19,49 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.fd_prefersNavigationBarHidden = YES;
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(40, 40, 100, 100);
-    btn.backgroundColor = [UIColor purpleColor];
-    [btn setTitle:@"点我" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(btnClcik) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    btn.frame = CGRectMake(40, 40, 100, 100);
+//    btn.backgroundColor = [UIColor purpleColor];
+//    [btn setTitle:@"点我" forState:UIControlStateNormal];
+//    [btn addTarget:self action:@selector(btnClcik) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:btn];
+    [self loadWebView];
 }
 
-- (void)btnClcik{
-    ForthViewController *nvc = [[ForthViewController alloc] init];
-    [self.navigationController pushViewController:nvc animated:YES];
+-(void)loadWebView{
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, screen_width, screen_height-64)];
+    NSURL *nsurl =[NSURL URLWithString:@"http://localhost:63342/jiaoben1892/jiaoben1892/index.html"];
+    NSURLRequest *request =[NSURLRequest requestWithURL:nsurl];
+    [self.webView loadRequest:request];
     
+    self.webView.delegate = self;
+    self.webView.scrollView.delegate = self;
+    [self.view addSubview:self.webView];
+    [self.webView setBackgroundColor:[UIColor clearColor]];
 }
+
+-(void)webViewDidStartLoad:(UIWebView *)webView{
+}
+
+-(void) webViewDidFinishLoad:(UIWebView *)webView{
+}
+
+-(BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)inRequest   navigationType:(UIWebViewNavigationType)inType
+{
+    NSLog(@">>>>> to:%@", inRequest.URL);
+    return YES;
+}
+
+-(void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    NSLog(@">>>> web load error:%@", webView.request.URL);
+}
+
+
+//- (void)btnClcik{
+//    ForthViewController *nvc = [[ForthViewController alloc] init];
+//    [self.navigationController pushViewController:nvc animated:YES];
+//    
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

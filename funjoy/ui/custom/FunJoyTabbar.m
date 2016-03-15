@@ -45,7 +45,7 @@
         self.tabBarController.delegate = self;
         
         UIView *upLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen_width, splite_line_height)];
-        upLineView.backgroundColor = [ColorUtils colorWithHexString:common_splite_line_color];
+        upLineView.backgroundColor = [ColorUtils colorWithHexString:splite_line_color];
         [self.tabBarController.tabBar addSubview:upLineView];
         
         //设置各个item的图像
@@ -88,7 +88,7 @@
 //    self.currentPageName = [viewController getPageName];
 //    NSLog(@">>>>>> 转入:%@", self.currentPageName);
 
-//    [((UINavigationController *)viewController) popToRootViewControllerAnimated:NO];
+    [((UINavigationController *)viewController) popToRootViewControllerAnimated:NO];
 }
 
 -(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{

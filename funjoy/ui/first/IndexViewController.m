@@ -73,16 +73,16 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"新闻";
-//    
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    btn.frame = CGRectMake(40, 40, 100, 100);
-//    btn.backgroundColor = [UIColor purpleColor];
-//    [btn setTitle:@"点我" forState:UIControlStateNormal];
-//    [btn addTarget:self action:@selector(btnClcik) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:btn];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(40, 140, 100, 100);
+    btn.backgroundColor = [UIColor purpleColor];
+    [btn setTitle:@"点我" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(btnClcik) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
     
 
-  
+//  http://localhost:63342/jiaoben1892/jiaoben1892/index.html
 
     
 }
@@ -136,11 +136,11 @@
 }
 
 
-//- (void)btnClcik{
-//    NextViewController *nvc = [[NextViewController alloc] init];
-//    [self.navigationController pushViewController:nvc animated:YES];
-//
-//}
+- (void)btnClcik{
+    NextViewController *nvc = [[NextViewController alloc] init];
+    [self.navigationController pushViewController:nvc animated:YES];
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

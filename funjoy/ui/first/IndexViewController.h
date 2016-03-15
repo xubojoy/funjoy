@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DMAdView.h"
-@interface IndexViewController : UIViewController<DMAdViewDelegate>
+@interface IndexViewController : UIViewController<DMAdViewDelegate,UIWebViewDelegate,UIScrollViewDelegate>
+@property (strong, nonatomic) UIWebView *webView;
 @property (nonatomic, strong) DMAdView *dmAdView;
 @end
