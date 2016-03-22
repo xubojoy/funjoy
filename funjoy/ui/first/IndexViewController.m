@@ -83,7 +83,7 @@
     
     // 设置广告视图的位置 宽与高设置为0即可 该广告视图默认是横竖屏自适应 但需要在旋转时调用orientationChanged 方法
     // Set the frame of advertisement view
-    self.dmAdView.frame = CGRectMake(_adX, _adY, FLEXIBLE_SIZE.width,100);
+    self.dmAdView.frame = CGRectMake(_adX, _adY, FLEXIBLE_SIZE.width,40);
     self.dmAdView.delegate = self;
     self.dmAdView.rootViewController = self; // set RootViewController
     [self.view addSubview:self.dmAdView];
@@ -205,7 +205,7 @@
 
 //初始化tableview
 -(void)initTableView{
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, screen_width,screen_height-tabbar_height-self.dmAdView.frame.origin.y-self.dmAdView.frame.size.height) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, screen_width,screen_height-tabbar_height-38) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [ColorUtils colorWithHexString:backgroud_color];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
