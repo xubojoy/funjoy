@@ -30,7 +30,7 @@
 
 -(void)loadWebView{
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, screen_width, screen_height-64)];
-    NSURL *nsurl =[NSURL URLWithString:@"http://localhost:63342/jiaoben1892/jiaoben1892/index.html"];
+    NSURL *nsurl =[NSURL URLWithString:@"http://www.html5tricks.com/demo/css3-dialog-with-animation/index.html"];
     NSURLRequest *request =[NSURLRequest requestWithURL:nsurl];
     [self.webView loadRequest:request];
     
