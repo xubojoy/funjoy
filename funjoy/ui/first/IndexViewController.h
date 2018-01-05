@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "DMAdView.h"
-@interface IndexViewController : UIViewController<DMAdViewDelegate,UIWebViewDelegate,UIScrollViewDelegate>
-@property (strong, nonatomic) UIWebView *webView;
+#import "rilegouleView.h"
+@interface IndexViewController : UIViewController<DMAdViewDelegate,UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) DMAdView *dmAdView;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) rilegouleView *rilegoule;
+
+@property (nonatomic, strong) UIImageView *BlurredView;
+
+@property (nonatomic, strong) NSArray *array;
+
+@property (nonatomic, strong) NSIndexPath *currentIndexPath;
+
 @end

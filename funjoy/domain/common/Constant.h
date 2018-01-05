@@ -335,9 +335,14 @@
 #define meirigaoerfuAppURL @"https://itunes.apple.com/cn/app/mei-ri-gao-er-fu/id985114578?mt=8"
 
 
+#define kEveryDay @"http://baobab.wandoujia.com/api/v1/feed?num=10&date=%@&vc=67&u=011f2924aa2cf27aa5dc8066c041fe08116a9a0c&v=1.8.0&f=iphone"
+
+#define kWidth [UIScreen mainScreen].bounds.size.width
+#define kHeight [UIScreen mainScreen].bounds.size.height
+#define kSelfWidth self.frame.size.width
+#define kSelfHeight self.frame.size.height
+
 #import <Foundation/Foundation.h>
-
-
 
 //订单的几种状态
 #define unpay_status          @"unpay"
