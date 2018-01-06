@@ -32,7 +32,7 @@
 }
 
 -(BOOL)isConnetInternet{
-    if (self.networkStatus == NotReachable) {
+    if (self.networkStatus == AFNetworkReachabilityStatusNotReachable) {
         return NO;
     }
     return YES;

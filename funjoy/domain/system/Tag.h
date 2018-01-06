@@ -10,15 +10,15 @@
 #define technology_tag_id 31
 
 #import <Foundation/Foundation.h>
-#import "JSONSerializable.h"
-#import "JSONModel.h"
+//#import "JSONSerializable.h"
+//#import "JSONModel.h"
 
-@protocol Tag
-@end
+//@protocol Tag
+//@end
 
-@interface Tag : JSONModel
+@interface Tag : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSMutableArray<Tag> *children;
+@property (nonatomic, copy) NSMutableArray<Tag *> *children;
 
 @end

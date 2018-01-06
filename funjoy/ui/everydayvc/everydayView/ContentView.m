@@ -83,23 +83,41 @@
 
 //    [self.imageView sd_setImageWithURL:[NSURL URLWithString:model.coverBlurred]];
 
-    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:model.coverBlurred] options:(SDWebImageRetryFailed) progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-
+//    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:model.coverBlurred] options:(SDWebImageRetryFailed) progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+//
+//        if (image) {
+//
+//            CABasicAnimation *contentsAnimation = [CABasicAnimation animationWithKeyPath:@"contents"];
+//            contentsAnimation.duration = 1.0f;
+//            contentsAnimation.fromValue = self.imageView.image ;
+//            contentsAnimation.toValue = image;
+//
+//            contentsAnimation.removedOnCompletion = YES;
+//            contentsAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//            [weakSelf.imageView.layer addAnimation:contentsAnimation forKey:nil];
+//
+//            weakSelf.imageView.image = image;
+//
+//        }
+//
+//    }];
+    
+    
+    [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:model.coverBlurred] options:(SDWebImageRetryFailed) progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
         if (image) {
             
             CABasicAnimation *contentsAnimation = [CABasicAnimation animationWithKeyPath:@"contents"];
             contentsAnimation.duration = 1.0f;
             contentsAnimation.fromValue = self.imageView.image ;
             contentsAnimation.toValue = image;
-
+            
             contentsAnimation.removedOnCompletion = YES;
             contentsAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
             [weakSelf.imageView.layer addAnimation:contentsAnimation forKey:nil];
-
+            
             weakSelf.imageView.image = image;
-
+            
         }
-
     }];
 }
 

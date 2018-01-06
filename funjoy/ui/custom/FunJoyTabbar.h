@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RDVTabBarController.h"
-#import "RDVTabBarItem.h"
+#import <RDVTabBarController.h>
+#import <RDVTabBarItem.h>
 @interface FunJoyTabbar : NSObject<UINavigationControllerDelegate,RDVTabBarControllerDelegate>
 @property (nonatomic,copy)NSString *currentPageName;
 

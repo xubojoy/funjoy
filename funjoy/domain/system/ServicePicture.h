@@ -7,14 +7,14 @@
 //
  #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "JSONSerializable.h"
-#import "JSONModel.h"
+//#import "JSONSerializable.h"
+//#import "JSONModel.h"
 
 
-@protocol ServicePicture
-@end
+//@protocol ServicePicture
+//@end
 
-@interface ServicePicture : JSONModel
+@interface ServicePicture : NSObject
 
 @property int id;
 @property (nonatomic, copy) NSString *fileUrl;//文件url

@@ -13,15 +13,17 @@
 
 
 
-+ (void)POST:(NSString *)URL params:(NSDictionary * )params success:(void (^)(id response))success
-     failure:(void (^)(AFHTTPRequestOperation *operation,NSError *error))Error
++ (void)POST:(NSString *)URL params:(NSDictionary * )params completeBlock:(void (^)(id response, NSError *))completeBlock
 {
     // 创建请求管理者
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.requestSerializer=[AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setTimeoutInterval:15];
+    [manager.requestSerializer setHTTPShouldHandleCookies:NO];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"text/plain",@"text/json",@"text/javascript",@"application/json",@"text/html",@"image/jpeg",@"image/png", @"application/octet-stream",@"multipart/form-data"]];
     
     // 请求超时时间
-
-    manager.requestSerializer.timeoutInterval = 30;
     NSString *postStr = URL;
     if (![URL hasPrefix:@"http"]) {
         
@@ -29,52 +31,41 @@
     }
     NSMutableDictionary *dict = [params mutableCopy];
     
-    
-    // 发送post请求
-    [manager POST:postStr parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:postStr parameters:dict progress:^(NSProgress * _Nonnull uploadProgress) {
         
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         // 请求成功
         NSDictionary *responseDict = (NSDictionary *)responseObject;
-        success(responseDict);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {// 请求失败
-        Error( operation,error);
-        
+        completeBlock(responseDict,nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        completeBlock( nil,error);
     }];
-
-
 }
 
 + (void)GET:(NSString *)URL
-    success:(void (^)(id response))success
-    failure:(void (^)(AFHTTPRequestOperation *operation,NSError *error))Error
+    completeBlock:(void (^)(id, NSError *))completeBlock
 {
     // 获得请求管理者
-    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.requestSerializer=[AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setTimeoutInterval:15];
     [manager.requestSerializer setHTTPShouldHandleCookies:NO];
-    manager.requestSerializer.timeoutInterval = 30;
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"text/plain",@"text/json",@"text/javascript",@"application/json",@"text/html",@"image/jpeg",@"image/png", @"application/octet-stream",@"multipart/form-data"]];
+    
+    
+    
     NSString *getStr = URL;
 //    NSLog(@"getStr======%@",getStr);
     if (![URL hasPrefix:@"http"]) {
         
         getStr = [NSString stringWithFormat:@"%@%@", serverUrl,URL] ;
     }
-
-   
-    // 发送GET请求
-    [manager GET:getStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"getStr------------%@",getStr);
+    [manager GET:getStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *responseDict = (NSDictionary *)responseObject;
-     
-            success(responseDict);
-
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (!operation.responseObject) {
-            NSLog(@"网络错误");
-        }
-        Error( operation,error);
+        completeBlock(responseDict, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        completeBlock(nil,error);
     }];
 
     
@@ -83,34 +74,28 @@
 + (void)UPLOADIMAGE:(NSString *)URL
              params:(NSDictionary *)params
         uploadImage:(UIImage *)image
-            success:(void (^)(id response))success
-            failure:(void (^)(AFHTTPRequestOperation *operation,NSError *error))Error
+            completeBlock:(void (^)(id, NSError *))completeBlock
 {
     // 创建请求管理者
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.requestSerializer.timeoutInterval = 30;
-    //    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    //
-    //    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    manager.requestSerializer=[AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setTimeoutInterval:15];
+    [manager.requestSerializer setHTTPShouldHandleCookies:NO];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"text/plain",@"text/json",@"text/javascript",@"application/json",@"text/html",@"image/jpeg",@"image/png", @"application/octet-stream",@"multipart/form-data"]];
     
     NSString *postStr = [NSString stringWithFormat:@"%@%@", serverUrl,URL] ;
     NSMutableDictionary *dict = [params mutableCopy];
-
-    [manager POST:postStr parameters:dict constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [manager POST:postStr parameters:dict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         NSData *imageData = UIImageJPEGRepresentation(image, 0.1);
         [formData appendPartWithFileData:imageData name:@"img" fileName:@"head.jpg" mimeType:@"image/jpeg"];
-        
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        NSLog(@"uploadProgress is %lld,总字节 is %lld",uploadProgress.completedUnitCount,uploadProgress.totalUnitCount);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *responseDict = (NSDictionary *)responseObject;
-                success(responseDict);
- 
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        Error( operation,error);
-        
+        completeBlock(responseDict, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        completeBlock(nil, error);
     }];
 
 

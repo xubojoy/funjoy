@@ -144,60 +144,56 @@
     
     NSString *url = [NSString stringWithFormat:kEveryDay,dateString];
     
-    [LORequestManger GET:url success:^(id response) {
-        
-        NSDictionary *Dic = (NSDictionary *)response;
-        
-        NSArray *array = Dic[@"dailyList"];
-        
-        for (NSDictionary *dic in array) {
+    [LORequestManger GET:url completeBlock:^(id response, NSError *err) {
+        if (response != nil) {
+            NSDictionary *Dic = (NSDictionary *)response;
             
-            NSMutableArray *selectArray = [NSMutableArray array];
+            NSArray *array = Dic[@"dailyList"];
             
-            NSArray *arr = dic[@"videoList"];
-            
-            for (NSDictionary *dic1 in arr) {
-                NSLog(@">>>>>>>>>>>>%@",dic1);
-                EveryDayModel *model = [[EveryDayModel alloc]init];
+            for (NSDictionary *dic in array) {
                 
-                [model setValuesForKeysWithDictionary:dic1];
+                NSMutableArray *selectArray = [NSMutableArray array];
                 
-                model.collectionCount = dic1[@"consumption"][@"collectionCount"];
-                model.replyCount = dic1[@"consumption"][@"replyCount"];
-                model.shareCount = dic1[@"consumption"][@"shareCount"];
+                NSArray *arr = dic[@"videoList"];
                 
-                [selectArray addObject:model];
+                for (NSDictionary *dic1 in arr) {
+                    NSLog(@">>>>>>>>>>>>%@",dic1);
+                    EveryDayModel *model = [[EveryDayModel alloc]init];
+                    
+                    [model setValuesForKeysWithDictionary:dic1];
+                    
+                    model.collectionCount = dic1[@"consumption"][@"collectionCount"];
+                    model.replyCount = dic1[@"consumption"][@"replyCount"];
+                    model.shareCount = dic1[@"consumption"][@"shareCount"];
+                    
+                    [selectArray addObject:model];
+                }
+                NSString *date = [[dic[@"date"] stringValue] substringToIndex:10];
+                
+                [self.selectDic setValue:selectArray forKey:date];
             }
-            NSString *date = [[dic[@"date"] stringValue] substringToIndex:10];
             
-            [self.selectDic setValue:selectArray forKey:date];
+            NSComparisonResult (^priceBlock)(NSString *, NSString *) = ^(NSString *string1, NSString *string2){
+                
+                NSInteger number1 = [string1 integerValue];
+                NSInteger number2 = [string2 integerValue];
+                
+                if (number1 > number2) {
+                    return NSOrderedAscending;
+                }else if(number1 < number2){
+                    return NSOrderedDescending;
+                }else{
+                    return NSOrderedSame;
+                }
+                
+            };
+            
+            self.dateArray = [[[self.selectDic allKeys] sortedArrayUsingComparator:priceBlock]mutableCopy];
+            
+            NSLog(@"%ld",[self.dateArray count]);
+            
+            [self.tableView reloadData];
         }
-        
-        NSComparisonResult (^priceBlock)(NSString *, NSString *) = ^(NSString *string1, NSString *string2){
-            
-            NSInteger number1 = [string1 integerValue];
-            NSInteger number2 = [string2 integerValue];
-            
-            if (number1 > number2) {
-                return NSOrderedAscending;
-            }else if(number1 < number2){
-                return NSOrderedDescending;
-            }else{
-                return NSOrderedSame;
-            }
-            
-        };
-        
-        self.dateArray = [[[self.selectDic allKeys] sortedArrayUsingComparator:priceBlock]mutableCopy];
-        
-        NSLog(@"%ld",[self.dateArray count]);
-        
-        [self.tableView reloadData];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"%@",error);
-        
     }];
     
 }

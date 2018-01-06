@@ -9,11 +9,11 @@
 #import "User.h"
 #import <Foundation/Foundation.h>
 #import "AppActiveScene.h"
-#import "Reachability.h"
+//#import
 @interface AppStatus : NSObject<NSCoding>
 
 @property (nonatomic, strong) NSString *currentLocation;
-@property NetworkStatus networkStatus;
+@property AFNetworkReachabilityStatus networkStatus;
 @property (nonatomic, strong) NSString *deviceToken;
 @property double lastLat;//纬度
 @property double lastLng;//经度

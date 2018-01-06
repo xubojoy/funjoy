@@ -14,17 +14,13 @@
 
 @interface LORequestManger : NSObject
 
-+ (void)POST:(NSString *)URL params:(NSDictionary * )params success:(void (^)(id response))success
-     failure:(void (^)(AFHTTPRequestOperation *operation,NSError *error))Error;
++ (void)POST:(NSString *)URL params:(NSDictionary * )params completeBlock:(void (^)(id response, NSError *err))completeBlock;
 
 
-+ (void)GET:(NSString *)URL
-    success:(void (^)(id response))success
-    failure:(void (^)(AFHTTPRequestOperation *operation,NSError *error))Error;
++ (void)GET:(NSString *)URL completeBlock:(void (^)(id response, NSError *err))completeBlock;
 
 + (void)UPLOADIMAGE:(NSString *)URL
              params:(NSDictionary *)params
         uploadImage:(UIImage *)image
-            success:(void (^)(id response))success
-            failure:(void (^)(AFHTTPRequestOperation *operation,NSError *error))Error;
+            completeBlock:(void (^)(id response, NSError *err))completeBlock;
 @end
