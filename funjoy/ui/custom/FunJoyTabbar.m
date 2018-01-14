@@ -9,7 +9,7 @@
 #import "FunJoyTabbar.h"
 #import "IndexViewController.h"
 #import "SecondViewController.h"
-#import "ThirdViewController.h"
+#import "TodayHistoryController.h"
 #import "UserCenterViewController.h"
 @implementation FunJoyTabbar
 -(id)init{
@@ -27,7 +27,7 @@
         secondNavigationController.delegate = self;
         secondNavigationController.title = @"服务";
         
-        UIViewController *thirdViewController = [[ThirdViewController alloc] init];
+        UIViewController *thirdViewController = [[TodayHistoryController alloc] init];
         UINavigationController *thirdNavigationController = [[UINavigationController alloc]
                                                        initWithRootViewController:thirdViewController];
         thirdNavigationController.delegate = self;

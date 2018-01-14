@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0920"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5823F60341CE9E008A7A918194636F25"
-               BuildableName = "libPods-funjoy.a"
+               BlueprintIdentifier = "D3A904F44122BCE0EA21013D53095205"
+               BuildableName = "Pods_funjoy.framework"
                BlueprintName = "Pods-funjoy"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -47,8 +47,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5823F60341CE9E008A7A918194636F25"
-            BuildableName = "libPods-funjoy.a"
+            BlueprintIdentifier = "D3A904F44122BCE0EA21013D53095205"
+            BuildableName = "Pods_funjoy.framework"
             BlueprintName = "Pods-funjoy"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
