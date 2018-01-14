@@ -56,7 +56,7 @@
         [self.bgScrollView addSubview:label];
 //        [label setAttributedText:attrStr];
         label.text = historyDetail.content;
-        [label setFont:[UIFont systemFontOfSize:14]];
+        [label setFont:[UIFont systemFontOfSize:15]];
         [label sizeToFit];
         CGSize labelSize = [label getSizeWithWidth:self.view.bounds.size.width-30];
         NSLog(@"----------%f------%f",labelSize.height,labelSize.width);
