@@ -74,6 +74,7 @@
 		1C58B4B01C92AFE6008A2571 /* ChineseInclude.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B4681C92AFE6008A2571 /* ChineseInclude.m */; };
 		1C58B4B51C92AFE6008A2571 /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B4721C92AFE6008A2571 /* PinYinForObjc.m */; };
 		1C8B3909200C3CE100DFB393 /* PicUrlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B3908200C3CE100DFB393 /* PicUrlModel.m */; };
+		1C8B390C200C6F6900DFB393 /* TopDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B390B200C6F6900DFB393 /* TopDateView.m */; };
 		1CDEBB4F1C96F384001BB462 /* DomobAdProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDEBB4E1C96F384001BB462 /* DomobAdProcessor.m */; };
 		1CDEBB591C96F689001BB462 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CDEBB521C96F689001BB462 /* Default-568h@2x.png */; };
 		1CDEBB5A1C96F689001BB462 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CDEBB531C96F689001BB462 /* Default-Landscape@2x~ipad.png */; };
@@ -242,6 +243,8 @@
 		1C58B4CD1C92B27D008A2571 /* funjoy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "funjoy-Prefix.pch"; sourceTree = "<group>"; };
 		1C8B3907200C3CE100DFB393 /* PicUrlModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicUrlModel.h; sourceTree = "<group>"; };
 		1C8B3908200C3CE100DFB393 /* PicUrlModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicUrlModel.m; sourceTree = "<group>"; };
+		1C8B390A200C6F6900DFB393 /* TopDateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopDateView.h; sourceTree = "<group>"; };
+		1C8B390B200C6F6900DFB393 /* TopDateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopDateView.m; sourceTree = "<group>"; };
 		1CDEBB4D1C96F384001BB462 /* DomobAdProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DomobAdProcessor.h; path = processor/DomobAdProcessor.h; sourceTree = "<group>"; };
 		1CDEBB4E1C96F384001BB462 /* DomobAdProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DomobAdProcessor.m; path = processor/DomobAdProcessor.m; sourceTree = "<group>"; };
 		1CDEBB521C96F689001BB462 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -377,6 +380,8 @@
 			children = (
 				1C52BA26200B94E400935F4C /* HistoryCell.h */,
 				1C52BA27200B94E400935F4C /* HistoryCell.m */,
+				1C8B390A200C6F6900DFB393 /* TopDateView.h */,
+				1C8B390B200C6F6900DFB393 /* TopDateView.m */,
 			);
 			name = view;
 			path = third/view;
@@ -988,6 +993,7 @@
 				1C8B3909200C3CE100DFB393 /* PicUrlModel.m in Sources */,
 				1C58B3BD1C92AD8F008A2571 /* IndexViewController.m in Sources */,
 				1C3D5C561CA0EA710061D01D /* rilegouleView.m in Sources */,
+				1C8B390C200C6F6900DFB393 /* TopDateView.m in Sources */,
 				1C52BA23200B84B300935F4C /* HistoryDetail.m in Sources */,
 				1C58B4251C92AF4C008A2571 /* SortType.m in Sources */,
 				1C3D5C541CA0EA710061D01D /* EveryDayTableViewCell.m in Sources */,

@@ -92,7 +92,7 @@ const void *kAssociatedYf_contentInsets;
         lenght += content.length + title.length + 2;
     }
     
-    UIFont *font = [UIFont systemFontOfSize:default_font_size];
+    UIFont *font = [UIFont systemFontOfSize:font_14_size];
     [attr addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, allContent.length)];
     
     self.attributedText = attr;

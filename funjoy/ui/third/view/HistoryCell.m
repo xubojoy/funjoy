@@ -7,7 +7,6 @@
 //
 
 #import "HistoryCell.h"
-#import <Masonry/Masonry.h>
 #import "UILabel+Custom.h"
 @implementation HistoryCell
 
@@ -79,7 +78,7 @@
     self.dateLabel.backgroundColor = [UIColor clearColor];
     self.dateLabel.textColor = [ColorUtils colorWithHexString:@"#bdbdbd"];
     self.dateLabel.textAlignment = NSTextAlignmentLeft;
-    self.dateLabel.font = [UIFont systemFontOfSize:12];
+    self.dateLabel.font = [UIFont systemFontOfSize:font_13_size];
     [self.contentView addSubview:self.dateLabel];
     [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(general_padding);
@@ -114,11 +113,11 @@
     self.contentLabel.backgroundColor = [ColorUtils colorWithHexString:@"#6c6c6c"];
     self.contentLabel.textColor = [ColorUtils colorWithHexString:@"#c6c6c6"];
     self.contentLabel.textAlignment = NSTextAlignmentLeft;
-    self.contentLabel.font = [UIFont systemFontOfSize:12];
+    self.contentLabel.font = [UIFont systemFontOfSize:font_13_size];
     self.contentLabel.yf_contentInsets = UIEdgeInsetsMake(0, 10, 0, 10);
     [self.contentView addSubview:self.contentLabel];
     [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-         make.centerY.mas_equalTo(self.contentView.mas_centerY);
+        make.centerY.mas_equalTo(self.contentView.mas_centerY);
         make.left.mas_equalTo(roundImageView.mas_right).mas_offset(20);
         make.right.mas_equalTo(self.contentView.mas_right).mas_offset(-30);
         make.height.mas_equalTo(40);

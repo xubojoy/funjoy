@@ -8,7 +8,7 @@
 
 #import "UIImage+imagePlus.h"
 
-#define navigation_height     44
+#define navigation_height     64
 #define status_bar_height     20
 #define tabbar_height         51
 #define general_margin        15
@@ -40,17 +40,16 @@
 
 
 //字体大小
-#define smallest_font_size  10
-#define smaller_font_size   11
-#define small_font_size     12
-#define default_2_font_size 13
-#define default_font_size   14
-#define default_1_font_size 15
-#define big_font_size       16
-#define bigger_1_font_size  17
-#define bigger_font_size    18
-#define biggest_font_size   24
-#define default_txt_height  16
+#define font_10_size  10
+#define font_11_size   11
+#define font_12_size     12
+#define font_13_size 13
+#define font_14_size   14
+#define font_15_size 15
+#define font_16_size       16
+#define font_17_size  17
+#define font_18_size    18
+#define font_24_size   24
 //色值
 #define black_text_color          @"#222222"
 #define gray_text_color           @"#666666"
@@ -77,6 +76,7 @@
 #define blue_order_status_backgroud_color   @"#90c4f5"
 #define orange_order_status_backgroud_color @"#ff9933"
 #define common_btn_bg_color       @"#fc9a35"
+#define splite_vertical_line_color  @"#6c6c6c"
 //#7cbb73
 #define common_splite_line_color  @"#eeeeee"
 #define green_common_color        @"#49c28d"

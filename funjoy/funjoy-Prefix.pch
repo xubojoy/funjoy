@@ -26,6 +26,7 @@
 #import "MJExtension.h"
 #import "UIImageView+WebCache.h"
 #import "JSONKit.h"
+#import <Masonry/Masonry.h>
 
 #define MR_SHORTHAND
 #import "AppStatus.h"

@@ -14,9 +14,11 @@
 #import "History.h"
 #import "HistoryDetailController.h"
 #import "HistoryCell.h"
+#import "TopDateView.h"
 @interface TodayHistoryController ()
 @property(nonatomic, strong) DateUtils *date;
 @property(nonatomic, strong) UIImageView *imageView;
+@property(nonatomic, strong) TopDateView *topDateView;
 @end
 static NSString *cellIdentifier = @"HistoryCell";
 @implementation TodayHistoryController
@@ -26,11 +28,11 @@ static NSString *cellIdentifier = @"HistoryCell";
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [ColorUtils colorWithHexString:common_content_color];
     self.title = @"历史上的今天";
-//        [self initBgImageView];
-    [self commonInitialization];
+    
     self.historyArray = [NSMutableArray new];
     self.date = [[DateUtils alloc] initWithDate:[NSDate date]];
     [self loadData];
+    [self initUI];
 }
 
 - (void)loadData{
@@ -43,26 +45,49 @@ static NSString *cellIdentifier = @"HistoryCell";
     } month:[NSString stringWithFormat:@"%d",self.date.month] day:[NSString stringWithFormat:@"%d",self.date.day]];
 }
 
+- (void)initUI{
+    [self initTopView];
+    [self commonInitialization];
+}
+
 //- (void)initBgImageView{
 //    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height-tabbar_height)];
 //    self.imageView.image = [UIImage imageNamed:@"bg"];
 //    self.imageView.userInteractionEnabled = YES;
 //    [self.view addSubview:self.imageView];
 //}
+- (void)initTopView{
+    self.topDateView = [[TopDateView alloc] init];
+    self.topDateView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.topDateView];
+    [self.topDateView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(navigation_height);
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.height.mas_equalTo(120);
+    }];
+    self.topDateView.sellectDateBtnClick = ^(UIButton *dateBtn) {
+        
+    };
+}
 
 - (void)commonInitialization {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:self.imageView.frame style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 120, screen_width, screen_height-120-tabbar_height) style:UITableViewStylePlain];
         _tableView.zh_reloadAnimationType = zhTableViewAnimationTypeVallum;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.delaysContentTouches = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = [ColorUtils colorWithHexString:common_content_color];
+        [self.view addSubview:_tableView];
+        [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.topDateView.mas_bottom).mas_offset(0);
+            make.left.mas_equalTo(0);
+            make.right.mas_equalTo(0);
+            make.bottom.mas_equalTo(-tabbar_height);
+        }];
     }
-    self.view = _tableView;
-//        [self.imageView addSubview:_tableView];
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(zh_reload)];
 }
 
