@@ -19,6 +19,7 @@
 @property(nonatomic, strong) DateUtils *date;
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) TopDateView *topDateView;
+@property(nonatomic, strong) UIView *headerView;
 @end
 static NSString *cellIdentifier = @"HistoryCell";
 @implementation TodayHistoryController
@@ -48,20 +49,48 @@ static NSString *cellIdentifier = @"HistoryCell";
 }
 
 - (void)initUI{
+    [self initTableView];
     [self initTopView];
-    [self commonInitialization];
+}
+
+- (void)initTableView {
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height-navigation_height-tabbar_height) style:UITableViewStylePlain];
+    _tableView.zh_reloadAnimationType = zhTableViewAnimationTypeVallum;
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.delaysContentTouches = NO;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
+    [self.view addSubview:_tableView];
+
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(zh_reload)];
+    
 }
 
 - (void)initTopView{
-    self.topDateView = [[TopDateView alloc] init];
-    self.topDateView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.topDateView];
-    [self.topDateView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 100)];
+    self.headerView.backgroundColor = [UIColor cyanColor];
+    
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(navigation_height);
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(-tabbar_height);
+    }];
+    
+    self.topDateView = [[TopDateView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 100)];
+    self.topDateView.backgroundColor = [UIColor clearColor];
+    [self.headerView addSubview:self.topDateView];
+    [self.topDateView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(self.headerView.mas_bottom).mas_equalTo(0);
         make.height.mas_equalTo(100);
     }];
+    
+    _stretchableTableHeaderView = [HFStretchableTableHeaderView new];
+    [_stretchableTableHeaderView stretchHeaderForTableView:_tableView withView:self.headerView];
+    
     __weak TodayHistoryController *weakSelf = self;
     self.topDateView.sellectDateBtnClick = ^(UIButton *dateBtn) {
         NSString *dateStr = nil;
@@ -92,26 +121,6 @@ static NSString *cellIdentifier = @"HistoryCell";
         [weakSelf.topDateView updateDateLabel:[NSString stringWithFormat:@"%d/%d",month,day]];
         [weakSelf loadDataWithMonth:month day:day];
     };
-}
-
-- (void)commonInitialization {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 120, screen_width, screen_height-120-tabbar_height) style:UITableViewStylePlain];
-        _tableView.zh_reloadAnimationType = zhTableViewAnimationTypeVallum;
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.delaysContentTouches = NO;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
-        [self.view addSubview:_tableView];
-        [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.topDateView.mas_bottom).mas_offset(0);
-            make.left.mas_equalTo(0);
-            make.right.mas_equalTo(0);
-            make.bottom.mas_equalTo(-tabbar_height);
-        }];
-    }
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(zh_reload)];
 }
 
 - (void)zh_reload {
@@ -146,8 +155,16 @@ static NSString *cellIdentifier = @"HistoryCell";
         historyDetailVc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:historyDetailVc animated:YES];
     }
-    
-    
+}
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [_stretchableTableHeaderView scrollViewDidScroll:scrollView];
+}
+- (void)viewDidLayoutSubviews
+{
+    [_stretchableTableHeaderView resizeView];
 }
 
 - (void)didReceiveMemoryWarning {

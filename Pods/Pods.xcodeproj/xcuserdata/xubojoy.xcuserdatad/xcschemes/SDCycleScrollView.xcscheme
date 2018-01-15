@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '538F0C139A473146AFBCBAD5797005A0'
-               BlueprintName = 'RDVTabBarController'
+               BlueprintIdentifier = 'E3E67252A9DBD443FA9B6692B93A8252'
+               BlueprintName = 'SDCycleScrollView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'RDVTabBarController.framework'>
+               BuildableName = 'SDCycleScrollView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

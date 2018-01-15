@@ -75,6 +75,7 @@
 		1C58B4B51C92AFE6008A2571 /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B4721C92AFE6008A2571 /* PinYinForObjc.m */; };
 		1C8B3909200C3CE100DFB393 /* PicUrlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B3908200C3CE100DFB393 /* PicUrlModel.m */; };
 		1C8B390C200C6F6900DFB393 /* TopDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B390B200C6F6900DFB393 /* TopDateView.m */; };
+		1C8B3910200CA73700DFB393 /* HFStretchableTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B390E200CA73700DFB393 /* HFStretchableTableHeaderView.m */; };
 		1CDEBB4F1C96F384001BB462 /* DomobAdProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDEBB4E1C96F384001BB462 /* DomobAdProcessor.m */; };
 		1CDEBB591C96F689001BB462 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CDEBB521C96F689001BB462 /* Default-568h@2x.png */; };
 		1CDEBB5A1C96F689001BB462 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CDEBB531C96F689001BB462 /* Default-Landscape@2x~ipad.png */; };
@@ -245,6 +246,8 @@
 		1C8B3908200C3CE100DFB393 /* PicUrlModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicUrlModel.m; sourceTree = "<group>"; };
 		1C8B390A200C6F6900DFB393 /* TopDateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopDateView.h; sourceTree = "<group>"; };
 		1C8B390B200C6F6900DFB393 /* TopDateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopDateView.m; sourceTree = "<group>"; };
+		1C8B390E200CA73700DFB393 /* HFStretchableTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFStretchableTableHeaderView.m; sourceTree = "<group>"; };
+		1C8B390F200CA73700DFB393 /* HFStretchableTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFStretchableTableHeaderView.h; sourceTree = "<group>"; };
 		1CDEBB4D1C96F384001BB462 /* DomobAdProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DomobAdProcessor.h; path = processor/DomobAdProcessor.h; sourceTree = "<group>"; };
 		1CDEBB4E1C96F384001BB462 /* DomobAdProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DomobAdProcessor.m; path = processor/DomobAdProcessor.m; sourceTree = "<group>"; };
 		1CDEBB521C96F689001BB462 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -468,6 +471,7 @@
 		1C58B3A51C92AAF0008A2571 /* third */ = {
 			isa = PBXGroup;
 			children = (
+				1C8B390D200CA73700DFB393 /* stretchTableHeader */,
 				1C3D5BFD1CA0E8A10061D01D /* EnNetWork */,
 				1CDEBB6C1C96F838001BB462 /* DomobAdSDK */,
 				1C58B4631C92AFE6008A2571 /* OpenUDID */,
@@ -672,6 +676,15 @@
 			path = pinYin;
 			sourceTree = "<group>";
 		};
+		1C8B390D200CA73700DFB393 /* stretchTableHeader */ = {
+			isa = PBXGroup;
+			children = (
+				1C8B390E200CA73700DFB393 /* HFStretchableTableHeaderView.m */,
+				1C8B390F200CA73700DFB393 /* HFStretchableTableHeaderView.h */,
+			);
+			path = stretchTableHeader;
+			sourceTree = "<group>";
+		};
 		1CDEBB4C1C96F326001BB462 /* processor */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,6 +884,7 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/PinYin4Objc/PinYin4Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/RDVTabBarController/RDVTabBarController.framework",
+				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/TYAttributedLabel/TYAttributedLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/zhUITableViewAnimations/zhUITableViewAnimations.framework",
@@ -884,6 +898,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinYin4Objc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RDVTabBarController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TYAttributedLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/zhUITableViewAnimations.framework",
@@ -980,6 +995,7 @@
 				1C5767182008D83000CA3771 /* HistoryStore.m in Sources */,
 				1C3D5C501CA0EA710061D01D /* BlurImageView.m in Sources */,
 				1C58B3931C92A52A008A2571 /* AppDelegate.m in Sources */,
+				1C8B3910200CA73700DFB393 /* HFStretchableTableHeaderView.m in Sources */,
 				1C58B4B51C92AFE6008A2571 /* PinYinForObjc.m in Sources */,
 				1C58B3F71C92AF03008A2571 /* FunctionUtils.m in Sources */,
 				1C58B3F81C92AF03008A2571 /* ImageUtils.m in Sources */,
