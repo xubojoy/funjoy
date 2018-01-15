@@ -263,6 +263,46 @@
     return NO;
 }
 
+////获取当地时间
+//- (NSString *)getCurrentTime {
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateFormat:@"yyyy-MM-dd"];
+//    NSString *dateTime = [formatter stringFromDate:[NSDate date]];
+//    return dateTime;
+//}
+////将字符串转成NSDate类型
+//- (NSDate *)dateFromString:(NSString *)dateString {
+//
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat: @"yyyy-MM-dd"];
+//    NSDate *destDate= [dateFormatter dateFromString:dateString];
+//    return destDate;
+//}
+//传入今天的时间，返回明天的时间
++ (NSString *)getTomorrowAndYesterdayDay:(NSDate *)aDate spaceNum:(int)spaceNum{
+    NSDate *beginningOfWeek = [DateUtils getTomorrowAndYesterdayDayDate:aDate spaceNum:spaceNum];
+    NSDateFormatter *dateday = [[NSDateFormatter alloc] init];
+    [dateday setDateFormat:@"yyyy/MM/dd"];
+    return [dateday stringFromDate:beginningOfWeek];
+}
+
++ (NSDate *)getTomorrowAndYesterdayDayDate:(NSDate *)aDate spaceNum:(int)spaceNum{
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [gregorian components:NSCalendarUnitWeekday | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:aDate];
+    [components setDay:([components day]+spaceNum)];
+    
+    NSDate *beginningOfWeek = [gregorian dateFromComponents:components];
+    return beginningOfWeek;
+}
+
+//+ (NSDate *)getYesterdayDayDate:(NSDate *)aDate{
+//    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+//    NSDateComponents *components = [gregorian components:NSCalendarUnitWeekday | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:aDate];
+//    [components setDay:([components day]-1)];
+//
+//    NSDate *beginningOfWeek = [gregorian dateFromComponents:components];
+//    return beginningOfWeek;
+//}
 
 -(NSString *)description
 {

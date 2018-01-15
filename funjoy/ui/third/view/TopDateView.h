@@ -20,5 +20,8 @@ typedef void(^SellectDateBtnClick)(UIButton *dateBtn);
 
 @property (nonatomic, strong) DateUtils *dateUtils;
 @property (nonatomic, copy) SellectDateBtnClick sellectDateBtnClick;
+@property (nonatomic, strong) UILabel *dayLabel;
+
+- (void)updateDateLabel:(NSString *)dateStr;
 
 @end

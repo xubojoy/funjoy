@@ -29,20 +29,22 @@ static NSString *cellIdentifier = @"HistoryCell";
     self.view.backgroundColor = [ColorUtils colorWithHexString:common_content_color];
     self.title = @"历史上的今天";
     
-    self.historyArray = [NSMutableArray new];
+   
     self.date = [[DateUtils alloc] initWithDate:[NSDate date]];
-    [self loadData];
+    self.date.date = [NSDate date];
+    [self loadDataWithMonth:self.date.month day:self.date.day];
     [self initUI];
 }
 
-- (void)loadData{
+- (void)loadDataWithMonth:(int)month day:(int)day{
     [HistoryStore getHistoryToday:^(NSArray *historyArray, NSError *error) {
         NSLog(@".>>>>>>>>>>请求书居>>>>>>>>%@",historyArray);
         if (error == nil) {
-            self.historyArray = [NSMutableArray arrayWithArray:historyArray];
+            self.historyArray = [NSMutableArray new];
+            [self.historyArray addObjectsFromArray:historyArray];
         }
         [self.tableView reloadData];
-    } month:[NSString stringWithFormat:@"%d",self.date.month] day:[NSString stringWithFormat:@"%d",self.date.day]];
+    } month:[NSString stringWithFormat:@"%d",month] day:[NSString stringWithFormat:@"%d",day]];
 }
 
 - (void)initUI{
@@ -66,8 +68,35 @@ static NSString *cellIdentifier = @"HistoryCell";
         make.right.mas_equalTo(0);
         make.height.mas_equalTo(120);
     }];
+    __weak TodayHistoryController *weakSelf = self;
     self.topDateView.sellectDateBtnClick = ^(UIButton *dateBtn) {
-        
+        NSString *dateStr = nil;
+        switch (dateBtn.tag) {
+            case BEFORE_BTN:{
+                
+                NSDate *beginningOfWeek = [DateUtils getTomorrowAndYesterdayDayDate:weakSelf.date.date spaceNum:1];
+                
+                dateStr = [DateUtils getTomorrowAndYesterdayDay:weakSelf.date.date spaceNum:1];
+                weakSelf.date.date = beginningOfWeek;
+                NSLog(@">>>>>>>>>>明天>>>>>>>>%@",dateStr);
+            }
+                
+                break;
+                
+            default:{
+                NSDate *beginningOfWeek = [DateUtils getTomorrowAndYesterdayDayDate:weakSelf.date.date spaceNum:-1];
+                
+                dateStr = [DateUtils getTomorrowAndYesterdayDay:weakSelf.date.date spaceNum:-1];
+                weakSelf.date.date = beginningOfWeek;
+                NSLog(@">>>>>>>>>>后一天>>>>>>>>%@",dateStr);
+            }
+                break;
+        }
+        NSArray *dateArray = [dateStr componentsSeparatedByString:@"/"];
+        int month = [dateArray[1] intValue];
+        int day = [dateArray[2] intValue];
+        [weakSelf.topDateView updateDateLabel:[NSString stringWithFormat:@"%d/%d",month,day]];
+        [weakSelf loadDataWithMonth:month day:day];
     };
 }
 

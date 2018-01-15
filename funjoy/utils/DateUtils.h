@@ -43,4 +43,7 @@
 
 +(int) compare:(NSDate *)date1 date2:(NSDate *)date2;
 + (BOOL)intervalSinceNow: (NSString *) theDate;
+
++ (NSString *)getTomorrowAndYesterdayDay:(NSDate *)aDate spaceNum:(int)spaceNum;
++ (NSDate *)getTomorrowAndYesterdayDayDate:(NSDate *)aDate spaceNum:(int)spaceNum;
 @end
