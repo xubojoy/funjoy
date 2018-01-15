@@ -42,8 +42,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        self.contentView.backgroundColor = [ColorUtils colorWithHexString:common_content_color];
-        self.backgroundColor = [ColorUtils colorWithHexString:common_content_color];
+        self.contentView.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
+        self.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
         [self initUI];
     }
     

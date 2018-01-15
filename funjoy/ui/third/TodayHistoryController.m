@@ -26,7 +26,7 @@ static NSString *cellIdentifier = @"HistoryCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [ColorUtils colorWithHexString:common_content_color];
+    self.view.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
     self.title = @"历史上的今天";
     
    
@@ -52,21 +52,15 @@ static NSString *cellIdentifier = @"HistoryCell";
     [self commonInitialization];
 }
 
-//- (void)initBgImageView{
-//    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height-tabbar_height)];
-//    self.imageView.image = [UIImage imageNamed:@"bg"];
-//    self.imageView.userInteractionEnabled = YES;
-//    [self.view addSubview:self.imageView];
-//}
 - (void)initTopView{
     self.topDateView = [[TopDateView alloc] init];
-    self.topDateView.backgroundColor = [UIColor clearColor];
+    self.topDateView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.topDateView];
     [self.topDateView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(navigation_height);
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.height.mas_equalTo(120);
+        make.height.mas_equalTo(100);
     }];
     __weak TodayHistoryController *weakSelf = self;
     self.topDateView.sellectDateBtnClick = ^(UIButton *dateBtn) {
@@ -108,7 +102,7 @@ static NSString *cellIdentifier = @"HistoryCell";
         _tableView.dataSource = self;
         _tableView.delaysContentTouches = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.backgroundColor = [ColorUtils colorWithHexString:common_content_color];
+        _tableView.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
         [self.view addSubview:_tableView];
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.topDateView.mas_bottom).mas_offset(0);

@@ -23,20 +23,21 @@
     
     self.dayLabel = [[UILabel alloc] init];
     self.dayLabel.textColor = [ColorUtils colorWithHexString:@"#c6c6c6"];
-    self.dayLabel.backgroundColor = [ColorUtils colorWithHexString:@"#505052"];
+//    self.dayLabel.backgroundColor = [ColorUtils colorWithHexString:@"#505052"];
+    self.dayLabel.backgroundColor = [UIColor whiteColor];
     self.dayLabel.textAlignment = NSTextAlignmentCenter;
     self.dayLabel.font = [UIFont systemFontOfSize:font_24_size];
     [self addSubview:self.dayLabel];
     [self.dayLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(10);
         make.centerX.mas_equalTo(self.mas_centerX);
-        make.size.mas_equalTo(CGSizeMake(100, 100));
+        make.size.mas_equalTo(CGSizeMake(80, 80));
     }];
     self.dayLabel.text = [NSString stringWithFormat:@"%d/%d",self.dateUtils.month,self.dateUtils.day];
-    self.dayLabel.layer.cornerRadius = 50;
+    self.dayLabel.layer.cornerRadius = 40;
     self.dayLabel.layer.masksToBounds = YES;
     self.dayLabel.layer.borderWidth = splite_line_height;
-    self.dayLabel.layer.borderColor = [ColorUtils colorWithHexString:@"#6B6B6C"].CGColor;
+    self.dayLabel.layer.borderColor = [ColorUtils colorWithHexString:splite_line_color].CGColor;
     
     UIButton *afterBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     afterBtn.backgroundColor = [UIColor clearColor];
@@ -67,7 +68,7 @@
     }];
     
     UIView *downLine = [[UIView alloc] init];
-    downLine.backgroundColor = [ColorUtils colorWithHexString:splite_vertical_line_color];
+    downLine.backgroundColor = [ColorUtils colorWithHexString:splite_line_color];
     [self addSubview:downLine];
     [downLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
