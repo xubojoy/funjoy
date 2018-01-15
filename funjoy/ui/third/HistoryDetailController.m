@@ -10,6 +10,7 @@
 #import "HistoryStore.h"
 #import "HistoryDetail.h"
 #import <TYAttributedLabel/TYAttributedLabel.h>
+#import "PicUrlModel.h"
 @interface HistoryDetailController ()
 @property(nonatomic, strong) NSMutableArray *historyDetailArray;
 @end
@@ -25,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setRightSwipeGestureAndAdaptive];
     self.view.backgroundColor = [UIColor whiteColor];
     self.historyDetailArray = [NSMutableArray new];
     [self initScrollView];
@@ -50,13 +52,23 @@
 - (void)initUI{
     if (self.historyDetailArray.count > 0) {
         HistoryDetail *historyDetail = self.historyDetailArray[0];
+        
+        NSLog(@"-----图片数组-----%@",historyDetail.picUrl);
+        PicUrlModel *picUrlModel = historyDetail.picUrl[0];
+        
 //        NSAttributedString * attrStr = [[NSAttributedString alloc]initWithData:[historyDetail.content dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
         TYAttributedLabel *label = [[TYAttributedLabel alloc] init];
         [label setFrameWithOrign:CGPointMake(15, 0) Width:CGRectGetWidth(self.view.frame)-30];
         [self.bgScrollView addSubview:label];
-//        [label setAttributedText:attrStr];
-        label.text = historyDetail.content;
-        [label setFont:[UIFont systemFontOfSize:15]];
+        
+        // 追加 图片Url
+        TYImageStorage *imageUrlStorage = [[TYImageStorage alloc]init];
+        imageUrlStorage.imageURL = [NSURL URLWithString:picUrlModel.url];
+        imageUrlStorage.size = CGSizeMake(CGRectGetWidth(label.frame), 343*CGRectGetWidth(label.frame)/600);
+        [label appendTextStorage:imageUrlStorage];
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:historyDetail.content];
+        [attributedString addAttributeFont:[UIFont systemFontOfSize:15]];
+        [label appendTextAttributedString:attributedString];
         [label sizeToFit];
         CGSize labelSize = [label getSizeWithWidth:self.view.bounds.size.width-30];
         NSLog(@"----------%f------%f",labelSize.height,labelSize.width);

@@ -104,7 +104,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"新闻";
+    self.title = @"流行语";
     [self initTableView];
     [self jsonSelection];
 }

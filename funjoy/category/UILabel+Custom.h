@@ -14,6 +14,11 @@
 
 -(float) realWidth;
 -(float) realHeight;
+/**
+ 修改label内容距 `top` `left` `bottom` `right` 边距
+ */
+@property (nonatomic, assign) UIEdgeInsets yf_contentInsets;
+
 
 //计算文字实际高度
 extern float CalcTextHight(UIFont *font, NSString* text, CGFloat width);

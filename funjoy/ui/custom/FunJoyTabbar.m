@@ -19,19 +19,19 @@
         UINavigationController *firstNavigationController = [[UINavigationController alloc]
                                                        initWithRootViewController:firstViewController];
         firstNavigationController.delegate = self;
-        firstNavigationController.title = @"新闻";
+        firstNavigationController.title = @"流行语";
         
         UIViewController *secondViewController = [[SecondViewController alloc] init];
         UINavigationController *secondNavigationController = [[UINavigationController alloc]
                                                         initWithRootViewController:secondViewController];
         secondNavigationController.delegate = self;
-        secondNavigationController.title = @"服务";
+        secondNavigationController.title = @"小常识";
         
         UIViewController *thirdViewController = [[TodayHistoryController alloc] init];
         UINavigationController *thirdNavigationController = [[UINavigationController alloc]
                                                        initWithRootViewController:thirdViewController];
         thirdNavigationController.delegate = self;
-        thirdNavigationController.title = @"游戏";
+        thirdNavigationController.title = @"今天";
         
         UIViewController *userViewController = [[UserCenterViewController alloc] init];
         UINavigationController *userNavigationController = [[UINavigationController alloc]
@@ -92,6 +92,14 @@
 }
 
 -(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    if ([viewController isKindOfClass:NSClassFromString(@"IndexViewController")]
+        ||[viewController isKindOfClass:NSClassFromString(@"SecondViewController")]
+        ||[viewController isKindOfClass:NSClassFromString(@"TodayHistoryController")] || [viewController isKindOfClass:NSClassFromString(@"UserCenterViewController")]) {
+        [self.tabBarController setTabBarHidden:NO animated:YES];
+        
+    }else{
+        [self.tabBarController setTabBarHidden:YES animated:YES];
+    }
     //记录页面访问日志
     if (self.currentPageName != nil) {
         NSLog(@">>>>>> 转出:%@", self.currentPageName);
@@ -106,42 +114,7 @@
 {
     [self.tabBarController setTabBarHidden:NO animated:YES];
 }
-//
-//-(void)tabBarController:(LeveyTabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-//{
-//    //    UIViewController *uc = [((UINavigationController *)viewController).viewControllers objectAtIndex:0];
-//    
-//    [((UINavigationController *)viewController) popToRootViewControllerAnimated:NO];
-//    
-//}
-////
-//#pragma mark --- navigationController协议
-//-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-//{
-//    if ([viewController isKindOfClass:NSClassFromString(@"IndexViewController")]
-//        ||[viewController isKindOfClass:NSClassFromString(@"SecondViewController")]
-//        ||[viewController isKindOfClass:NSClassFromString(@"ThirdViewController")] || [viewController isKindOfClass:NSClassFromString(@"UserCenterViewController")]) {
-//        [self.tabbarController hidesTabBar:NO animated:YES];
-//    }
-//    //    else if ([viewController isKindOfClass:NSClassFromString(@"UserLoginController")]&&[[viewController.navigationController.viewControllers objectAtIndex:0] isKindOfClass:[UserCenterViewController class]]) {
-//    //        [self.tabbarController hidesTabBar:NO animated:YES];
-//    //    }
-//    else
-//    {
-//        [self.tabbarController hidesTabBar:YES animated:YES];
-//    }
-//    
-//    //记录页面访问日志
-////    if (self.currentPageName != nil) {
-////        [MobClick endLogPageView:self.currentPageName];
-////        NSLog(@">>>>>> 转出:%@", self.currentPageName);
-////    }
-////    self.currentPageName = [viewController getPageName];
-////    [MobClick beginLogPageView:self.currentPageName];
-////    NSLog(@">>>>>> 转入:%@", self.currentPageName);
-//}
-//
-//
+
 -(UINavigationController *) getSelectedViewController{
     return (UINavigationController *)self.tabBarController.selectedViewController;
 }

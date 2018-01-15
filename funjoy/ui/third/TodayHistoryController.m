@@ -24,9 +24,9 @@ static NSString *cellIdentifier = @"HistoryCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [ColorUtils colorWithHexString:common_content_color];
     self.title = @"历史上的今天";
-        [self initBgImageView];
+//        [self initBgImageView];
     [self commonInitialization];
     self.historyArray = [NSMutableArray new];
     self.date = [[DateUtils alloc] initWithDate:[NSDate date]];
@@ -43,12 +43,12 @@ static NSString *cellIdentifier = @"HistoryCell";
     } month:[NSString stringWithFormat:@"%d",self.date.month] day:[NSString stringWithFormat:@"%d",self.date.day]];
 }
 
-- (void)initBgImageView{
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height-tabbar_height)];
-    self.imageView.image = [UIImage imageNamed:@"bg"];
-    self.imageView.userInteractionEnabled = YES;
-    [self.view addSubview:self.imageView];
-}
+//- (void)initBgImageView{
+//    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height-tabbar_height)];
+//    self.imageView.image = [UIImage imageNamed:@"bg"];
+//    self.imageView.userInteractionEnabled = YES;
+//    [self.view addSubview:self.imageView];
+//}
 
 - (void)commonInitialization {
     if (!_tableView) {
@@ -57,12 +57,11 @@ static NSString *cellIdentifier = @"HistoryCell";
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.delaysContentTouches = NO;
-//        _tableView.rowHeight = 90;
-        _tableView.backgroundColor = [UIColor clearColor];
-//        [_tableView registerClass:[HistoryCell class] forCellReuseIdentifier:cellIdentifier];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.backgroundColor = [ColorUtils colorWithHexString:common_content_color];
     }
-//    self.view = _tableView;
-        [self.imageView addSubview:_tableView];
+    self.view = _tableView;
+//        [self.imageView addSubview:_tableView];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(zh_reload)];
 }
@@ -77,6 +76,7 @@ static NSString *cellIdentifier = @"HistoryCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HistoryCell *cell = [HistoryCell cellWithTableView:tableView];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.history = self.historyArray[indexPath.row];
     return cell;
 }
@@ -86,7 +86,7 @@ static NSString *cellIdentifier = @"HistoryCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 90;
+    return 60;
 }
 
 
@@ -95,6 +95,7 @@ static NSString *cellIdentifier = @"HistoryCell";
     if (self.historyArray.count > 0) {
         History *history = self.historyArray[indexPath.row];
         HistoryDetailController *historyDetailVc = [[HistoryDetailController alloc] initWithE_id:history.e_id];
+        historyDetailVc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:historyDetailVc animated:YES];
     }
     

@@ -9,5 +9,9 @@
 #import "HistoryDetail.h"
 
 @implementation HistoryDetail
-
++ (NSDictionary *)mj_objectClassInArray{
+    return @{
+             @"picUrl" : @"PicUrlModel"
+             };
+}
 @end

@@ -47,7 +47,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
-    self.title = @"服务";
+    self.title = @"小常识";
     
     self.presentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.presentBtn.frame = CGRectMake(40, 64, 100, 100);
