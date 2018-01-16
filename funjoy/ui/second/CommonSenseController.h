@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DMInterstitialAdController.h"
-@interface SecondViewController : UIViewController<DMInterstitialAdControllerDelegate>
+@interface CommonSenseController : UIViewController<DMInterstitialAdControllerDelegate>
 @property (nonatomic, strong) DMInterstitialAdController *dmInterstitial;
 @property (nonatomic, strong) UIButton *presentBtn;
 @end

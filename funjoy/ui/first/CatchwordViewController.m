@@ -6,7 +6,7 @@
 //  Copyright © 2016年 xubojoy. All rights reserved.
 //
 
-#import "IndexViewController.h"
+#import "CatchwordViewController.h"
 #import "NextViewController.h"
 #import "DMTools.h"
 #define DMPUBLISHERID        @"56OJyM1ouMGoULfJaL"
@@ -39,7 +39,7 @@
 
 @end
 
-@interface IndexViewController ()
+@interface CatchwordViewController ()
 {
     CGSize _adSize;
     CGFloat _adX, _adY;
@@ -49,7 +49,7 @@
 @property (nonatomic, retain) NSMutableArray *dateArray;
 @end
 
-@implementation IndexViewController
+@implementation CatchwordViewController
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     debugMethod();

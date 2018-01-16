@@ -54,18 +54,20 @@
         HistoryDetail *historyDetail = self.historyDetailArray[0];
         
         NSLog(@"-----图片数组-----%@",historyDetail.picUrl);
-        PicUrlModel *picUrlModel = historyDetail.picUrl[0];
         
-//        NSAttributedString * attrStr = [[NSAttributedString alloc]initWithData:[historyDetail.content dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
+        //        NSAttributedString * attrStr = [[NSAttributedString alloc]initWithData:[historyDetail.content dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
         TYAttributedLabel *label = [[TYAttributedLabel alloc] init];
         [label setFrameWithOrign:CGPointMake(15, 0) Width:CGRectGetWidth(self.view.frame)-30];
         [self.bgScrollView addSubview:label];
         
         // 追加 图片Url
-        TYImageStorage *imageUrlStorage = [[TYImageStorage alloc]init];
-        imageUrlStorage.imageURL = [NSURL URLWithString:picUrlModel.url];
-        imageUrlStorage.size = CGSizeMake(CGRectGetWidth(label.frame), 343*CGRectGetWidth(label.frame)/600);
-        [label appendTextStorage:imageUrlStorage];
+        if (historyDetail.picUrl.count > 0) {
+            PicUrlModel *picUrlModel = historyDetail.picUrl[0];
+            TYImageStorage *imageUrlStorage = [[TYImageStorage alloc]init];
+            imageUrlStorage.imageURL = [NSURL URLWithString:picUrlModel.url];
+            imageUrlStorage.size = CGSizeMake(CGRectGetWidth(label.frame), 343*CGRectGetWidth(label.frame)/600);
+            [label appendTextStorage:imageUrlStorage];
+        }
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:historyDetail.content];
         [attributedString addAttributeFont:[UIFont systemFontOfSize:15]];
         [label appendTextAttributedString:attributedString];
@@ -74,7 +76,6 @@
         NSLog(@"----------%f------%f",labelSize.height,labelSize.width);
         self.bgScrollView.contentSize = CGSizeMake(screen_width, labelSize.height);
     }
-    
 }
 
 - (void)didReceiveMemoryWarning {

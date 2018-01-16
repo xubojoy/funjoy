@@ -6,18 +6,19 @@
 //  Copyright © 2016年 xubojoy. All rights reserved.
 //
 
-#import "SecondViewController.h"
-
+#import "CommonSenseController.h"
+#import <SDCycleScrollView/SDCycleScrollView.h>
 
 
 #define DMPUBLISHERID        @"56OJyM1ouMGoULfJaL"
 #define DMPLCAEMENTID_INTER @"16TLwebvAchkAY6iOWkE6kpk"
 
-@interface SecondViewController ()
+@interface CommonSenseController ()<SDCycleScrollViewDelegate>
+@property(nonatomic, strong) SDCycleScrollView *bannerCycleScrollView;
 
 @end
 
-@implementation SecondViewController
+@implementation CommonSenseController
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     CGSize adSize;
@@ -56,6 +57,12 @@
     [self.presentBtn addTarget:self action:@selector(onPresentBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.presentBtn];
     
+}
+
+- (void)initBannerView{
+    self.bannerCycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, screen_width, screen_width/2) delegate:self placeholderImage:nil];
+    
+    [self.view addSubview:self.bannerCycleScrollView];
 }
 
 - (void)onPresentBtnClicked:(id)sender

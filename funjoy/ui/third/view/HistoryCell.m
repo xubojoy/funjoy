@@ -76,7 +76,7 @@
     
     self.dateLabel = [[UILabel alloc] init];
     self.dateLabel.backgroundColor = [UIColor clearColor];
-    self.dateLabel.textColor = [ColorUtils colorWithHexString:@"#bdbdbd"];
+    self.dateLabel.textColor = [ColorUtils colorWithHexString:splite_line_color];
     self.dateLabel.textAlignment = NSTextAlignmentLeft;
     self.dateLabel.font = [UIFont systemFontOfSize:font_13_size];
     [self.contentView addSubview:self.dateLabel];
@@ -110,8 +110,8 @@
 
     
     self.contentLabel = [[UILabel alloc] init];
-    self.contentLabel.backgroundColor = [ColorUtils colorWithHexString:@"#6c6c6c"];
-    self.contentLabel.textColor = [ColorUtils colorWithHexString:@"#c6c6c6"];
+    self.contentLabel.backgroundColor = [ColorUtils colorWithHexString:splite_line_color];
+    self.contentLabel.textColor = [ColorUtils colorWithHexString:black_text_color];
     self.contentLabel.textAlignment = NSTextAlignmentLeft;
     self.contentLabel.font = [UIFont systemFontOfSize:font_13_size];
     self.contentLabel.yf_contentInsets = UIEdgeInsetsMake(0, 10, 0, 10);

@@ -75,7 +75,7 @@ static NSString *cellIdentifier = @"HistoryCell";
         make.top.mas_equalTo(navigation_height);
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(-tabbar_height);
+        make.bottom.mas_equalTo(0);
     }];
     
     self.topDateView = [[TopDateView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 100)];

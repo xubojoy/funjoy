@@ -7,21 +7,21 @@
 //
 
 #import "FunJoyTabbar.h"
-#import "IndexViewController.h"
-#import "SecondViewController.h"
+#import "CatchwordViewController.h"
+#import "CommonSenseController.h"
 #import "TodayHistoryController.h"
 #import "UserCenterViewController.h"
 @implementation FunJoyTabbar
 -(id)init{
     self = [super init];
     if (self) {
-        UIViewController *firstViewController = [[IndexViewController alloc] init];
+        UIViewController *firstViewController = [[CatchwordViewController alloc] init];
         UINavigationController *firstNavigationController = [[UINavigationController alloc]
                                                        initWithRootViewController:firstViewController];
         firstNavigationController.delegate = self;
         firstNavigationController.title = @"流行语";
         
-        UIViewController *secondViewController = [[SecondViewController alloc] init];
+        UIViewController *secondViewController = [[CommonSenseController alloc] init];
         UINavigationController *secondNavigationController = [[UINavigationController alloc]
                                                         initWithRootViewController:secondViewController];
         secondNavigationController.delegate = self;
@@ -92,8 +92,8 @@
 }
 
 -(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    if ([viewController isKindOfClass:NSClassFromString(@"IndexViewController")]
-        ||[viewController isKindOfClass:NSClassFromString(@"SecondViewController")]
+    if ([viewController isKindOfClass:NSClassFromString(@"CatchwordViewController")]
+        ||[viewController isKindOfClass:NSClassFromString(@"CommonSenseController")]
         ||[viewController isKindOfClass:NSClassFromString(@"TodayHistoryController")] || [viewController isKindOfClass:NSClassFromString(@"UserCenterViewController")]) {
         [self.tabBarController setTabBarHidden:NO animated:YES];
         

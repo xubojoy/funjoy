@@ -35,8 +35,8 @@
 		1C58B39B1C92A52A008A2571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C58B39A1C92A52A008A2571 /* Assets.xcassets */; };
 		1C58B39E1C92A52A008A2571 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C58B39C1C92A52A008A2571 /* LaunchScreen.storyboard */; };
 		1C58B3B61C92AB53008A2571 /* FunJoyTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B3B51C92AB53008A2571 /* FunJoyTabbar.m */; };
-		1C58B3BD1C92AD8F008A2571 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B3BC1C92AD8F008A2571 /* IndexViewController.m */; };
-		1C58B3C01C92ADA5008A2571 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B3BF1C92ADA5008A2571 /* SecondViewController.m */; };
+		1C58B3BD1C92AD8F008A2571 /* CatchwordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B3BC1C92AD8F008A2571 /* CatchwordViewController.m */; };
+		1C58B3C01C92ADA5008A2571 /* CommonSenseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B3BF1C92ADA5008A2571 /* CommonSenseController.m */; };
 		1C58B3C61C92ADCE008A2571 /* UserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B3C51C92ADCE008A2571 /* UserCenterViewController.m */; };
 		1C58B3EB1C92AF03008A2571 /* NSNull+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B3C91C92AF02008A2571 /* NSNull+JSON.m */; };
 		1C58B3EC1C92AF03008A2571 /* NSString+stringPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B3CB1C92AF02008A2571 /* NSString+stringPlus.m */; };
@@ -163,10 +163,10 @@
 		1C58B39F1C92A52A008A2571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C58B3B41C92AB53008A2571 /* FunJoyTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunJoyTabbar.h; sourceTree = "<group>"; };
 		1C58B3B51C92AB53008A2571 /* FunJoyTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunJoyTabbar.m; sourceTree = "<group>"; };
-		1C58B3BB1C92AD8F008A2571 /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexViewController.h; path = first/IndexViewController.h; sourceTree = "<group>"; };
-		1C58B3BC1C92AD8F008A2571 /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexViewController.m; path = first/IndexViewController.m; sourceTree = "<group>"; };
-		1C58B3BE1C92ADA5008A2571 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondViewController.h; path = second/SecondViewController.h; sourceTree = "<group>"; };
-		1C58B3BF1C92ADA5008A2571 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondViewController.m; path = second/SecondViewController.m; sourceTree = "<group>"; };
+		1C58B3BB1C92AD8F008A2571 /* CatchwordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CatchwordViewController.h; path = first/CatchwordViewController.h; sourceTree = "<group>"; };
+		1C58B3BC1C92AD8F008A2571 /* CatchwordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CatchwordViewController.m; path = first/CatchwordViewController.m; sourceTree = "<group>"; };
+		1C58B3BE1C92ADA5008A2571 /* CommonSenseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonSenseController.h; path = second/CommonSenseController.h; sourceTree = "<group>"; };
+		1C58B3BF1C92ADA5008A2571 /* CommonSenseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonSenseController.m; path = second/CommonSenseController.m; sourceTree = "<group>"; };
 		1C58B3C41C92ADCE008A2571 /* UserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCenterViewController.h; path = user/UserCenterViewController.h; sourceTree = "<group>"; };
 		1C58B3C51C92ADCE008A2571 /* UserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCenterViewController.m; path = user/UserCenterViewController.m; sourceTree = "<group>"; };
 		1C58B3C81C92AF02008A2571 /* NSNull+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+JSON.h"; sourceTree = "<group>"; };
@@ -509,8 +509,8 @@
 			children = (
 				1C3D5C571CA0EEF20061D01D /* PlayViewController.h */,
 				1C3D5C581CA0EEF20061D01D /* PlayViewController.m */,
-				1C58B3BB1C92AD8F008A2571 /* IndexViewController.h */,
-				1C58B3BC1C92AD8F008A2571 /* IndexViewController.m */,
+				1C58B3BB1C92AD8F008A2571 /* CatchwordViewController.h */,
+				1C58B3BC1C92AD8F008A2571 /* CatchwordViewController.m */,
 				1CE55C3C1C96C01700FFC7E9 /* NextViewController.h */,
 				1CE55C3D1C96C01700FFC7E9 /* NextViewController.m */,
 				1CE55C421C96C30D00FFC7E9 /* ForthViewController.h */,
@@ -522,8 +522,8 @@
 		1C58B3B81C92AD31008A2571 /* second */ = {
 			isa = PBXGroup;
 			children = (
-				1C58B3BE1C92ADA5008A2571 /* SecondViewController.h */,
-				1C58B3BF1C92ADA5008A2571 /* SecondViewController.m */,
+				1C58B3BE1C92ADA5008A2571 /* CommonSenseController.h */,
+				1C58B3BF1C92ADA5008A2571 /* CommonSenseController.m */,
 			);
 			name = second;
 			sourceTree = "<group>";
@@ -962,7 +962,7 @@
 				1C58B4281C92AF4C008A2571 /* ExceptionMsg.m in Sources */,
 				1CE55C411C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				1C57670E2008C38100CA3771 /* HttpRequestFacade.m in Sources */,
-				1C58B3C01C92ADA5008A2571 /* SecondViewController.m in Sources */,
+				1C58B3C01C92ADA5008A2571 /* CommonSenseController.m in Sources */,
 				1C58B3F01C92AF03008A2571 /* UINavigationController+Autorotate.m in Sources */,
 				1C58B3F31C92AF03008A2571 /* UIViewController+Custom.m in Sources */,
 				1C58B3F51C92AF03008A2571 /* DateUtils.m in Sources */,
@@ -1007,7 +1007,7 @@
 				1C57670B2008B6D300CA3771 /* YNetWorkManger.m in Sources */,
 				1C58B3ED1C92AF03008A2571 /* Toast+UIView.m in Sources */,
 				1C8B3909200C3CE100DFB393 /* PicUrlModel.m in Sources */,
-				1C58B3BD1C92AD8F008A2571 /* IndexViewController.m in Sources */,
+				1C58B3BD1C92AD8F008A2571 /* CatchwordViewController.m in Sources */,
 				1C3D5C561CA0EA710061D01D /* rilegouleView.m in Sources */,
 				1C8B390C200C6F6900DFB393 /* TopDateView.m in Sources */,
 				1C52BA23200B84B300935F4C /* HistoryDetail.m in Sources */,

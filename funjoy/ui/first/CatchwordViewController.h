@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DMAdView.h"
 #import "rilegouleView.h"
-@interface IndexViewController : UIViewController<DMAdViewDelegate,UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface CatchwordViewController : UIViewController<DMAdViewDelegate,UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) DMAdView *dmAdView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) rilegouleView *rilegoule;
