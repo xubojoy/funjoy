@@ -108,6 +108,18 @@
 		1CDEBB971C96F9C8001BB462 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDEBB961C96F9C8001BB462 /* UIKit.framework */; };
 		1CE2A9AB200DFBEC00F62855 /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE2A9A7200DFBEB00F62855 /* WRNavigationBar.m */; };
 		1CE2A9AC200DFBEC00F62855 /* WRCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE2A9AA200DFBEB00F62855 /* WRCustomNavigationBar.m */; };
+		1CE2A9B2200E17B600F62855 /* HPSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE2A9AE200E17B600F62855 /* HPSphereView.m */; };
+		1CE2A9C7200E1AAC00F62855 /* GBAnimationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE2A9B4200E1AAC00F62855 /* GBAnimationTool.m */; };
+		1CE2A9C8200E1AAC00F62855 /* draw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CE2A9B7200E1AAC00F62855 /* draw@2x.png */; };
+		1CE2A9C9200E1AAC00F62855 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CE2A9B8200E1AAC00F62855 /* Contents.json */; };
+		1CE2A9CA200E1AAC00F62855 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CE2A9BA200E1AAC00F62855 /* camera@2x.png */; };
+		1CE2A9CB200E1AAC00F62855 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CE2A9BB200E1AAC00F62855 /* Contents.json */; };
+		1CE2A9CC200E1AAC00F62855 /* gallery@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CE2A9BD200E1AAC00F62855 /* gallery@2x.png */; };
+		1CE2A9CD200E1AAC00F62855 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CE2A9BE200E1AAC00F62855 /* Contents.json */; };
+		1CE2A9CE200E1AAC00F62855 /* dropbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CE2A9C0200E1AAC00F62855 /* dropbox@2x.png */; };
+		1CE2A9CF200E1AAC00F62855 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CE2A9C1200E1AAC00F62855 /* Contents.json */; };
+		1CE2A9D0200E1AAC00F62855 /* GBPopMenuButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE2A9C2200E1AAC00F62855 /* GBPopMenuButtonItem.m */; };
+		1CE2A9D1200E1AAC00F62855 /* GBPopMenuButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE2A9C3200E1AAC00F62855 /* GBPopMenuButtonView.m */; };
 		1CE544B51C97E3760062204E /* SIDADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE544B41C97E3760062204E /* SIDADView.m */; };
 		1CE55C411C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE55C401C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		42DB9A8A9A594CB799E45C74 /* Pods_funjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334123488D2DB21C19875B3D /* Pods_funjoy.framework */; };
@@ -296,6 +308,24 @@
 		1CE2A9A8200DFBEB00F62855 /* WRCustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCustomNavigationBar.h; sourceTree = "<group>"; };
 		1CE2A9A9200DFBEB00F62855 /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
 		1CE2A9AA200DFBEB00F62855 /* WRCustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCustomNavigationBar.m; sourceTree = "<group>"; };
+		1CE2A9AE200E17B600F62855 /* HPSphereView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSphereView.m; sourceTree = "<group>"; };
+		1CE2A9AF200E17B600F62855 /* HPMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPMatrix.h; sourceTree = "<group>"; };
+		1CE2A9B0200E17B600F62855 /* HPSphereView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSphereView.h; sourceTree = "<group>"; };
+		1CE2A9B1200E17B600F62855 /* HPPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPoint.h; sourceTree = "<group>"; };
+		1CE2A9B4200E1AAC00F62855 /* GBAnimationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBAnimationTool.m; sourceTree = "<group>"; };
+		1CE2A9B7200E1AAC00F62855 /* draw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "draw@2x.png"; sourceTree = "<group>"; };
+		1CE2A9B8200E1AAC00F62855 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		1CE2A9BA200E1AAC00F62855 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		1CE2A9BB200E1AAC00F62855 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		1CE2A9BD200E1AAC00F62855 /* gallery@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gallery@2x.png"; sourceTree = "<group>"; };
+		1CE2A9BE200E1AAC00F62855 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		1CE2A9C0200E1AAC00F62855 /* dropbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dropbox@2x.png"; sourceTree = "<group>"; };
+		1CE2A9C1200E1AAC00F62855 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		1CE2A9C2200E1AAC00F62855 /* GBPopMenuButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBPopMenuButtonItem.m; sourceTree = "<group>"; };
+		1CE2A9C3200E1AAC00F62855 /* GBPopMenuButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBPopMenuButtonView.m; sourceTree = "<group>"; };
+		1CE2A9C4200E1AAC00F62855 /* GBAnimationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBAnimationTool.h; sourceTree = "<group>"; };
+		1CE2A9C5200E1AAC00F62855 /* GBPopMenuButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBPopMenuButtonItem.h; sourceTree = "<group>"; };
+		1CE2A9C6200E1AAC00F62855 /* GBPopMenuButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBPopMenuButtonView.h; sourceTree = "<group>"; };
 		1CE544B31C97E3760062204E /* SIDADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDADView.h; sourceTree = "<group>"; };
 		1CE544B41C97E3760062204E /* SIDADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIDADView.m; sourceTree = "<group>"; };
 		1CE55C3F1C96C1EE00FFC7E9 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
@@ -470,6 +500,8 @@
 		1C58B3A51C92AAF0008A2571 /* third */ = {
 			isa = PBXGroup;
 			children = (
+				1CE2A9B3200E1AAC00F62855 /* GBPopMenuButtonView */,
+				1CE2A9AD200E17B600F62855 /* LabelCloud */,
 				1CE2A9A6200DFBEB00F62855 /* WRNavigationBar */,
 				1C8B390D200CA73700DFB393 /* stretchTableHeader */,
 				1C3D5BFD1CA0E8A10061D01D /* EnNetWork */,
@@ -797,6 +829,78 @@
 			path = WRNavigationBar;
 			sourceTree = "<group>";
 		};
+		1CE2A9AD200E17B600F62855 /* LabelCloud */ = {
+			isa = PBXGroup;
+			children = (
+				1CE2A9AE200E17B600F62855 /* HPSphereView.m */,
+				1CE2A9AF200E17B600F62855 /* HPMatrix.h */,
+				1CE2A9B0200E17B600F62855 /* HPSphereView.h */,
+				1CE2A9B1200E17B600F62855 /* HPPoint.h */,
+			);
+			path = LabelCloud;
+			sourceTree = "<group>";
+		};
+		1CE2A9B3200E1AAC00F62855 /* GBPopMenuButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				1CE2A9B5200E1AAC00F62855 /* New Folder */,
+				1CE2A9B4200E1AAC00F62855 /* GBAnimationTool.m */,
+				1CE2A9C5200E1AAC00F62855 /* GBPopMenuButtonItem.h */,
+				1CE2A9C2200E1AAC00F62855 /* GBPopMenuButtonItem.m */,
+				1CE2A9C4200E1AAC00F62855 /* GBAnimationTool.h */,
+				1CE2A9C6200E1AAC00F62855 /* GBPopMenuButtonView.h */,
+				1CE2A9C3200E1AAC00F62855 /* GBPopMenuButtonView.m */,
+			);
+			path = GBPopMenuButtonView;
+			sourceTree = "<group>";
+		};
+		1CE2A9B5200E1AAC00F62855 /* New Folder */ = {
+			isa = PBXGroup;
+			children = (
+				1CE2A9B6200E1AAC00F62855 /* draw.imageset */,
+				1CE2A9B9200E1AAC00F62855 /* camera.imageset */,
+				1CE2A9BC200E1AAC00F62855 /* gallery.imageset */,
+				1CE2A9BF200E1AAC00F62855 /* dropbox.imageset */,
+			);
+			path = "New Folder";
+			sourceTree = "<group>";
+		};
+		1CE2A9B6200E1AAC00F62855 /* draw.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				1CE2A9B7200E1AAC00F62855 /* draw@2x.png */,
+				1CE2A9B8200E1AAC00F62855 /* Contents.json */,
+			);
+			path = draw.imageset;
+			sourceTree = "<group>";
+		};
+		1CE2A9B9200E1AAC00F62855 /* camera.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				1CE2A9BA200E1AAC00F62855 /* camera@2x.png */,
+				1CE2A9BB200E1AAC00F62855 /* Contents.json */,
+			);
+			path = camera.imageset;
+			sourceTree = "<group>";
+		};
+		1CE2A9BC200E1AAC00F62855 /* gallery.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				1CE2A9BD200E1AAC00F62855 /* gallery@2x.png */,
+				1CE2A9BE200E1AAC00F62855 /* Contents.json */,
+			);
+			path = gallery.imageset;
+			sourceTree = "<group>";
+		};
+		1CE2A9BF200E1AAC00F62855 /* dropbox.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				1CE2A9C0200E1AAC00F62855 /* dropbox@2x.png */,
+				1CE2A9C1200E1AAC00F62855 /* Contents.json */,
+			);
+			path = dropbox.imageset;
+			sourceTree = "<group>";
+		};
 		1CE544B21C97E3760062204E /* SIDADView */ = {
 			isa = PBXGroup;
 			children = (
@@ -885,16 +989,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C52BA2F200B9ADB00935F4C /* bg.png in Resources */,
+				1CE2A9CC200E1AAC00F62855 /* gallery@2x.png in Resources */,
 				1CDEBB5B1C96F689001BB462 /* Default-Landscape~ipad.png in Resources */,
 				1CDEBB761C96F838001BB462 /* DomobAdSDKBundle.bundle in Resources */,
+				1CE2A9C9200E1AAC00F62855 /* Contents.json in Resources */,
 				1C58B39E1C92A52A008A2571 /* LaunchScreen.storyboard in Resources */,
+				1CE2A9CE200E1AAC00F62855 /* dropbox@2x.png in Resources */,
 				1C58B39B1C92A52A008A2571 /* Assets.xcassets in Resources */,
 				1CDEBB5F1C96F689001BB462 /* Default@2x.png in Resources */,
+				1CE2A9CF200E1AAC00F62855 /* Contents.json in Resources */,
 				1CDEBB5A1C96F689001BB462 /* Default-Landscape@2x~ipad.png in Resources */,
+				1CE2A9CA200E1AAC00F62855 /* camera@2x.png in Resources */,
 				1CDEBB5C1C96F689001BB462 /* Default-Portrait@2x~ipad.png in Resources */,
 				1CDEBB5E1C96F689001BB462 /* Default.png in Resources */,
+				1CE2A9CB200E1AAC00F62855 /* Contents.json in Resources */,
 				1CDEBB5D1C96F689001BB462 /* Default-Portrait~ipad.png in Resources */,
 				1CDEBB591C96F689001BB462 /* Default-568h@2x.png in Resources */,
+				1CE2A9CD200E1AAC00F62855 /* Contents.json in Resources */,
+				1CE2A9C8200E1AAC00F62855 /* draw@2x.png in Resources */,
 				1C52BA2A200B968100935F4C /* bg.jpg in Resources */,
 				1C58B3991C92A52A008A2571 /* Main.storyboard in Resources */,
 				1C93A3FC200DA4C70059EC5A /* 1.jpg in Resources */,
@@ -1001,6 +1113,7 @@
 				1C57670E2008C38100CA3771 /* HttpRequestFacade.m in Sources */,
 				1C58B3F01C92AF03008A2571 /* UINavigationController+Autorotate.m in Sources */,
 				1C93A3F2200DA41C0059EC5A /* CommonSenseController.m in Sources */,
+				1CE2A9D0200E1AAC00F62855 /* GBPopMenuButtonItem.m in Sources */,
 				1C58B3F31C92AF03008A2571 /* UIViewController+Custom.m in Sources */,
 				1C58B3F51C92AF03008A2571 /* DateUtils.m in Sources */,
 				1C58B3C61C92ADCE008A2571 /* UserCenterViewController.m in Sources */,
@@ -1013,6 +1126,7 @@
 				1C3D5C3C1CA0E9C30061D01D /* EveryDayModel.m in Sources */,
 				1C58B4291C92AF4C008A2571 /* ExpertFilter.m in Sources */,
 				1CE544B51C97E3760062204E /* SIDADView.m in Sources */,
+				1CE2A9D1200E1AAC00F62855 /* GBPopMenuButtonView.m in Sources */,
 				1C58B3FA1C92AF03008A2571 /* NSStringUtils.m in Sources */,
 				1C58B4221C92AF4C008A2571 /* Constant.m in Sources */,
 				1C58B3EE1C92AF03008A2571 /* UIImage+imagePlus.m in Sources */,
@@ -1029,11 +1143,13 @@
 				1CE2A9AB200DFBEC00F62855 /* WRNavigationBar.m in Sources */,
 				1C58B42B1C92AF4C008A2571 /* PushRecord.m in Sources */,
 				1C58B3B61C92AB53008A2571 /* FunJoyTabbar.m in Sources */,
+				1CE2A9C7200E1AAC00F62855 /* GBAnimationTool.m in Sources */,
 				1C3D5C531CA0EA710061D01D /* CustomView.m in Sources */,
 				1C93A3F6200DA41C0059EC5A /* CatchwordViewController.m in Sources */,
 				1C58B4301C92AF4C008A2571 /* User.m in Sources */,
 				1CDEBB4F1C96F384001BB462 /* DomobAdProcessor.m in Sources */,
 				1C5767182008D83000CA3771 /* HistoryStore.m in Sources */,
+				1CE2A9B2200E17B600F62855 /* HPSphereView.m in Sources */,
 				1C3D5C501CA0EA710061D01D /* BlurImageView.m in Sources */,
 				1C58B3931C92A52A008A2571 /* AppDelegate.m in Sources */,
 				1C8B3910200CA73700DFB393 /* HFStretchableTableHeaderView.m in Sources */,

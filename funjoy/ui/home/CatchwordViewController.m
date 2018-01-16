@@ -22,6 +22,8 @@
 #import "ImageContentView.h"
 #import "PlayViewController.h"
 #import "AppDelegate.h"
+#import "HPSphereView.h"
+#import "GBPopMenuButtonView.h"
 
 @interface SDWebImageManager  (cache)
 
@@ -39,7 +41,7 @@
 
 @end
 
-@interface CatchwordViewController ()
+@interface CatchwordViewController ()<GBMenuButtonDelegate>
 {
     CGSize _adSize;
     CGFloat _adX, _adY;
@@ -47,6 +49,10 @@
 @property (nonatomic, retain) NSMutableDictionary *selectDic;
 
 @property (nonatomic, retain) NSMutableArray *dateArray;
+@property (nonatomic, retain) HPSphereView *sphereView;
+@property (nonatomic, strong) GBPopMenuButtonView *popMenuButtonView;
+@property (nonatomic, retain) NSArray *labelArray;
+
 @end
 
 @implementation CatchwordViewController
@@ -104,26 +110,59 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-//    self.title = @"流行语";
-    [self initTableView];
+    self.labelArray = @[@"吃藕",@"方",@"狗带",@"吃土",@"巨巨",@"666",@"一波",@"红红火火恍恍惚惚",@"扩列",@"实力",@"糊",@"滑稽",@"欧洲人"];
     [self initHeaderView];
-    [self jsonSelection];
-//    [self.view insertSubview:self.customNavBar aboveSubview:self.tableView];
-//    self.customNavBar.title = @"流行语";
-//    [self.customNavBar wr_setBottomLineHidden:YES];
-//
-//    // 设置初始导航栏透明度
-//    [self.customNavBar wr_setBackgroundAlpha:0];
-//    [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"arrow_back_icon"]];
+    [self initPopMenuButtonView];
+    [self initLabelCloudView];
+//    [self jsonSelection];
    
 }
 
 - (void)initHeaderView{
-    [self.view insertSubview:self.customNavBar aboveSubview:self.tableView];
+    [self.view addSubview:self.customNavBar];
     self.customNavBar.title = @"流行语";
     [self.customNavBar wr_setBottomLineHidden:NO];
     // 设置初始导航栏透明度
     [self.customNavBar wr_setBackgroundAlpha:1];
+}
+
+- (void)initPopMenuButtonView{
+    self.popMenuButtonView = [[GBPopMenuButtonView alloc] initWithItems:@[@"camera",@"draw",@"dropbox",@"gallery"] size:CGSizeMake(50, 50) type:GBMenuButtonTypeLineRight isMove:YES];
+    self.popMenuButtonView.delegate = self;
+    self.popMenuButtonView.frame = CGRectMake(15, [WRNavigationBar navBarBottom]+general_margin, 50, 50);
+    [self.view addSubview:self.popMenuButtonView];
+//    self.popMenuButtonView.menuButtonSelectedAtIdex = ^(NSInteger selectTag) {
+//
+//    };
+}
+
+
+- (void)initLabelCloudView{
+    _sphereView = [[HPSphereView alloc] initWithFrame:CGRectMake(15, self.popMenuButtonView.bottomY+general_space, screen_width-30, screen_width-30)];
+    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+    for (NSInteger i = 0; i < self.labelArray.count; i ++) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [btn setTitle:[NSString stringWithFormat:@"%@", self.labelArray[i]] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        btn.titleLabel.font = [UIFont systemFontOfSize:24.];
+        btn.frame = CGRectMake(0, 0, 100, 20);
+        [btn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [array addObject:btn];
+        [_sphereView addSubview:btn];
+    }
+    [_sphereView setCloudTags:array];
+    _sphereView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:_sphereView];
+
+}
+
+- (void)buttonPressed:(UIButton *)sender{
+    NSLog(@"点击了-------%@",sender.currentTitle);
+}
+
+- (void)menuButtonSelectedAtIdex:(NSInteger)index{
+    [self.popMenuButtonView hideItems];
+    NSLog(@"点击了-------%ld",(long)index);
 }
 
 
