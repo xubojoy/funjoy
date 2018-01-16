@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ForthViewController : UIViewController
+@interface ForthViewController : BaseViewController
 
 @end

@@ -20,24 +20,28 @@
                                                        initWithRootViewController:firstViewController];
         firstNavigationController.delegate = self;
         firstNavigationController.title = @"流行语";
+        [firstNavigationController.navigationBar setHidden:YES];
         
         UIViewController *secondViewController = [[CommonSenseController alloc] init];
         UINavigationController *secondNavigationController = [[UINavigationController alloc]
                                                         initWithRootViewController:secondViewController];
         secondNavigationController.delegate = self;
         secondNavigationController.title = @"小常识";
+        [secondNavigationController.navigationBar setHidden:YES];
         
         UIViewController *thirdViewController = [[TodayHistoryController alloc] init];
         UINavigationController *thirdNavigationController = [[UINavigationController alloc]
                                                        initWithRootViewController:thirdViewController];
         thirdNavigationController.delegate = self;
         thirdNavigationController.title = @"今天";
+        [thirdNavigationController.navigationBar setHidden:YES];
         
         UIViewController *userViewController = [[UserCenterViewController alloc] init];
         UINavigationController *userNavigationController = [[UINavigationController alloc]
                                                        initWithRootViewController:userViewController];
         userNavigationController.delegate = self;
         userNavigationController.title = @"我";
+        [userNavigationController.navigationBar setHidden:YES];
         
         self.tabBarController = [[RDVTabBarController alloc] init];
         [self.tabBarController setViewControllers:@[firstNavigationController, secondNavigationController,

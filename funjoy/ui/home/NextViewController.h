@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NextViewController : UIViewController<UIWebViewDelegate,UIScrollViewDelegate>
+@interface NextViewController : BaseViewController<UIWebViewDelegate,UIScrollViewDelegate>
 @property (strong, nonatomic) UIWebView *webView;
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class EveryDayModel;
 
-@interface PlayViewController : UIViewController
+@interface PlayViewController : BaseViewController
 
 @property (nonatomic, strong) NSArray *modelArray;
 

@@ -27,7 +27,6 @@
 
     //初始化App的底栏
     self.tabbar = [FunJoyTabbar new];
-//    [self.tabbar customizeInterface];
     self.window.rootViewController = self.tabbar.tabBarController;
     
 //    DomobAdProcessor *domobProcessor = [DomobAdProcessor new];

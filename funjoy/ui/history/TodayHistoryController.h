@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HFStretchableTableHeaderView.h"
-@interface TodayHistoryController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface TodayHistoryController : BaseViewController<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *historyArray;
 @property (nonatomic, strong) HFStretchableTableHeaderView* stretchableTableHeaderView;

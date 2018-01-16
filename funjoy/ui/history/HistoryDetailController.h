@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HistoryDetailController : UIViewController
+@interface HistoryDetailController : BaseViewController
 @property (nonatomic, assign) int e_id;
 @property (nonatomic, strong) UIScrollView *bgScrollView;
 

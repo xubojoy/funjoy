@@ -46,6 +46,7 @@
     [afterBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
     [afterBtn addTarget:self action:@selector(sellectDateBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     afterBtn.tag = AFTER_BTN;
+//    [afterBtn];
     [self addSubview:afterBtn];
     [afterBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.dayLabel.mas_left).mas_offset(-20);
