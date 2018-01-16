@@ -8,6 +8,8 @@
 
 #import "UIImage+imagePlus.h"
 
+const NSString *associatedKey = @"associate_btn_key";
+
 #define navigation_height     64
 #define status_bar_height     20
 #define tabbar_height         51

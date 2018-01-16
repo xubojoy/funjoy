@@ -91,6 +91,8 @@ static NSString *cellIdentifier = @"HistoryCell";
     _stretchableTableHeaderView = [HFStretchableTableHeaderView new];
     [_stretchableTableHeaderView stretchHeaderForTableView:_tableView withView:self.headerView];
     
+//    NSNumber *num = objc_getAssociatedObject(<#id  _Nonnull object#>, &associatedKey);
+    
     __weak TodayHistoryController *weakSelf = self;
     self.topDateView.sellectDateBtnClick = ^(UIButton *dateBtn) {
         NSString *dateStr = nil;

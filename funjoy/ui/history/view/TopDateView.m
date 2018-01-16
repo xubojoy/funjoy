@@ -7,7 +7,7 @@
 //
 
 #import "TopDateView.h"
-
+#import <objc/runtime.h>
 @implementation TopDateView
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -81,6 +81,8 @@
 
 - (void)sellectDateBtnClick:(UIButton *)sender{
     NSLog(@"--------sender.tag--------%ld",(long)sender.tag);
+    NSNumber *num = [NSNumber numberWithInteger:sender.tag];
+//    objc_setAssociatedObject(sender, &associatedKey, num, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.sellectDateBtnClick) {
         self.sellectDateBtnClick(sender);
     }

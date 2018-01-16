@@ -677,11 +677,11 @@
 		1C93A3E8200DA41C0059EC5A /* history */ = {
 			isa = PBXGroup;
 			children = (
+				1C93A3EB200DA41C0059EC5A /* TodayHistoryController.h */,
 				1C93A3E9200DA41C0059EC5A /* TodayHistoryController.m */,
 				1C93A3EA200DA41C0059EC5A /* HistoryDetailController.h */,
-				1C93A3EB200DA41C0059EC5A /* TodayHistoryController.h */,
-				1C93A3EC200DA41C0059EC5A /* view */,
 				1C93A3F1200DA41C0059EC5A /* HistoryDetailController.m */,
+				1C93A3EC200DA41C0059EC5A /* view */,
 			);
 			path = history;
 			sourceTree = "<group>";
