@@ -104,10 +104,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"流行语";
+//    self.title = @"流行语";
     [self initTableView];
+    [self initHeaderView];
     [self jsonSelection];
+//    [self.view insertSubview:self.customNavBar aboveSubview:self.tableView];
+//    self.customNavBar.title = @"流行语";
+//    [self.customNavBar wr_setBottomLineHidden:YES];
+//
+//    // 设置初始导航栏透明度
+//    [self.customNavBar wr_setBackgroundAlpha:0];
+//    [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"arrow_back_icon"]];
+   
 }
+
+- (void)initHeaderView{
+    [self.view insertSubview:self.customNavBar aboveSubview:self.tableView];
+    self.customNavBar.title = @"流行语";
+    [self.customNavBar wr_setBottomLineHidden:NO];
+    // 设置初始导航栏透明度
+    [self.customNavBar wr_setBackgroundAlpha:1];
+}
+
 
 
 #pragma mark ---------- 数据解析 -----------
@@ -201,7 +219,7 @@
 
 //初始化tableview
 -(void)initTableView{
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, screen_width,screen_height-tabbar_height-38) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, [WRNavigationBar navBarBottom], screen_width,screen_height-tabbar_height-[WRNavigationBar navBarBottom]) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [ColorUtils colorWithHexString:backgroud_color];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -210,6 +228,9 @@
     self.tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.tableView];
 //    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
 }
 
 #pragma mark - Table view data source

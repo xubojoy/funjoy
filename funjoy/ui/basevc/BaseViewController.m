@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+//#import "WRNavigationBar.h"
 
 @interface BaseViewController ()
 
@@ -17,6 +18,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupNavBar];
+}
+
+- (void)setupNavBar
+{
+    [self.view addSubview:self.customNavBar];
+
+    // 设置自定义导航栏背景图片
+    self.customNavBar.barBackgroundImage = [UIImage imageNamed:@"under_bar"];
+
+//    // 设置自定义导航栏标题颜色
+    self.customNavBar.titleLabelColor = [ColorUtils colorWithHexString:green_light_color];
+//
+//    if (self.navigationController.childViewControllers.count != 1) {
+//        [self.customNavBar wr_setLeftButtonWithTitle:@"<<" titleColor:[UIColor whiteColor]];
+//    }
+}
+
+- (WRCustomNavigationBar *)customNavBar
+{
+    if (_customNavBar == nil) {
+        _customNavBar = [WRCustomNavigationBar CustomNavigationBar];
+    }
+    return _customNavBar;
 }
 
 - (void)didReceiveMemoryWarning {

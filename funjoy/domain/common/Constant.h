@@ -8,7 +8,7 @@
 
 #import "UIImage+imagePlus.h"
 
-const NSString *associatedKey = @"associate_btn_key";
+//const NSString *associatedKey = @"associate_btn_key";
 
 #define navigation_height     64
 #define status_bar_height     20
@@ -79,6 +79,7 @@ const NSString *associatedKey = @"associate_btn_key";
 #define orange_order_status_backgroud_color @"#ff9933"
 #define common_btn_bg_color       @"#fc9a35"
 #define splite_vertical_line_color  @"#6c6c6c"
+#define color_c6c6c6   @"#c6c6c6"
 //#7cbb73
 #define common_splite_line_color  @"#eeeeee"
 #define green_common_color        @"#49c28d"

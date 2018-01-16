@@ -15,11 +15,15 @@
 #import "HistoryDetailController.h"
 #import "HistoryCell.h"
 #import "TopDateView.h"
+
+#define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
+#define IMAGE_HEIGHT (screen_width/2)
+#define NAV_HEIGHT 64
 @interface TodayHistoryController ()
 @property(nonatomic, strong) DateUtils *date;
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) TopDateView *topDateView;
-@property(nonatomic, strong) UIView *headerView;
+@property(nonatomic, strong) UIImageView *headerView;
 @end
 static NSString *cellIdentifier = @"HistoryCell";
 @implementation TodayHistoryController
@@ -28,14 +32,15 @@ static NSString *cellIdentifier = @"HistoryCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
-    self.title = @"历史上的今天";
+    [self.navigationController.navigationBar setHidden:YES];
+//    self.title = @"历史上的今天";
     
-   
     self.date = [[DateUtils alloc] initWithDate:[NSDate date]];
     self.date.date = [NSDate date];
     [self loadDataWithMonth:self.date.month day:self.date.day];
     [self initUI];
 }
+
 
 - (void)loadDataWithMonth:(int)month day:(int)day{
     [HistoryStore getHistoryToday:^(NSArray *historyArray, NSError *error) {
@@ -51,10 +56,19 @@ static NSString *cellIdentifier = @"HistoryCell";
 - (void)initUI{
     [self initTableView];
     [self initTopView];
+    [self initHeaderView];
+}
+
+- (void)initHeaderView{
+    [self.view insertSubview:self.customNavBar aboveSubview:self.tableView];
+    self.customNavBar.title = @"历史上的今天";
+    [self.customNavBar wr_setBottomLineHidden:NO];
+    // 设置初始导航栏透明度
+    [self.customNavBar wr_setBackgroundAlpha:0];
 }
 
 - (void)initTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height-navigation_height-tabbar_height) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height) style:UITableViewStylePlain];
     _tableView.zh_reloadAnimationType = zhTableViewAnimationTypeVallum;
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -68,11 +82,15 @@ static NSString *cellIdentifier = @"HistoryCell";
 }
 
 - (void)initTopView{
-    self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 100)];
-    self.headerView.backgroundColor = [UIColor cyanColor];
+    self.headerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_width/2)];
+    self.headerView.backgroundColor = [UIColor whiteColor];
+    self.headerView.contentMode = UIViewContentModeScaleAspectFill;
+    self.headerView.clipsToBounds = YES;
+    self.headerView.userInteractionEnabled = YES;
+//    self.headerView.image = [UIImage imageNamed:@"bg.png"];
     
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(navigation_height);
+        make.top.mas_equalTo(-64);
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
         make.bottom.mas_equalTo(0);
@@ -162,6 +180,17 @@ static NSString *cellIdentifier = @"HistoryCell";
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (offsetY > NAVBAR_COLORCHANGE_POINT)
+    {
+        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
+        [self.customNavBar wr_setBackgroundAlpha:alpha];
+    }
+    else
+    {
+        [self.customNavBar wr_setBackgroundAlpha:0];
+    }
+
     [_stretchableTableHeaderView scrollViewDidScroll:scrollView];
 }
 - (void)viewDidLayoutSubviews

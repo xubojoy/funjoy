@@ -11,6 +11,7 @@
 #import "HistoryDetail.h"
 #import <TYAttributedLabel/TYAttributedLabel.h>
 #import "PicUrlModel.h"
+
 @interface HistoryDetailController ()
 @property(nonatomic, strong) NSMutableArray *historyDetailArray;
 @end
@@ -29,6 +30,18 @@
     [self setRightSwipeGestureAndAdaptive];
     self.view.backgroundColor = [UIColor whiteColor];
     self.historyDetailArray = [NSMutableArray new];
+    [self.view addSubview:self.customNavBar];
+//    self.customNavBar.title = @"";
+    [self.customNavBar wr_setBottomLineHidden:NO];
+    
+    // 设置初始导航栏透明度
+    [self.customNavBar wr_setBackgroundAlpha:1];
+    [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"arrow_back_icon"]];
+    __weak typeof(self) weakSelf = self;
+    self.customNavBar.onClickLeftButton = ^{
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    };
+    
     [self initScrollView];
     [self loadDetailData];
 }
@@ -45,7 +58,7 @@
 }
 
 - (void)initScrollView{
-    self.bgScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height-tabbar_height)];
+    self.bgScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, [WRNavigationBar navBarBottom], screen_width, screen_height-[WRNavigationBar navBarBottom])];
     [self.view addSubview:self.bgScrollView];
 }
 

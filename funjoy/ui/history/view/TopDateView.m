@@ -22,9 +22,9 @@
 - (void)initUI{
     
     self.dayLabel = [[UILabel alloc] init];
-    self.dayLabel.textColor = [ColorUtils colorWithHexString:@"#c6c6c6"];
+    self.dayLabel.textColor = [ColorUtils colorWithHexString:green_light_color];
 //    self.dayLabel.backgroundColor = [ColorUtils colorWithHexString:@"#505052"];
-    self.dayLabel.backgroundColor = [UIColor whiteColor];
+    self.dayLabel.backgroundColor = [UIColor clearColor];
     self.dayLabel.textAlignment = NSTextAlignmentCenter;
     self.dayLabel.font = [UIFont systemFontOfSize:font_24_size];
     [self addSubview:self.dayLabel];
@@ -42,7 +42,7 @@
     UIButton *afterBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     afterBtn.backgroundColor = [UIColor clearColor];
     [afterBtn setTitle:@"后一天" forState:UIControlStateNormal];
-    [afterBtn setTitleColor:[ColorUtils colorWithHexString:@"#c6c6c6"] forState:UIControlStateNormal];
+    [afterBtn setTitleColor:[ColorUtils colorWithHexString:splite_line_color] forState:UIControlStateNormal];
     [afterBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
     [afterBtn addTarget:self action:@selector(sellectDateBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     afterBtn.tag = AFTER_BTN;
@@ -57,7 +57,7 @@
     UIButton *beforeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     beforeBtn.backgroundColor = [UIColor clearColor];
     [beforeBtn setTitle:@"前一天" forState:UIControlStateNormal];
-    [beforeBtn setTitleColor:[ColorUtils colorWithHexString:@"#c6c6c6"] forState:UIControlStateNormal];
+    [beforeBtn setTitleColor:[ColorUtils colorWithHexString:splite_line_color] forState:UIControlStateNormal];
     [beforeBtn.titleLabel setFont:[UIFont systemFontOfSize:13]];
     [beforeBtn addTarget:self action:@selector(sellectDateBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     beforeBtn.tag = BEFORE_BTN;
@@ -80,8 +80,8 @@
 }
 
 - (void)sellectDateBtnClick:(UIButton *)sender{
-    NSLog(@"--------sender.tag--------%ld",(long)sender.tag);
-    NSNumber *num = [NSNumber numberWithInteger:sender.tag];
+//    NSLog(@"--------sender.tag--------%ld",(long)sender.tag);
+//    NSNumber *num = [NSNumber numberWithInteger:sender.tag];
 //    objc_setAssociatedObject(sender, &associatedKey, num, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.sellectDateBtnClick) {
         self.sellectDateBtnClick(sender);

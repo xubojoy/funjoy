@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WRCustomNavigationBar.h"
 @interface BaseViewController : UIViewController
-
+@property (nonatomic, strong) WRCustomNavigationBar *customNavBar;
 @end
