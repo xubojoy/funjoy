@@ -24,7 +24,8 @@
 #import "AppDelegate.h"
 #import "HPSphereView.h"
 #import "GBPopMenuButtonView.h"
-
+#import "funjoy-Swift.h"
+#import "FJAlertView.h"
 @interface SDWebImageManager  (cache)
 
 
@@ -48,10 +49,12 @@
 }
 @property (nonatomic, retain) NSMutableDictionary *selectDic;
 
-@property (nonatomic, retain) NSMutableArray *dateArray;
+@property (nonatomic, retain) NSArray *dateArray;
 @property (nonatomic, retain) HPSphereView *sphereView;
 @property (nonatomic, strong) GBPopMenuButtonView *popMenuButtonView;
 @property (nonatomic, retain) NSArray *labelArray;
+@property (nonatomic, strong) NSDictionary *yearOldCategoryDict;
+
 
 @end
 
@@ -110,7 +113,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.labelArray = @[@"吃藕",@"方",@"狗带",@"吃土",@"巨巨",@"666",@"一波",@"红红火火恍恍惚惚",@"扩列",@"实力",@"糊",@"滑稽",@"欧洲人"];
+    self.labelArray = @[@"吃藕",@"方",@"狗带",@"吃土",@"巨巨",@"666",@"一波",@"红红火火恍恍惚惚",@"扩列",@"实力",@"糊",@"滑稽",@"欧洲人",@"尼奏凯",@"洗模杯",@"打铁",@"布吉岛",@"PYQ",@"发糖",@"原谅色",@"落地成盒",@"扣字",@"CQY",@"毒药",@"共药",@"共掉线",@"亦可赛艇",@"DD",@"互卖",@"开黑",@"萌新",@"挽",@"233333",@"本命",@"黑界",@"实力挽尊",@"欧气",@"巨巨",@"同控",@"语C",@"小确肥",@"战五渣",@"喊麦",@"扩同好",@"面基",@"290",@"可攻可受",@"中二",@"种草"];
+    
+    
+    self.dateArray = @[
+                       @{
+                           @"id":@0,
+                           @"title":@"00后",
+                           @"labelArray": self.labelArray
+                           },
+                       
+                       ];
+    
     [self initHeaderView];
     [self initPopMenuButtonView];
     [self initLabelCloudView];
@@ -118,6 +132,9 @@
    
 }
 
+/**
+ 初始化导航
+ */
 - (void)initHeaderView{
     [self.view addSubview:self.customNavBar];
     self.customNavBar.title = @"流行语";
@@ -126,6 +143,9 @@
     [self.customNavBar wr_setBackgroundAlpha:1];
 }
 
+/**
+ 初始化弹出按钮
+ */
 - (void)initPopMenuButtonView{
     self.popMenuButtonView = [[GBPopMenuButtonView alloc] initWithItems:@[@"camera",@"draw",@"dropbox",@"gallery"] size:CGSizeMake(50, 50) type:GBMenuButtonTypeLineRight isMove:YES];
     self.popMenuButtonView.delegate = self;
@@ -136,16 +156,19 @@
 //    };
 }
 
-
+/**
+ 初始化标签云
+ */
 - (void)initLabelCloudView{
-    _sphereView = [[HPSphereView alloc] initWithFrame:CGRectMake(15, self.popMenuButtonView.bottomY+general_space, screen_width-30, screen_width-30)];
+    _sphereView = [[HPSphereView alloc] initWithFrame:CGRectMake(30, self.popMenuButtonView.bottomY+general_space, screen_width-60, screen_width-30)];
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
     for (NSInteger i = 0; i < self.labelArray.count; i ++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
         [btn setTitle:[NSString stringWithFormat:@"%@", self.labelArray[i]] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont systemFontOfSize:24.];
-        btn.frame = CGRectMake(0, 0, 100, 20);
+        CGSize btnSize = [NSStringUtils boundingALLRectWithSize:self.labelArray[i] Font:[UIFont systemFontOfSize:font_24_size] Size:CGSizeMake(screen_width, 0)];
+        btn.frame = CGRectMake(0, 0, btnSize.width, 20);
         [btn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [array addObject:btn];
         [_sphereView addSubview:btn];
@@ -153,16 +176,21 @@
     [_sphereView setCloudTags:array];
     _sphereView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_sphereView];
-
 }
 
 - (void)buttonPressed:(UIButton *)sender{
     NSLog(@"点击了-------%@",sender.currentTitle);
+//    [YHAlertView showWithTitle:sender.currentTitle message:@"" cancelButtonTitle:@"" otherButtonTitle:@"关闭" clickButtonBlock:^(YHAlertView * _Nonnull alert, NSInteger clickIndex) {
+//
+//    }];
+    FJAlertView *alert = [[FJAlertView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:alert];
 }
 
 - (void)menuButtonSelectedAtIdex:(NSInteger)index{
     [self.popMenuButtonView hideItems];
     NSLog(@"点击了-------%ld",(long)index);
+    
 }
 
 

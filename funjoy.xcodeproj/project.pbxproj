@@ -17,6 +17,10 @@
 		1C3D5C541CA0EA710061D01D /* EveryDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D5C4B1CA0EA710061D01D /* EveryDayTableViewCell.m */; };
 		1C3D5C551CA0EA710061D01D /* ImageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D5C4D1CA0EA710061D01D /* ImageContentView.m */; };
 		1C3D5C561CA0EA710061D01D /* rilegouleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D5C4F1CA0EA710061D01D /* rilegouleView.m */; };
+		1C51F53C200EE31F006AD194 /* CatchWordDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C51F53B200EE31F006AD194 /* CatchWordDetailController.m */; };
+		1C51F53F200EE704006AD194 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51F53E200EE704006AD194 /* Const.swift */; };
+		1C51F545200EE7A5006AD194 /* YHAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51F544200EE7A5006AD194 /* YHAlertView.swift */; };
+		1C51F548200EF271006AD194 /* FJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C51F547200EF271006AD194 /* FJAlertView.m */; };
 		1C52BA23200B84B300935F4C /* HistoryDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52BA22200B84B300935F4C /* HistoryDetail.m */; };
 		1C52BA2A200B968100935F4C /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C52BA29200B968100935F4C /* bg.jpg */; };
 		1C52BA2F200B9ADB00935F4C /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C52BA2E200B9ADB00935F4C /* bg.png */; };
@@ -147,6 +151,13 @@
 		1C3D5C4D1CA0EA710061D01D /* ImageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageContentView.m; path = everydayvc/everydayView/ImageContentView.m; sourceTree = "<group>"; };
 		1C3D5C4E1CA0EA710061D01D /* rilegouleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rilegouleView.h; path = everydayvc/everydayView/rilegouleView.h; sourceTree = "<group>"; };
 		1C3D5C4F1CA0EA710061D01D /* rilegouleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rilegouleView.m; path = everydayvc/everydayView/rilegouleView.m; sourceTree = "<group>"; };
+		1C51F53A200EE31F006AD194 /* CatchWordDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatchWordDetailController.h; sourceTree = "<group>"; };
+		1C51F53B200EE31F006AD194 /* CatchWordDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatchWordDetailController.m; sourceTree = "<group>"; };
+		1C51F53D200EE703006AD194 /* funjoy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "funjoy-Bridging-Header.h"; sourceTree = "<group>"; };
+		1C51F53E200EE704006AD194 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		1C51F544200EE7A5006AD194 /* YHAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHAlertView.swift; sourceTree = "<group>"; };
+		1C51F546200EF271006AD194 /* FJAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJAlertView.h; sourceTree = "<group>"; };
+		1C51F547200EF271006AD194 /* FJAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJAlertView.m; sourceTree = "<group>"; };
 		1C52BA21200B84B300935F4C /* HistoryDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryDetail.h; sourceTree = "<group>"; };
 		1C52BA22200B84B300935F4C /* HistoryDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryDetail.m; sourceTree = "<group>"; };
 		1C52BA29200B968100935F4C /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
@@ -419,6 +430,16 @@
 			name = everydayView;
 			sourceTree = "<group>";
 		};
+		1C51F543200EE7A5006AD194 /* funswift */ = {
+			isa = PBXGroup;
+			children = (
+				1C51F544200EE7A5006AD194 /* YHAlertView.swift */,
+				1C51F546200EF271006AD194 /* FJAlertView.h */,
+				1C51F547200EF271006AD194 /* FJAlertView.m */,
+			);
+			path = funswift;
+			sourceTree = "<group>";
+		};
 		1C5767022008B48D00CA3771 /* store */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +536,7 @@
 		1C58B3AE1C92AAF0008A2571 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				1C51F543200EE7A5006AD194 /* funswift */,
 				1C93A3DC200DA41C0059EC5A /* commonsense */,
 				1C93A3E8200DA41C0059EC5A /* history */,
 				1C93A3DF200DA41C0059EC5A /* home */,
@@ -621,6 +643,8 @@
 				1C58B4071C92AF4C008A2571 /* SortType.m */,
 				1C58B4081C92AF4C008A2571 /* TimeUtils.h */,
 				1C58B4091C92AF4C008A2571 /* TimeUtils.m */,
+				1C51F53E200EE704006AD194 /* Const.swift */,
+				1C51F53D200EE703006AD194 /* funjoy-Bridging-Header.h */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -696,6 +720,8 @@
 			children = (
 				1C93A3E2200DA41C0059EC5A /* CatchwordViewController.h */,
 				1C93A3E7200DA41C0059EC5A /* CatchwordViewController.m */,
+				1C51F53A200EE31F006AD194 /* CatchWordDetailController.h */,
+				1C51F53B200EE31F006AD194 /* CatchWordDetailController.m */,
 				1C93A3E3200DA41C0059EC5A /* ForthViewController.m */,
 				1C93A3E4200DA41C0059EC5A /* NextViewController.h */,
 				1C93A3E0200DA41C0059EC5A /* NextViewController.m */,
@@ -844,10 +870,10 @@
 			isa = PBXGroup;
 			children = (
 				1CE2A9B5200E1AAC00F62855 /* New Folder */,
+				1CE2A9C4200E1AAC00F62855 /* GBAnimationTool.h */,
 				1CE2A9B4200E1AAC00F62855 /* GBAnimationTool.m */,
 				1CE2A9C5200E1AAC00F62855 /* GBPopMenuButtonItem.h */,
 				1CE2A9C2200E1AAC00F62855 /* GBPopMenuButtonItem.m */,
-				1CE2A9C4200E1AAC00F62855 /* GBAnimationTool.h */,
 				1CE2A9C6200E1AAC00F62855 /* GBPopMenuButtonView.h */,
 				1CE2A9C3200E1AAC00F62855 /* GBPopMenuButtonView.m */,
 			);
@@ -962,6 +988,7 @@
 					1C58B38A1C92A52A008A2571 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 475AM2DC65;
+						LastSwiftMigration = 0920;
 					};
 				};
 			};
@@ -1123,6 +1150,7 @@
 				1C58B3F91C92AF03008A2571 /* NSNumber+Utils.m in Sources */,
 				1C58B4AF1C92AFE6008A2571 /* OpenUDID.m in Sources */,
 				1C5767122008D35000CA3771 /* History.m in Sources */,
+				1C51F545200EE7A5006AD194 /* YHAlertView.swift in Sources */,
 				1C3D5C3C1CA0E9C30061D01D /* EveryDayModel.m in Sources */,
 				1C58B4291C92AF4C008A2571 /* ExpertFilter.m in Sources */,
 				1CE544B51C97E3760062204E /* SIDADView.m in Sources */,
@@ -1140,8 +1168,10 @@
 				1C58B4B01C92AFE6008A2571 /* ChineseInclude.m in Sources */,
 				1C58B42E1C92AF4C008A2571 /* Tag.m in Sources */,
 				1C93A3F4200DA41C0059EC5A /* PlayViewController.m in Sources */,
+				1C51F548200EF271006AD194 /* FJAlertView.m in Sources */,
 				1CE2A9AB200DFBEC00F62855 /* WRNavigationBar.m in Sources */,
 				1C58B42B1C92AF4C008A2571 /* PushRecord.m in Sources */,
+				1C51F53C200EE31F006AD194 /* CatchWordDetailController.m in Sources */,
 				1C58B3B61C92AB53008A2571 /* FunJoyTabbar.m in Sources */,
 				1CE2A9C7200E1AAC00F62855 /* GBAnimationTool.m in Sources */,
 				1C3D5C531CA0EA710061D01D /* CustomView.m in Sources */,
@@ -1174,6 +1204,7 @@
 				1C3D5C381CA0E8A10061D01D /* LORequestManger.m in Sources */,
 				1C58B3EF1C92AF03008A2571 /* UILabel+Custom.m in Sources */,
 				1C58B4271C92AF4C008A2571 /* AppStatus.m in Sources */,
+				1C51F53F200EE704006AD194 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1301,6 +1332,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 475AM2DC65;
@@ -1321,6 +1353,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.golfd.funjoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "funjoy/domain/common/funjoy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1330,6 +1365,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 475AM2DC65;
@@ -1350,6 +1386,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.golfd.funjoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "funjoy/domain/common/funjoy-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

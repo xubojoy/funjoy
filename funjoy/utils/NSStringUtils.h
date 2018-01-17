@@ -16,4 +16,6 @@
 +(BOOL) ispecialNotBlank:(NSString *) str;
 + (NSString *)stringFromInt:(int)num;
 + (BOOL) isEmpty:(NSString *) str;
+//计算文字的size
++(CGSize) boundingALLRectWithSize:(NSString*) txt Font:(UIFont*) font Size:(CGSize) size;
 @end
