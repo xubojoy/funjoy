@@ -27,6 +27,7 @@
 #import "UIImageView+WebCache.h"
 #import "JSONKit.h"
 #import <Masonry/Masonry.h>
+#import <TYAttributedLabel/TYAttributedLabel.h>
 
 #define MR_SHORTHAND
 #import "BaseViewController.h"

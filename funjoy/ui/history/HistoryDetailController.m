@@ -9,7 +9,6 @@
 #import "HistoryDetailController.h"
 #import "HistoryStore.h"
 #import "HistoryDetail.h"
-#import <TYAttributedLabel/TYAttributedLabel.h>
 #import "PicUrlModel.h"
 
 @interface HistoryDetailController ()

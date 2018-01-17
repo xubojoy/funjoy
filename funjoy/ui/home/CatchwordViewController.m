@@ -183,8 +183,10 @@
 //    [YHAlertView showWithTitle:sender.currentTitle message:@"" cancelButtonTitle:@"" otherButtonTitle:@"关闭" clickButtonBlock:^(YHAlertView * _Nonnull alert, NSInteger clickIndex) {
 //
 //    }];
-    FJAlertView *alert = [[FJAlertView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:alert];
+    
+    NSString *str = @"可见方法名里面并没有体现参数的位置，所以是否是同一个方法取决于方法名是否相同，和参数没关系。要找到方法首先要先确定是那个类。isa和super_class是找到实现函数的关键映射，决定找到存放在哪个类的方法实现。（isa用于自省确定所属类，super_class确定继承关系）。实例对象的isa指针指向类，类的isa指针指向其元类（metaClass）。对象就是一个含isa指针的结构体。类存储实例对象的方法列表，元类存储类的方法列表，元类也是类对象。当创建实例对象时，分配的内存包含一个objc_object数据结构，然后是类到父类直到根类NSObject的实例变量的数据。NSObject类的alloc和allocWithZone:方法使用函数class_createInstance来创建objc_object数据结构。向一个Objective-C对象发送消息时，运行时库会根据实例对象的isa指针找到这个实例对象所属的类。Runtime库会在类的方法列表由super_class指针找到父类的方法列表直至根类NSObject中去寻找与消息对应的selector指向的方法。找到后即运行这个方法。";
+    FJAlertView *alert = [[FJAlertView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height) title:sender.currentTitle message:str buttonTitle:nil];
+    [alert show];
 }
 
 - (void)menuButtonSelectedAtIdex:(NSInteger)index{
