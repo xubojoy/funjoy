@@ -68,11 +68,21 @@
         make.right.mas_equalTo(0);
         make.height.mas_equalTo(general_space);
     }];
+    
+    UIView *downLine = [[UIView alloc] init];
+    downLine.backgroundColor = [ColorUtils colorWithHexString:splite_line_color];
+    [self.contentView addSubview:downLine];
+    [downLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_titleLabel.mas_bottom).mas_offset(5);
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.height.mas_equalTo(splite_line_height);
+    }];
 //    内容
     _messageLabel = [[TYAttributedLabel alloc] init];
     [self.contentView addSubview:_messageLabel];
     [_messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_titleLabel.mas_bottom).mas_offset(5);
+        make.top.mas_equalTo(downLine.mas_bottom).mas_offset(5);
         make.left.mas_equalTo(10);
         make.right.mas_equalTo(-10);
         make.bottom.mas_equalTo(-5);
@@ -98,15 +108,37 @@
 - (void)updateViewFrame{
     
     _titleLabel.text = _title;
-
+    
+//    TYImageStorage *imageUrlStorage = [[TYImageStorage alloc]init];
+//    imageUrlStorage.imageURL = [NSURL URLWithString:picUrlModel.url];
+//    imageUrlStorage.size = CGSizeMake(CGRectGetWidth(label.frame), 343*CGRectGetWidth(label.frame)/600);
+//    [_messageLabel appendTextStorage:imageUrlStorage];
+    
+    
+//    获取所有字体
+//    NSArray *familyNames = [[NSArray alloc] initWithArray:[UIFont familyNames]];
+//    NSArray *fontNames;
+//    NSInteger indFamily, indFont;
+//    for (indFamily=0; indFamily<[familyNames count]; ++indFamily)
+//    {
+//        NSLog(@"Family name: %@", [familyNames objectAtIndex:indFamily]);
+//        fontNames = [[NSArray alloc] initWithArray:
+//                     [UIFont fontNamesForFamilyName:
+//                      [familyNames objectAtIndex:indFamily]]];
+//        for (indFont=0; indFont<[fontNames count]; ++indFont)
+//        {
+//            NSLog(@"    Font name: %@", [fontNames objectAtIndex:indFont]);
+//        }
+//    }
+    
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:_message];
-    [attributedString addAttributeFont:[UIFont systemFontOfSize:14]];
+    [attributedString addAttributeFont:[UIFont fontWithName:@"HelveticaNeue" size:font_14_size]];
     [_messageLabel appendTextAttributedString:attributedString];
     [_messageLabel sizeToFit];
     CGSize messageLabelSize = [_messageLabel getSizeWithWidth:((screen_width-2*general_margin)-20)];
-    NSLog(@"----------%f------%f",messageLabelSize.height,messageLabelSize.width);
+//    NSLog(@"----------%f------%f",messageLabelSize.height,messageLabelSize.width);
     [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(messageLabelSize.height+35);
+        make.height.mas_equalTo(messageLabelSize.height+40+splite_line_height);
     }];
     
     [self.closeBtn mas_updateConstraints:^(MASConstraintMaker *make) {

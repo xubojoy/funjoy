@@ -26,6 +26,7 @@
 #import "GBPopMenuButtonView.h"
 #import "funjoy-Swift.h"
 #import "FJAlertView.h"
+#import "CatchWordModel.h"
 @interface SDWebImageManager  (cache)
 
 
@@ -49,11 +50,12 @@
 }
 @property (nonatomic, retain) NSMutableDictionary *selectDic;
 
-@property (nonatomic, retain) NSArray *dateArray;
+@property (nonatomic, retain) NSMutableArray *dateArray;
 @property (nonatomic, retain) HPSphereView *sphereView;
 @property (nonatomic, strong) GBPopMenuButtonView *popMenuButtonView;
 @property (nonatomic, retain) NSArray *labelArray;
 @property (nonatomic, strong) NSDictionary *yearOldCategoryDict;
+@property (nonatomic, strong) CatchWordModel *catchWordModel;
 
 
 @end
@@ -113,23 +115,176 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.labelArray = @[@"吃藕",@"方",@"狗带",@"吃土",@"巨巨",@"666",@"一波",@"红红火火恍恍惚惚",@"扩列",@"实力",@"糊",@"滑稽",@"欧洲人",@"尼奏凯",@"洗模杯",@"打铁",@"布吉岛",@"PYQ",@"发糖",@"原谅色",@"落地成盒",@"扣字",@"CQY",@"毒药",@"共药",@"共掉线",@"亦可赛艇",@"DD",@"互卖",@"开黑",@"萌新",@"挽",@"233333",@"本命",@"黑界",@"实力挽尊",@"欧气",@"巨巨",@"同控",@"语C",@"小确肥",@"战五渣",@"喊麦",@"扩同好",@"面基",@"290",@"可攻可受",@"中二",@"种草"];
-    
-    
-    self.dateArray = @[
-                       @{
-                           @"id":@0,
-                           @"title":@"00后",
-                           @"labelArray": self.labelArray
-                           },
-                       
-                       ];
-    
+    self.labelArray = @[
+                        @{
+                            @"name":@"吃藕",
+                            @"content":@""
+                            },
+                        @{
+                            @"name":@"方",
+                            @"content":@""
+                            },
+                        @{
+                            @"name":@"狗带",
+                            @"content":@""
+                            },
+                        @{
+                            @"name":@"吃土",
+                            @"content":@""
+                            },
+                        @{
+                            @"name":@"巨巨",
+                            @"content":@""
+                            },
+                        @{
+                            @"name":@"666",
+                            @"content":@""
+                            },
+                        @{
+                            @"name":@"一波",
+                            @"content":@""
+                            },
+                        @{
+                            @"name":@"红红火火恍恍惚惚",
+                            @"content":@""
+                            },@{
+                            @"name":@"扩列",
+                            @"content":@""
+                            },@{
+                            @"name":@"实力",
+                            @"content":@""
+                            },@{
+                            @"name":@"糊",
+                            @"content":@""
+                            },@{
+                            @"name":@"滑稽",
+                            @"content":@""
+                            },@{
+                            @"name":@"欧洲人",
+                            @"content":@""
+                            },@{
+                            @"name":@"尼奏凯",
+                            @"content":@""
+                            },@{
+                            @"name":@"洗模杯",
+                            @"content":@""
+                            },@{
+                            @"name":@"打铁",
+                            @"content":@""
+                            },@{
+                            @"name":@"布吉岛",
+                            @"content":@""
+                            },@{
+                            @"name":@"PYQ",
+                            @"content":@""
+                            },@{
+                            @"name":@"发糖",
+                            @"content":@""
+                            },@{
+                            @"name":@"原谅色",
+                            @"content":@""
+                            },@{
+                            @"name":@"落地成盒",
+                            @"content":@""
+                            },@{
+                            @"name":@"扣字",
+                            @"content":@""
+                            },@{
+                            @"name":@"CQY",
+                            @"content":@""
+                            },@{
+                            @"name":@"毒药",
+                            @"content":@""
+                            },@{
+                            @"name":@"共药",
+                            @"content":@""
+                            },@{
+                            @"name":@"共掉线",
+                            @"content":@""
+                            },@{
+                            @"name":@"亦可赛艇",
+                            @"content":@""
+                            },@{
+                            @"name":@"DD",
+                            @"content":@""
+                            },@{
+                            @"name":@"互卖",
+                            @"content":@""
+                            },@{
+                            @"name":@"开黑",
+                            @"content":@""
+                            },@{
+                            @"name":@"萌新",
+                            @"content":@""
+                            },@{
+                            @"name":@"挽",
+                            @"content":@""
+                            },@{
+                            @"name":@"233333",
+                            @"content":@""
+                            },@{
+                            @"name":@"本命",
+                            @"content":@""
+                            },@{
+                            @"name":@"黑界",
+                            @"content":@""
+                            },@{
+                            @"name":@"实力挽尊",
+                            @"content":@""
+                            },@{
+                            @"name":@"欧气",
+                            @"content":@""
+                            },@{
+                            @"name":@"巨巨",
+                            @"content":@""
+                            },@{
+                            @"name":@"同控",
+                            @"content":@""
+                            },@{
+                            @"name":@"语C",
+                            @"content":@""
+                            },@{
+                            @"name":@"小确肥",
+                            @"content":@""
+                            },@{
+                            @"name":@"战五渣",
+                            @"content":@""
+                            },@{
+                            @"name":@"喊麦",
+                            @"content":@""
+                            },@{
+                            @"name":@"扩同好",
+                            @"content":@""
+                            },@{
+                            @"name":@"面基",
+                            @"content":@""
+                            },@{
+                            @"name":@"290",
+                            @"content":@""
+                            },@{
+                            @"name":@"可攻可受",
+                            @"content":@""
+                            },@{
+                            @"name":@"中二",
+                            @"content":@""
+                            },@{
+                            @"name":@"种草",
+                            @"content":@""
+                            },
+                        ];
     [self initHeaderView];
     [self initPopMenuButtonView];
-    [self initLabelCloudView];
+    [self initData];
+    
 //    [self jsonSelection];
    
+}
+
+- (void)initData{
+    if (self.labelArray.count > 0) {
+        self.dateArray = [CatchWordModel mj_objectArrayWithKeyValuesArray:self.labelArray];
+        [self initLabelCloudView];
+    }
 }
 
 /**
@@ -151,23 +306,21 @@
     self.popMenuButtonView.delegate = self;
     self.popMenuButtonView.frame = CGRectMake(15, [WRNavigationBar navBarBottom]+general_margin, 50, 50);
     [self.view addSubview:self.popMenuButtonView];
-//    self.popMenuButtonView.menuButtonSelectedAtIdex = ^(NSInteger selectTag) {
-//
-//    };
 }
 
 /**
  初始化标签云
  */
 - (void)initLabelCloudView{
-    _sphereView = [[HPSphereView alloc] initWithFrame:CGRectMake(30, self.popMenuButtonView.bottomY+general_space, screen_width-60, screen_width-30)];
+    _sphereView = [[HPSphereView alloc] initWithFrame:CGRectMake(30, self.popMenuButtonView.bottomY+general_space, screen_width-60, screen_width-60)];
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
-    for (NSInteger i = 0; i < self.labelArray.count; i ++) {
+    for (NSInteger i = 0; i < self.dateArray.count; i ++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [btn setTitle:[NSString stringWithFormat:@"%@", self.labelArray[i]] forState:UIControlStateNormal];
+        self.catchWordModel = self.dateArray[i];
+        [btn setTitle:[NSString stringWithFormat:@"%@", self.catchWordModel.name] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont systemFontOfSize:24.];
-        CGSize btnSize = [NSStringUtils boundingALLRectWithSize:self.labelArray[i] Font:[UIFont systemFontOfSize:font_24_size] Size:CGSizeMake(screen_width, 0)];
+        CGSize btnSize = [NSStringUtils boundingALLRectWithSize:self.catchWordModel.name Font:[UIFont systemFontOfSize:font_24_size] Size:CGSizeMake(screen_width, 0)];
         btn.frame = CGRectMake(0, 0, btnSize.width, 20);
         [btn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [array addObject:btn];
@@ -178,17 +331,19 @@
     [self.view addSubview:_sphereView];
 }
 
+#pragma mark 点击标签事件------------
 - (void)buttonPressed:(UIButton *)sender{
     NSLog(@"点击了-------%@",sender.currentTitle);
-//    [YHAlertView showWithTitle:sender.currentTitle message:@"" cancelButtonTitle:@"" otherButtonTitle:@"关闭" clickButtonBlock:^(YHAlertView * _Nonnull alert, NSInteger clickIndex) {
-//
-//    }];
-    
-    NSString *str = @"可见方法名里面并没有体现参数的位置，所以是否是同一个方法取决于方法名是否相同，和参数没关系。要找到方法首先要先确定是那个类。isa和super_class是找到实现函数的关键映射，决定找到存放在哪个类的方法实现。（isa用于自省确定所属类，super_class确定继承关系）。实例对象的isa指针指向类，类的isa指针指向其元类（metaClass）。对象就是一个含isa指针的结构体。类存储实例对象的方法列表，元类存储类的方法列表，元类也是类对象。当创建实例对象时，分配的内存包含一个objc_object数据结构，然后是类到父类直到根类NSObject的实例变量的数据。NSObject类的alloc和allocWithZone:方法使用函数class_createInstance来创建objc_object数据结构。向一个Objective-C对象发送消息时，运行时库会根据实例对象的isa指针找到这个实例对象所属的类。Runtime库会在类的方法列表由super_class指针找到父类的方法列表直至根类NSObject中去寻找与消息对应的selector指向的方法。找到后即运行这个方法。";
-    FJAlertView *alert = [[FJAlertView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height) title:sender.currentTitle message:str buttonTitle:nil];
-    [alert show];
+//    NSString *str = @"可见方法名里面并没有体现参数的位置，所以是否是同一个方法取决于方法名是否相同，和参数没关系。要找到方法首先要先确定是那个类。isa和super_class是找到实现函数的关键映射，决定找到存放在哪个类的方法实现。（isa用于自省确定所属类，super_class确定继承关系）。实例对象的isa指针指向类，类的isa指针指向其元类（metaClass）。对象就是一个含isa指针的结构体。类存储实例对象的方法列表，元类存储类的方法列表，元类也是类对象。当创建实例对象时，分配的内存包含一个objc_object数据结构，然后是类到父类直到根类NSObject的实例变量的数据。NSObject类的alloc和allocWithZone:方法使用函数class_createInstance来创建objc_object数据结构。向一个Objective-C对象发送消息时，运行时库会根据实例对象的isa指针找到这个实例对象所属的类。Runtime库会在类的方法列表由super_class指针找到父类的方法列表直至根类NSObject中去寻找与消息对应的selector指向的方法。找到后即运行这个方法。";
+    for (CatchWordModel *catchWordModel in self.dateArray) {
+        if ([sender.currentTitle isEqualToString:catchWordModel.name]) {
+            FJAlertView *alert = [[FJAlertView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height) title:sender.currentTitle message:catchWordModel.content buttonTitle:nil];
+            [alert show];
+        }
+    }
 }
 
+#pragma mark GBMenuButtonDelegate--------
 - (void)menuButtonSelectedAtIdex:(NSInteger)index{
     [self.popMenuButtonView hideItems];
     NSLog(@"点击了-------%ld",(long)index);
