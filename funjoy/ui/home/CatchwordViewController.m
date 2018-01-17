@@ -118,10 +118,10 @@
     self.labelArray = @[
                         @{
                             @"name":@"吃藕",
-                            @"content":@""
+                            @"content":@"吃藕，网络流行词，是指“丑”的意思，谐音拼音“chou”，源于百度贴吧。某网友发贴问一个游戏中的人物是不是很丑不小心把\"丑\"打成了\"吃藕\"。从此，以\"吃藕\"表示\"丑\"的用法，在网上流行起来。\n发展经过\n可是\"吃藕\"为什么能表示\"丑\"呢？这就是我们汉语拼音的奇妙之处了。声母为zh、ch、sh、r、z、c、s，的韵母为i的音节，在与零声母字组词快速链接时，就会出现合为一字的现象，如\"吃藕\"和\"丑\"，\"师恩\"和\"深\"。"
                             },
                         @{
-                            @"name":@"方",
+                            @"name":@"我好方",
                             @"content":@""
                             },
                         @{
@@ -306,6 +306,7 @@
     self.popMenuButtonView.delegate = self;
     self.popMenuButtonView.frame = CGRectMake(15, [WRNavigationBar navBarBottom]+general_margin, 50, 50);
     [self.view addSubview:self.popMenuButtonView];
+    
 }
 
 /**
@@ -329,12 +330,17 @@
     [_sphereView setCloudTags:array];
     _sphereView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_sphereView];
+    [self.view bringSubviewToFront:self.popMenuButtonView];
 }
 
 #pragma mark 点击标签事件------------
 - (void)buttonPressed:(UIButton *)sender{
     NSLog(@"点击了-------%@",sender.currentTitle);
 //    NSString *str = @"可见方法名里面并没有体现参数的位置，所以是否是同一个方法取决于方法名是否相同，和参数没关系。要找到方法首先要先确定是那个类。isa和super_class是找到实现函数的关键映射，决定找到存放在哪个类的方法实现。（isa用于自省确定所属类，super_class确定继承关系）。实例对象的isa指针指向类，类的isa指针指向其元类（metaClass）。对象就是一个含isa指针的结构体。类存储实例对象的方法列表，元类存储类的方法列表，元类也是类对象。当创建实例对象时，分配的内存包含一个objc_object数据结构，然后是类到父类直到根类NSObject的实例变量的数据。NSObject类的alloc和allocWithZone:方法使用函数class_createInstance来创建objc_object数据结构。向一个Objective-C对象发送消息时，运行时库会根据实例对象的isa指针找到这个实例对象所属的类。Runtime库会在类的方法列表由super_class指针找到父类的方法列表直至根类NSObject中去寻找与消息对应的selector指向的方法。找到后即运行这个方法。";
+//
+//    FJAlertView *alert = [[FJAlertView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height) title:sender.currentTitle message:str buttonTitle:nil];
+//    [alert show];
+    
     for (CatchWordModel *catchWordModel in self.dateArray) {
         if ([sender.currentTitle isEqualToString:catchWordModel.name]) {
             FJAlertView *alert = [[FJAlertView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height) title:sender.currentTitle message:catchWordModel.content buttonTitle:nil];
@@ -349,6 +355,7 @@
     NSLog(@"点击了-------%ld",(long)index);
     
 }
+
 
 
 
