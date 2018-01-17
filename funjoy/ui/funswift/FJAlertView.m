@@ -77,7 +77,7 @@
         make.right.mas_equalTo(-10);
         make.bottom.mas_equalTo(-5);
     }];
-    
+//    关闭按钮
     self.closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self addSubview:self.closeBtn];
     [self.closeBtn setImage:[UIImage imageNamed:@"icon_del_cross"] forState:UIControlStateNormal];
@@ -94,7 +94,7 @@
     
     [self updateViewFrame];
 }
-
+//更新frame
 - (void)updateViewFrame{
     
     _titleLabel.text = _title;
@@ -117,13 +117,11 @@
 - (void)show{
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self];
-    [window bringSubviewToFront:self];
 }
 
 - (void)closeBtnClick{
     self.contentView.layer.affineTransform = CGAffineTransformMakeScale(1,1);
     [UIView animateWithDuration:0.75 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        
         self.contentView.layer.affineTransform = CGAffineTransformMakeScale(0,0);
         self.effectView.effect = nil;
         [self.closeBtn removeFromSuperview];
