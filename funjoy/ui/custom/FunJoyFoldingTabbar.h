@@ -10,6 +10,6 @@
 
 @interface FunJoyFoldingTabbar : NSObject
 
-+ (void)setupYALTabBarController:(UIViewController *)rootViewController;
++ (void)setupYALTabBarController:(UIWindow *)window;
 
 @end

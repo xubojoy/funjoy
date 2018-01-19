@@ -25,13 +25,12 @@
     [self.window makeKeyAndVisible];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
-
-    //初始化App的底栏
-    FJTabBarViewController *mtc = [[FJTabBarViewController alloc]init];
-    self.window.rootViewController = mtc ;
     
 //    self.tabbar = [FunJoyTabbar new];
 //    self.window.rootViewController = self.tabbar.tabBarController;
+    
+    [FunJoyFoldingTabbar setupYALTabBarController:self.window];
+    
     
 //    DomobAdProcessor *domobProcessor = [DomobAdProcessor new];
 //    [domobProcessor initDomobAd:self.window];

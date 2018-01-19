@@ -290,7 +290,7 @@
 - (void)initHeaderView{
     [self.view addSubview:self.customNavBar];
     self.customNavBar.title = @"流行语";
-    [self.customNavBar wr_setBottomLineHidden:NO];
+    [self.customNavBar wr_setBottomLineHidden:YES];
     // 设置初始导航栏透明度
     [self.customNavBar wr_setBackgroundAlpha:1];
 }
@@ -300,6 +300,7 @@
  */
 - (void)initPopMenuButtonView{
     self.popMenuButtonView = [[GBPopMenuButtonView alloc] initWithItems:@[@"camera",@"draw",@"dropbox",@"gallery"] size:CGSizeMake(50, 50) type:GBMenuButtonTypeLineRight isMove:YES];
+    self.popMenuButtonView.backgroundColor = [UIColor clearColor];
     self.popMenuButtonView.delegate = self;
     self.popMenuButtonView.frame = CGRectMake(15, [WRNavigationBar navBarBottom]+general_margin, 50, 50);
     [self.view addSubview:self.popMenuButtonView];

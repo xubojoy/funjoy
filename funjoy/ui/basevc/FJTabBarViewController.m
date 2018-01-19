@@ -68,9 +68,12 @@
     self.tabBarView.offsetForExtraTabBarItems = YALForExtraTabBarItemsDefaultOffset;
     self.tabBarView.backgroundColor = [UIColor colorWithRed:94.f/255.f green:91.f/255.f blue:149.f/255.f alpha:1.f];
     self.tabBarView.tabBarColor = [UIColor colorWithRed:72.f/255.f green:211.f/255.f blue:178.f/255.f alpha:1.f];
+    self.tabBarView.dotColor = [UIColor redColor];
     self.tabBarViewHeight = YALTabBarViewDefaultHeight;
     self.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets;
     self.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewItemsDefaultEdgeInsets;
+    
+//    [self.tabBar addSubview:self.tabBarView];
     
     CatchwordViewController *vc1 = [[CatchwordViewController alloc] init];
     FJNavigationController *nc1 = [[FJNavigationController alloc]initWithRootViewController:vc1];

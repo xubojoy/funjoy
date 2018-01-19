@@ -37,8 +37,6 @@ static NSString *cellIdentifier = @"HistoryCell";
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [ColorUtils colorWithHexString:@"#5E5C93"];
     [self.navigationController.navigationBar setHidden:YES];
-//    self.title = @"历史上的今天";
-    
     self.date = [[DateUtils alloc] initWithDate:[NSDate date]];
     self.date.date = [NSDate date];
     [self loadDataWithMonth:self.date.month day:self.date.day];
@@ -46,6 +44,11 @@ static NSString *cellIdentifier = @"HistoryCell";
 }
 
 
+/**
+ 数据请求
+ @param month 月份
+ @param day 日期
+ */
 - (void)loadDataWithMonth:(int)month day:(int)day{
     [HistoryStore getHistoryToday:^(NSArray *historyArray, NSError *error) {
         NSLog(@".>>>>>>>>>>请求书居>>>>>>>>%@",historyArray);
@@ -57,6 +60,9 @@ static NSString *cellIdentifier = @"HistoryCell";
     } month:[NSString stringWithFormat:@"%d",month] day:[NSString stringWithFormat:@"%d",day]];
 }
 
+/**
+ 初始化UI
+ */
 - (void)initUI{
     [self initTableView];
     [self initTopView];

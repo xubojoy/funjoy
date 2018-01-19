@@ -93,15 +93,15 @@
 -(void)addSubviews{
     UIButton *mainButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [mainButton addTarget:self action:@selector(showItems) forControlEvents:UIControlEventTouchUpInside];
-    [mainButton setTitleColor:[ColorUtils colorWithHexString:green_light_color] forState:UIControlStateNormal];
-    [mainButton setBackgroundColor:[ColorUtils colorWithHexString:white_text_color]];
+    [mainButton setTitleColor:[ColorUtils colorWithHexString:white_text_color] forState:UIControlStateNormal];
+    [mainButton setBackgroundImage:[UIImage imageNamed:@"circle"] forState:UIControlStateNormal];
     [mainButton setTitle:@"流行>" forState:UIControlStateNormal];
     [mainButton.titleLabel setFont:[UIFont systemFontOfSize:font_14_size]];
     self.mainButton = mainButton;
     self.mainButton.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     mainButton.layer.cornerRadius = self.frame.size.width / 2.0;
     mainButton.layer.borderWidth = splite_line_height;
-    mainButton.layer.borderColor = [ColorUtils colorWithHexString:splite_line_color].CGColor;
+    mainButton.layer.borderColor = [ColorUtils colorWithHexString:green_common_color].CGColor;
     mainButton.layer.masksToBounds = YES;
     
 #pragma mark -- 菜单选项

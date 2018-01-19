@@ -29,7 +29,12 @@
 #import <Masonry/Masonry.h>
 #import <TYAttributedLabel/TYAttributedLabel.h>
 #import <FoldingTabBar/YALFoldingTabBar.h>
+#import <FoldingTabBar/YALTabBarItem.h>
+//controller
 #import <FoldingTabBar/YALFoldingTabBarController.h>
+//helpers
+#import <FoldingTabBar/YALAnimatingTabBarConstants.h>
+#import <FoldingTabBar/YALCustomHeightTabBar.h>
 
 #define MR_SHORTHAND
 #import "BaseViewController.h"

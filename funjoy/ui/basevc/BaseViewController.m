@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [ColorUtils colorWithHexString:common_purple_color];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [self setupNavBar];
 }
 
@@ -31,7 +32,7 @@
     self.customNavBar.barBackgroundColor = [ColorUtils colorWithHexString:common_purple_color];
 
 //    // 设置自定义导航栏标题颜色
-    self.customNavBar.titleLabelColor = [ColorUtils colorWithHexString:green_light_color];
+    self.customNavBar.titleLabelColor = [ColorUtils colorWithHexString:green_common_color];
 //
 //    if (self.navigationController.childViewControllers.count != 1) {
 //        [self.customNavBar wr_setLeftButtonWithTitle:@"<<" titleColor:[UIColor whiteColor]];
