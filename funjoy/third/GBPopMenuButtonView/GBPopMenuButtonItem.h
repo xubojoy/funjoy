@@ -28,7 +28,7 @@ typedef NS_OPTIONS(NSUInteger, GBButtonItemShowType){
  *  @param target      target
  *  @param action      action
  */
--(instancetype)initWithSize:(CGSize)size image:(UIImage *)image heightImage:(UIImage *)heightImage target:(id)target action:(SEL)action;
+-(instancetype)initWithSize:(CGSize)size title:(NSString *)title image:(UIImage *)image heightImage:(UIImage *)heightImage target:(id)target action:(SEL)action;
 
 /**
  *  MuneItem工厂方法
@@ -39,7 +39,7 @@ typedef NS_OPTIONS(NSUInteger, GBButtonItemShowType){
  *  @param target      target
  *  @param action      action
  */
-+(GBPopMenuButtonItem *)muneItemWithSize:(CGSize)size image:(UIImage *)image heightImage:(UIImage *)heightImage target:(id)target action:(SEL)action;
++(GBPopMenuButtonItem *)muneItemWithSize:(CGSize)size title:(NSString *)title image:(UIImage *)image heightImage:(UIImage *)heightImage target:(id)target action:(SEL)action;
 
 /**
  *  展开item,以kMuneItemShowTypeRadRight、kMuneItemShowTypeRadLeft以及kMuneItemShowTypeLine方式打开的item，其中kMuneItemShowTypeLine会调用itemShowWithTargetPoint方法

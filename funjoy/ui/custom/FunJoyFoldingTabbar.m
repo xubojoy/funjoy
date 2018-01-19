@@ -67,7 +67,6 @@
     CatchwordViewController *vc1 = [[CatchwordViewController alloc] init];
     FJNavigationController *nc1 = [[FJNavigationController alloc]initWithRootViewController:vc1];
     
-    
     CommonSenseController *vc2 = [[CommonSenseController alloc] init];
     FJNavigationController *nc2 = [[FJNavigationController alloc]initWithRootViewController:vc2];
     

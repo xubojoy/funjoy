@@ -274,6 +274,23 @@
     [self initData];
     
 //    [self jsonSelection];
+    
+    NSArray* familys = [UIFont familyNames];
+    
+    for (int i = 0; i<[familys count]; i++) {
+        
+        NSString* family = [familys objectAtIndex:i];
+        
+        NSLog(@"Fontfamily:%@=====",family);
+        
+        NSArray* fonts = [UIFont fontNamesForFamilyName:family];
+        
+        for (int j = 0; j<[fonts count]; j++) {
+            
+            NSLog(@"FontName:%@",[fonts objectAtIndex:j]);
+            
+        }
+    }
    
 }
 
@@ -299,7 +316,7 @@
  初始化弹出按钮
  */
 - (void)initPopMenuButtonView{
-    self.popMenuButtonView = [[GBPopMenuButtonView alloc] initWithItems:@[@"camera",@"draw",@"dropbox",@"gallery"] size:CGSizeMake(50, 50) type:GBMenuButtonTypeLineRight isMove:YES];
+    self.popMenuButtonView = [[GBPopMenuButtonView alloc] initWithItems:@[@"00",@"90",@"80",@"年度"] size:CGSizeMake(50, 50) type:GBMenuButtonTypeLineRight isMove:YES];
     self.popMenuButtonView.backgroundColor = [UIColor clearColor];
     self.popMenuButtonView.delegate = self;
     self.popMenuButtonView.frame = CGRectMake(15, [WRNavigationBar navBarBottom]+general_margin, 50, 50);

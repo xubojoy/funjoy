@@ -116,8 +116,8 @@
     if (_items == nil) {
         NSMutableArray *items = [NSMutableArray arrayWithCapacity:self.itemsImages.count];
         for (int i = 0; i < self.itemsImages.count; i++) {
-            UIImage *image = [UIImage imageNamed:self.itemsImages[i]];
-            GBPopMenuButtonItem *item = [GBPopMenuButtonItem muneItemWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height) image:image heightImage:nil target:self action:@selector(tapItem:)];
+//            UIImage *image = [UIImage imageNamed:self.itemsImages[i]];
+            GBPopMenuButtonItem *item = [GBPopMenuButtonItem muneItemWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height) title:self.itemsImages[i] image:nil heightImage:nil target:self action:@selector(tapItem:)];
             item.tag = 100 + i;
             item.center = self.mainButton.center;
             [self addSubview:item];

@@ -31,7 +31,7 @@
     [self addSubview:_effectView];
 //    白色背景view
     self.contentView = [[UIView alloc] init];
-    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.contentView.backgroundColor = [ColorUtils colorWithHexString:common_purple_color];
     self.contentView.layer.cornerRadius = 10;
     self.contentView.layer.masksToBounds = YES;
     [self addSubview:self.contentView];
@@ -60,6 +60,7 @@
 //    标题
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.textColor = [ColorUtils colorWithHexString:green_light_color];
+    _titleLabel.backgroundColor = [UIColor clearColor];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.font = [UIFont boldSystemFontOfSize:font_15_size];
     [self.contentView addSubview:_titleLabel];
@@ -70,34 +71,34 @@
         make.height.mas_equalTo(general_space);
     }];
     
-    UIView *downLine = [[UIView alloc] init];
-    downLine.backgroundColor = [ColorUtils colorWithHexString:splite_line_color];
-    [self.contentView addSubview:downLine];
-    [downLine mas_makeConstraints:^(MASConstraintMaker *make) {
+//    UIView *downLine = [[UIView alloc] init];
+//    downLine.backgroundColor = [ColorUtils colorWithHexString:splite_line_color];
+//    [self.contentView addSubview:downLine];
+//    [downLine mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(_titleLabel.mas_bottom).mas_offset(5);
+//        make.left.mas_equalTo(0);
+//        make.right.mas_equalTo(0);
+//        make.height.mas_equalTo(splite_line_height);
+//    }];
+    
+    self.contentBgScrollView = [[UIScrollView alloc] init];
+    self.contentBgScrollView.backgroundColor = [ColorUtils colorWithHexString:common_purple_color];
+    self.contentBgScrollView.scrollEnabled = YES;
+    self.contentBgScrollView.showsVerticalScrollIndicator = YES;
+    [self.contentView addSubview:self.contentBgScrollView];
+    [self.contentBgScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_titleLabel.mas_bottom).mas_offset(5);
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.height.mas_equalTo(splite_line_height);
+        make.bottom.mas_equalTo(-5);
     }];
-    
-//    self.contentBgScrollView = [[UIScrollView alloc] init];
-//    self.contentBgScrollView.backgroundColor = [UIColor purpleColor];
-//    [self.contentView addSubview:self.contentBgScrollView];
-//    [self.contentBgScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(downLine.mas_bottom).mas_offset(5);
-//        make.left.mas_equalTo(0);
-//        make.right.mas_equalTo(0);
-//        make.bottom.mas_equalTo(-5);
-//    }];
+    self.contentBgScrollView.contentSize = CGSizeMake(screen_width-2*general_margin, 80);
 //    内容
     _messageLabel = [[TYAttributedLabel alloc] init];
-    [self.contentView addSubview:_messageLabel];
-    [_messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(downLine.mas_bottom).mas_offset(5);
-        make.left.mas_equalTo(10);
-        make.right.mas_equalTo(-10);
-        make.bottom.mas_equalTo(0);
-    }];
+    [_messageLabel setFrameWithOrign:CGPointMake(10, 0) Width:screen_width-2*general_margin-20];
+    _messageLabel.backgroundColor = [ColorUtils colorWithHexString:common_purple_color];
+    [self.contentBgScrollView addSubview:_messageLabel];
+
 //    关闭按钮
     self.closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self addSubview:self.closeBtn];
@@ -144,18 +145,11 @@
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:_message];
     [attributedString addAttributeFont:[UIFont fontWithName:@"HelveticaNeue" size:font_14_size]];
+    [attributedString addAttributeTextColor:[ColorUtils colorWithHexString:white_text_color]];
     [_messageLabel appendTextAttributedString:attributedString];
     [_messageLabel sizeToFit];
     CGSize messageLabelSize = [_messageLabel getSizeWithWidth:((screen_width-2*general_margin)-20)];
-//    NSLog(@"----------%f------%f",messageLabelSize.height,messageLabelSize.width);
-//    self.contentBgScrollView.contentSize = CGSizeMake((screen_width-2*general_margin),messageLabelSize.height);
-//
-//    [_messageLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(0);
-//        make.left.mas_equalTo(10);
-//        make.right.mas_equalTo(-10);
-//        make.bottom.mas_equalTo(0);
-//    }];
+    self.contentBgScrollView.contentSize = CGSizeMake((screen_width-2*general_margin),messageLabelSize.height);
     
     if (messageLabelSize.height > screen_height/2) {
         [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {

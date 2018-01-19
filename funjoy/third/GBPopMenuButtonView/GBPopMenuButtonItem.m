@@ -21,14 +21,19 @@
 @implementation GBPopMenuButtonItem
 
 
--(instancetype)initWithSize:(CGSize)size image:(UIImage *)image heightImage:(UIImage *)heightImage target:(id)target action:(SEL)action{
+-(instancetype)initWithSize:(CGSize)size title:(NSString *)title image:(UIImage *)image heightImage:(UIImage *)heightImage target:(id)target action:(SEL)action{
     self = [super init];
     if (self) {
         [self setImage:image forState:UIControlStateNormal];
         [self setImage:heightImage forState:UIControlStateHighlighted];
+        [self setTitle:title forState:UIControlStateNormal];
+        [self.titleLabel setFont:[UIFont systemFontOfSize:font_14_size]];
         [self addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
         self.frame = CGRectMake(0, 0, size.width, size.height);
         self.layer.cornerRadius = size.width / 2.0;
+        self.layer.borderWidth = splite_line_height;
+        self.layer.borderColor = [ColorUtils colorWithHexString:green_common_color].CGColor;
+        self.layer.masksToBounds = YES;
         _radius = 400.0f;
         
     }
@@ -45,8 +50,8 @@
  *  @param target      target
  *  @param action      action
  */
-+(GBPopMenuButtonItem *)muneItemWithSize:(CGSize)size image:(UIImage *)image heightImage:(UIImage *)heightImage target:(id)target action:(SEL)action{
-    GBPopMenuButtonItem *item = [[GBPopMenuButtonItem alloc] initWithSize:size image:image heightImage:heightImage target:target action:action];
++(GBPopMenuButtonItem *)muneItemWithSize:(CGSize)size title:(NSString *)title image:(UIImage *)image heightImage:(UIImage *)heightImage target:(id)target action:(SEL)action{
+    GBPopMenuButtonItem *item = [[GBPopMenuButtonItem alloc] initWithSize:size title:title image:image heightImage:heightImage target:target action:action];
     return item;
 }
 
