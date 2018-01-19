@@ -18,7 +18,6 @@
 		1C3D5C551CA0EA710061D01D /* ImageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D5C4D1CA0EA710061D01D /* ImageContentView.m */; };
 		1C3D5C561CA0EA710061D01D /* rilegouleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D5C4F1CA0EA710061D01D /* rilegouleView.m */; };
 		1C47A2562011843C00601EAC /* FJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C47A2552011843C00601EAC /* FJNavigationController.m */; };
-		1C47A25920118F4100601EAC /* FJTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C47A25820118F4100601EAC /* FJTabBarViewController.m */; };
 		1C51F53C200EE31F006AD194 /* CatchWordDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C51F53B200EE31F006AD194 /* CatchWordDetailController.m */; };
 		1C51F53F200EE704006AD194 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51F53E200EE704006AD194 /* Const.swift */; };
 		1C51F545200EE7A5006AD194 /* YHAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51F544200EE7A5006AD194 /* YHAlertView.swift */; };
@@ -166,8 +165,6 @@
 		1C3D5C4F1CA0EA710061D01D /* rilegouleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rilegouleView.m; path = everydayvc/everydayView/rilegouleView.m; sourceTree = "<group>"; };
 		1C47A2542011843C00601EAC /* FJNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJNavigationController.h; sourceTree = "<group>"; };
 		1C47A2552011843C00601EAC /* FJNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJNavigationController.m; sourceTree = "<group>"; };
-		1C47A25720118F4100601EAC /* FJTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJTabBarViewController.h; sourceTree = "<group>"; };
-		1C47A25820118F4100601EAC /* FJTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJTabBarViewController.m; sourceTree = "<group>"; };
 		1C51F53A200EE31F006AD194 /* CatchWordDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatchWordDetailController.h; sourceTree = "<group>"; };
 		1C51F53B200EE31F006AD194 /* CatchWordDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatchWordDetailController.m; sourceTree = "<group>"; };
 		1C51F53D200EE703006AD194 /* funjoy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "funjoy-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -413,8 +410,6 @@
 				1C886A572010887100426138 /* CommonWebController.swift */,
 				1C47A2542011843C00601EAC /* FJNavigationController.h */,
 				1C47A2552011843C00601EAC /* FJNavigationController.m */,
-				1C47A25720118F4100601EAC /* FJTabBarViewController.h */,
-				1C47A25820118F4100601EAC /* FJTabBarViewController.m */,
 			);
 			path = basevc;
 			sourceTree = "<group>";
@@ -1246,7 +1241,6 @@
 				1CE2A9AC200DFBEC00F62855 /* WRCustomNavigationBar.m in Sources */,
 				1C93A400200DC19E0059EC5A /* CommonSenseCell.m in Sources */,
 				1C58B4B01C92AFE6008A2571 /* ChineseInclude.m in Sources */,
-				1C47A25920118F4100601EAC /* FJTabBarViewController.m in Sources */,
 				1C58B42E1C92AF4C008A2571 /* Tag.m in Sources */,
 				1C93A3F4200DA41C0059EC5A /* PlayViewController.m in Sources */,
 				1C51F548200EF271006AD194 /* FJAlertView.m in Sources */,

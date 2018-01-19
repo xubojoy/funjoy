@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "DomobAdProcessor.h"
 #import "FunJoyFoldingTabbar.h"
-#import "FJTabBarViewController.h"
+
 @interface AppDelegate ()
 
 @end
