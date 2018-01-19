@@ -20,6 +20,8 @@
 
 @property (nonatomic, strong) UIView *contentView;
 
+@property (nonatomic, strong) UIScrollView *contentBgScrollView;
+
 /**
  添加毛玻璃
  */

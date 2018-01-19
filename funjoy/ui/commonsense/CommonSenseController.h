@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "DMInterstitialAdController.h"
-@interface CommonSenseController : BaseViewController<DMInterstitialAdControllerDelegate>
+#import <FoldingTabBar/YALFoldingTabBar.h>
+@interface CommonSenseController : BaseViewController<DMInterstitialAdControllerDelegate,YALTabBarDelegate>
 @property (nonatomic, strong) DMInterstitialAdController *dmInterstitial;
 @property (nonatomic, strong) UIButton *presentBtn;
 @end

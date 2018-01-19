@@ -13,6 +13,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        self.contentView.backgroundColor = [ColorUtils colorWithHexString:common_purple_color];
         [self initUI];
     }
     return self;
@@ -43,9 +44,5 @@
         make.size.mas_equalTo(CGSizeMake(screen_width/4, 20));
     }];
 }
-
-
-
-
 
 @end

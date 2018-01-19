@@ -22,12 +22,12 @@
         firstNavigationController.title = @"流行语";
         [firstNavigationController.navigationBar setHidden:YES];
         
-//        UIViewController *secondViewController = [[CommonSenseController alloc] init];
-//        UINavigationController *secondNavigationController = [[UINavigationController alloc]
-//                                                        initWithRootViewController:secondViewController];
-//        secondNavigationController.delegate = self;
-//        secondNavigationController.title = @"小常识";
-//        [secondNavigationController.navigationBar setHidden:YES];
+        UIViewController *secondViewController = [[CommonSenseController alloc] init];
+        UINavigationController *secondNavigationController = [[UINavigationController alloc]
+                                                        initWithRootViewController:secondViewController];
+        secondNavigationController.delegate = self;
+        secondNavigationController.title = @"小常识";
+        [secondNavigationController.navigationBar setHidden:YES];
         
         UIViewController *thirdViewController = [[TodayHistoryController alloc] init];
         UINavigationController *thirdNavigationController = [[UINavigationController alloc]
@@ -44,7 +44,7 @@
 //        [userNavigationController.navigationBar setHidden:YES];
         
         self.tabBarController = [[RDVTabBarController alloc] init];
-        [self.tabBarController setViewControllers:@[firstNavigationController,
+        [self.tabBarController setViewControllers:@[firstNavigationController,secondNavigationController,
                                                thirdNavigationController]];
         self.tabBarController.delegate = self;
         
@@ -62,7 +62,7 @@
 - (void)customizeTabBarForController:(RDVTabBarController *)tabBarController {
     UIImage *finishedImage = [UIImage imageNamed:@"under_bar"];
     UIImage *unfinishedImage = [UIImage imageNamed:@"under_bar"];
-    NSArray *tabBarItemImages = @[@"tabbar_news_icon",@"tabbar_game_icon"];
+    NSArray *tabBarItemImages = @[@"tabbar_news_icon",@"tabbar_private_icon",@"tabbar_game_icon"];
     NSInteger index = 0;
     for (RDVTabBarItem *item in [[tabBarController tabBar] items]) {
         [item setBackgroundSelectedImage:finishedImage withUnselectedImage:unfinishedImage];

@@ -40,6 +40,7 @@
         make.centerY.mas_equalTo(self.mas_centerY);
         make.size.mas_equalTo(CGSizeMake((screen_width-2*general_margin), 80));
     }];
+    
 //    CABasicAnimation *theAnimation;
 //    theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
 //    theAnimation.duration=2;
@@ -78,6 +79,16 @@
         make.right.mas_equalTo(0);
         make.height.mas_equalTo(splite_line_height);
     }];
+    
+//    self.contentBgScrollView = [[UIScrollView alloc] init];
+//    self.contentBgScrollView.backgroundColor = [UIColor purpleColor];
+//    [self.contentView addSubview:self.contentBgScrollView];
+//    [self.contentBgScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(downLine.mas_bottom).mas_offset(5);
+//        make.left.mas_equalTo(0);
+//        make.right.mas_equalTo(0);
+//        make.bottom.mas_equalTo(-5);
+//    }];
 //    内容
     _messageLabel = [[TYAttributedLabel alloc] init];
     [self.contentView addSubview:_messageLabel];
@@ -85,7 +96,7 @@
         make.top.mas_equalTo(downLine.mas_bottom).mas_offset(5);
         make.left.mas_equalTo(10);
         make.right.mas_equalTo(-10);
-        make.bottom.mas_equalTo(-5);
+        make.bottom.mas_equalTo(0);
     }];
 //    关闭按钮
     self.closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -137,10 +148,24 @@
     [_messageLabel sizeToFit];
     CGSize messageLabelSize = [_messageLabel getSizeWithWidth:((screen_width-2*general_margin)-20)];
 //    NSLog(@"----------%f------%f",messageLabelSize.height,messageLabelSize.width);
-    [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(messageLabelSize.height+40+splite_line_height);
-    }];
+//    self.contentBgScrollView.contentSize = CGSizeMake((screen_width-2*general_margin),messageLabelSize.height);
+//
+//    [_messageLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(0);
+//        make.left.mas_equalTo(10);
+//        make.right.mas_equalTo(-10);
+//        make.bottom.mas_equalTo(0);
+//    }];
     
+    if (messageLabelSize.height > screen_height/2) {
+        [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(400);
+        }];
+    }else{
+        [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(messageLabelSize.height+40+splite_line_height);
+        }];
+    }
     [self.closeBtn mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.contentView.mas_bottom).mas_offset(15);
     }];

@@ -42,8 +42,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        self.contentView.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
-        self.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
+        self.contentView.backgroundColor = [ColorUtils colorWithHexString:@"#5E5C93"];
+        self.backgroundColor = [ColorUtils colorWithHexString:@"#5E5C93"];
         [self initUI];
     }
     
@@ -83,11 +83,11 @@
     [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(general_padding);
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
-        make.size.mas_equalTo(CGSizeMake(80, 20));
+        make.size.mas_equalTo(CGSizeMake(80, 60));
     }];
-    
+//    @"#6c6c6c"
     UIImageView *roundImageView = [[UIImageView alloc] init];
-    roundImageView.backgroundColor = [ColorUtils colorWithHexString:@"#6c6c6c"];
+    roundImageView.backgroundColor = [ColorUtils colorWithHexString:splite_line_color];
     [self.contentView addSubview:roundImageView];
     [roundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
@@ -99,13 +99,13 @@
     roundImageView.layer.masksToBounds = YES;
     
     UIView *upLine = [[UIView alloc] init];
-    upLine.backgroundColor = [ColorUtils colorWithHexString:@"#6c6c6c"];
+    upLine.backgroundColor = [ColorUtils colorWithHexString:splite_line_color];
     [self.contentView addSubview:upLine];
     [upLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(roundImageView.mas_centerX);
         make.top.mas_equalTo(0);
         make.bottom.mas_equalTo(0);
-        make.size.width.mas_equalTo(splite_line_height);
+        make.size.mas_equalTo(CGSizeMake(splite_line_height, 60));
     }];
 
     
@@ -134,8 +134,6 @@
         make.size.mas_equalTo(CGSizeMake(16, 16));
         
     }];
-
-    
 }
 - (void)setHistory:(History *)history{
     NSLog(@"------为啥没有数据---------%@",history);

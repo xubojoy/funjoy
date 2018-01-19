@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9754854375F0F552C95944AA3E5E8E03"
+               BlueprintIdentifier = "F925B9C2135687B277C2426CE9AE58DB"
                BuildableName = "zhUITableViewAnimations.framework"
                BlueprintName = "zhUITableViewAnimations"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9754854375F0F552C95944AA3E5E8E03"
+            BlueprintIdentifier = "F925B9C2135687B277C2426CE9AE58DB"
             BuildableName = "zhUITableViewAnimations.framework"
             BlueprintName = "zhUITableViewAnimations"
             ReferencedContainer = "container:Pods.xcodeproj">

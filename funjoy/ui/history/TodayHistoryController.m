@@ -28,10 +28,14 @@
 static NSString *cellIdentifier = @"HistoryCell";
 @implementation TodayHistoryController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
+    self.view.backgroundColor = [ColorUtils colorWithHexString:@"#5E5C93"];
     [self.navigationController.navigationBar setHidden:YES];
 //    self.title = @"历史上的今天";
     
@@ -74,7 +78,8 @@ static NSString *cellIdentifier = @"HistoryCell";
     _tableView.dataSource = self;
     _tableView.delaysContentTouches = NO;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
+//    _tableView.backgroundColor = [ColorUtils colorWithHexString:white_text_color];
+    _tableView.backgroundColor = [ColorUtils colorWithHexString:common_purple_color];
     [self.view addSubview:_tableView];
 
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(zh_reload)];
@@ -83,7 +88,7 @@ static NSString *cellIdentifier = @"HistoryCell";
 
 - (void)initTopView{
     self.headerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_width/2)];
-    self.headerView.backgroundColor = [UIColor whiteColor];
+    self.headerView.backgroundColor = [ColorUtils colorWithHexString:@"#5E5C93"];
     self.headerView.contentMode = UIViewContentModeScaleAspectFill;
     self.headerView.clipsToBounds = YES;
     self.headerView.userInteractionEnabled = YES;
@@ -198,13 +203,40 @@ static NSString *cellIdentifier = @"HistoryCell";
     [_stretchableTableHeaderView resizeView];
 }
 
+#pragma mark - YALTabBarInteracting
+
+- (void)tabBarWillCollapse:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarWillExpand:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarDidCollapse:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarDidExpand:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 -(NSString *)getPageName{
-    return @"游戏";
+    return @"历史上的今天";
 }
 
 

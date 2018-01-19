@@ -10,7 +10,7 @@
 #import "History.h"
 @interface HistoryCell : UITableViewCell
 
-@property (nonatomic, strong) UIView *bgView;
+//@property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) UILabel *dateLabel;
 @property (nonatomic, strong) UILabel *contentLabel;
 @property (nonatomic, strong) History *history;

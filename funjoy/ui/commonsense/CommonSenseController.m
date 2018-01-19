@@ -9,6 +9,7 @@
 #import "CommonSenseController.h"
 #import <SDCycleScrollView/SDCycleScrollView.h>
 #import "CommonSenseCell.h"
+#import "funjoy-Swift.h"
 
 #define DMPUBLISHERID        @"56OJyM1ouMGoULfJaL"
 #define DMPLCAEMENTID_INTER @"16TLwebvAchkAY6iOWkE6kpk"
@@ -56,9 +57,9 @@ static NSString *commonSenseIdentifier = @"CommonSenseCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [ColorUtils colorWithHexString:@"#5E5C93"];
     self.navigationController.fd_prefersNavigationBarHidden = YES;
-    self.title = @"小常识";
+//    self.title = @"小常识";
     [self initCollectionView];
     [self initBannerView];
     
@@ -71,7 +72,7 @@ static NSString *commonSenseIdentifier = @"CommonSenseCell";
     layout.itemSize = CGSizeMake(screen_width/4, screen_width/4);
     
     self.categoryCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 300) collectionViewLayout:layout];
-    self.categoryCollectionView.backgroundColor = [UIColor whiteColor];
+    self.categoryCollectionView.backgroundColor = [ColorUtils colorWithHexString:common_purple_color];
     self.categoryCollectionView.delegate = self;
     self.categoryCollectionView.dataSource = self;
     self.categoryCollectionView.scrollEnabled = YES;
@@ -125,6 +126,17 @@ static NSString *commonSenseIdentifier = @"CommonSenseCell";
     return CGSizeMake(screen_width/4, screen_width/4);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+//    http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=%E9%93%B6%E9%AD%82&bk_length=600
+    FJWebViewController *fjwebvc = [[FJWebViewController alloc] init];
+    fjwebvc.htmlStr = @"https://www.baidu.com";
+    [self.navigationController pushViewController:fjwebvc animated:YES];
+//    CommonWebController *commvc = [[CommonWebController alloc] init];
+//    [self.navigationController pushViewController:commvc animated:YES];
+    
+}
+
 
 
 #pragma mark SDCycleScrollViewDelegate-----
@@ -140,7 +152,7 @@ static NSString *commonSenseIdentifier = @"CommonSenseCell";
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    //    CGFloat offsetY = scrollView.contentOffset.y;
+        CGFloat offsetY = scrollView.contentOffset.y;
     
     //    if (offsetY > NAVBAR_COLORCHANGE_POINT)
     //    {
@@ -153,9 +165,9 @@ static NSString *commonSenseIdentifier = @"CommonSenseCell";
     //    }
     
     //限制下拉的距离
-    //    if(offsetY < LIMIT_OFFSET_Y) {
-    //        [scrollView setContentOffset:CGPointMake(0, LIMIT_OFFSET_Y)];
-    //    }
+        if(offsetY < LIMIT_OFFSET_Y) {
+            [scrollView setContentOffset:CGPointMake(0, LIMIT_OFFSET_Y)];
+        }
     
     // 改变图片框的大小 (上滑的时候不改变)
     // 这里不能使用offsetY，因为当（offsetY < LIMIT_OFFSET_Y）的时候，y = LIMIT_OFFSET_Y 不等于 offsetY
@@ -244,6 +256,33 @@ static NSString *commonSenseIdentifier = @"CommonSenseCell";
 - (void)dmInterstitialApplicationWillEnterBackground:(DMInterstitialAdController *)dmInterstitial
 {
     NSLog(@"[Domob Interstitial] will enter background.");
+}
+
+
+#pragma mark - YALTabBarInteracting
+
+- (void)tabBarWillCollapse:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarWillExpand:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarDidCollapse:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarDidExpand:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
 }
 
 

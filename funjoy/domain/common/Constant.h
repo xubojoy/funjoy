@@ -39,7 +39,7 @@
 #define loading_frame         CGRectMake(0, 100, screen_width, 40)
 #define red_dot_width          7
 
-
+#define debug 1
 
 //字体大小
 #define font_10_size  10
@@ -105,6 +105,8 @@
 #define game_type_coffee_color    @"#ab6a1a"
 #define game_type_purple_color    @"#666699"
 #define unselect_title_color  @"#818181"
+
+#define common_purple_color   @"#5E5C93"
 
 //绿色＃7cbb73
 //黑色＃000000

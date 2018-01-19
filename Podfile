@@ -13,4 +13,5 @@ target 'funjoy' do
      pod 'TYAttributedLabel', '~> 2.6.6'
      pod 'Masonry', '~> 1.1.0'
      pod 'SDCycleScrollView', '~> 1.75'
+     pod 'FoldingTabBar', '~> 1.1.2'
 end

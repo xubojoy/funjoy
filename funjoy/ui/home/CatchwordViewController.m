@@ -107,14 +107,14 @@
 #warning please change the DMPUBLISHERID
 //    DMTools *_dmTools = [[DMTools alloc] initWithPublisherId:DMPUBLISHERID];
 //    [_dmTools checkRateInfo];
-    
+    [self initHeaderView];
 
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [ColorUtils colorWithHexString:@"#5E5C93"];
     self.labelArray = @[
                         @{
                             @"name":@"吃藕",
@@ -269,7 +269,7 @@
                             @"content":@"泛指“把一样事物推荐给另一个人，让另一个人喜欢这样事物”的过程，类似于网络语安利（推荐，因为自己特别特别喜欢，所以真心真意地推荐出来）。\n造句：最近种草了一款香水，准备下周拔草。"
                             },
                         ];
-    [self initHeaderView];
+    
     [self initPopMenuButtonView];
     [self initData];
     
@@ -316,7 +316,7 @@
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
         self.catchWordModel = self.dateArray[i];
         [btn setTitle:[NSString stringWithFormat:@"%@", self.catchWordModel.name] forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont systemFontOfSize:24.];
         CGSize btnSize = [NSStringUtils boundingALLRectWithSize:self.catchWordModel.name Font:[UIFont systemFontOfSize:font_24_size] Size:CGSizeMake(screen_width, 0)];
         btn.frame = CGRectMake(0, 0, btnSize.width, 20);
@@ -325,7 +325,8 @@
         [_sphereView addSubview:btn];
     }
     [_sphereView setCloudTags:array];
-    _sphereView.backgroundColor = [UIColor whiteColor];
+    _sphereView.backgroundColor = [UIColor clearColor];
+//    _sphereView.backgroundColor = [ColorUtils colorWithHexString:@"#5E5C93"];
     [self.view addSubview:_sphereView];
     [self.view bringSubviewToFront:self.popMenuButtonView];
 }
@@ -741,10 +742,39 @@
 
 }
 
+#pragma mark - YALTabBarInteracting
+
+- (void)tabBarWillCollapse:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarWillExpand:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarDidCollapse:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarDidExpand:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 -(NSString *)getPageName{
  return @"新闻";

@@ -27,15 +27,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setRightSwipeGestureAndAdaptive];
-    self.view.backgroundColor = [UIColor whiteColor];
     self.historyDetailArray = [NSMutableArray new];
     [self.view addSubview:self.customNavBar];
-//    self.customNavBar.title = @"";
-    [self.customNavBar wr_setBottomLineHidden:NO];
+    [self.customNavBar wr_setBottomLineHidden:YES];
     
     // 设置初始导航栏透明度
     [self.customNavBar wr_setBackgroundAlpha:1];
-    [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"arrow_back_icon"]];
+    [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"button_arrow_white_icon"]];
     __weak typeof(self) weakSelf = self;
     self.customNavBar.onClickLeftButton = ^{
         [weakSelf.navigationController popViewControllerAnimated:YES];
@@ -58,6 +56,7 @@
 
 - (void)initScrollView{
     self.bgScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, [WRNavigationBar navBarBottom], screen_width, screen_height-[WRNavigationBar navBarBottom])];
+    self.bgScrollView.backgroundColor = [ColorUtils colorWithHexString:common_purple_color];
     [self.view addSubview:self.bgScrollView];
 }
 
@@ -69,6 +68,7 @@
         
         //        NSAttributedString * attrStr = [[NSAttributedString alloc]initWithData:[historyDetail.content dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
         TYAttributedLabel *label = [[TYAttributedLabel alloc] init];
+        label.backgroundColor = [ColorUtils colorWithHexString:common_purple_color];
         [label setFrameWithOrign:CGPointMake(15, 0) Width:CGRectGetWidth(self.view.frame)-30];
         [self.bgScrollView addSubview:label];
         
@@ -82,6 +82,7 @@
         }
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:historyDetail.content];
         [attributedString addAttributeFont:[UIFont systemFontOfSize:15]];
+        [attributedString addAttributeTextColor:[UIColor whiteColor]];
         [label appendTextAttributedString:attributedString];
         [label sizeToFit];
         CGSize labelSize = [label getSizeWithWidth:self.view.bounds.size.width-30];

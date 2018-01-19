@@ -17,6 +17,8 @@
 		1C3D5C541CA0EA710061D01D /* EveryDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D5C4B1CA0EA710061D01D /* EveryDayTableViewCell.m */; };
 		1C3D5C551CA0EA710061D01D /* ImageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D5C4D1CA0EA710061D01D /* ImageContentView.m */; };
 		1C3D5C561CA0EA710061D01D /* rilegouleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D5C4F1CA0EA710061D01D /* rilegouleView.m */; };
+		1C47A2562011843C00601EAC /* FJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C47A2552011843C00601EAC /* FJNavigationController.m */; };
+		1C47A25920118F4100601EAC /* FJTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C47A25820118F4100601EAC /* FJTabBarViewController.m */; };
 		1C51F53C200EE31F006AD194 /* CatchWordDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C51F53B200EE31F006AD194 /* CatchWordDetailController.m */; };
 		1C51F53F200EE704006AD194 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51F53E200EE704006AD194 /* Const.swift */; };
 		1C51F545200EE7A5006AD194 /* YHAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51F544200EE7A5006AD194 /* YHAlertView.swift */; };
@@ -73,6 +75,15 @@
 		1C58B4AF1C92AFE6008A2571 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B4651C92AFE6008A2571 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1C58B4B01C92AFE6008A2571 /* ChineseInclude.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B4681C92AFE6008A2571 /* ChineseInclude.m */; };
 		1C58B4B51C92AFE6008A2571 /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B4721C92AFE6008A2571 /* PinYinForObjc.m */; };
+		1C886A4820104C7500426138 /* FJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C886A4720104C7500426138 /* FJWebViewController.swift */; };
+		1C886A4D201081A500426138 /* WkwebViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C886A4A201081A400426138 /* WkwebViewConfig.swift */; };
+		1C886A4E201081A500426138 /* WKJSPOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 1C886A4B201081A400426138 /* WKJSPOST.html */; };
+		1C886A4F201081A500426138 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C886A4C201081A400426138 /* WebView.swift */; };
+		1C886A54201081EF00426138 /* Extension+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C886A51201081EF00426138 /* Extension+UIBarButtonItem.swift */; };
+		1C886A55201081EF00426138 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C886A52201081EF00426138 /* Extension+String.swift */; };
+		1C886A56201081EF00426138 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C886A53201081EF00426138 /* Extension+UIView.swift */; };
+		1C886A582010887100426138 /* CommonWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C886A572010887100426138 /* CommonWebController.swift */; };
+		1C886A5B2010988A00426138 /* FunJoyFoldingTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C886A5A2010988A00426138 /* FunJoyFoldingTabbar.m */; };
 		1C8B3909200C3CE100DFB393 /* PicUrlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B3908200C3CE100DFB393 /* PicUrlModel.m */; };
 		1C8B3910200CA73700DFB393 /* HFStretchableTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B390E200CA73700DFB393 /* HFStretchableTableHeaderView.m */; };
 		1C93A3F2200DA41C0059EC5A /* CommonSenseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C93A3DE200DA41C0059EC5A /* CommonSenseController.m */; };
@@ -153,6 +164,10 @@
 		1C3D5C4D1CA0EA710061D01D /* ImageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageContentView.m; path = everydayvc/everydayView/ImageContentView.m; sourceTree = "<group>"; };
 		1C3D5C4E1CA0EA710061D01D /* rilegouleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rilegouleView.h; path = everydayvc/everydayView/rilegouleView.h; sourceTree = "<group>"; };
 		1C3D5C4F1CA0EA710061D01D /* rilegouleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rilegouleView.m; path = everydayvc/everydayView/rilegouleView.m; sourceTree = "<group>"; };
+		1C47A2542011843C00601EAC /* FJNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJNavigationController.h; sourceTree = "<group>"; };
+		1C47A2552011843C00601EAC /* FJNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJNavigationController.m; sourceTree = "<group>"; };
+		1C47A25720118F4100601EAC /* FJTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJTabBarViewController.h; sourceTree = "<group>"; };
+		1C47A25820118F4100601EAC /* FJTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJTabBarViewController.m; sourceTree = "<group>"; };
 		1C51F53A200EE31F006AD194 /* CatchWordDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatchWordDetailController.h; sourceTree = "<group>"; };
 		1C51F53B200EE31F006AD194 /* CatchWordDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatchWordDetailController.m; sourceTree = "<group>"; };
 		1C51F53D200EE703006AD194 /* funjoy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "funjoy-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -262,6 +277,16 @@
 		1C58B4711C92AFE6008A2571 /* PinYinForObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYinForObjc.h; sourceTree = "<group>"; };
 		1C58B4721C92AFE6008A2571 /* PinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinForObjc.m; sourceTree = "<group>"; };
 		1C58B4CD1C92B27D008A2571 /* funjoy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "funjoy-Prefix.pch"; sourceTree = "<group>"; };
+		1C886A4720104C7500426138 /* FJWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FJWebViewController.swift; sourceTree = "<group>"; };
+		1C886A4A201081A400426138 /* WkwebViewConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WkwebViewConfig.swift; sourceTree = "<group>"; };
+		1C886A4B201081A400426138 /* WKJSPOST.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKJSPOST.html; sourceTree = "<group>"; };
+		1C886A4C201081A400426138 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		1C886A51201081EF00426138 /* Extension+UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIBarButtonItem.swift"; sourceTree = "<group>"; };
+		1C886A52201081EF00426138 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		1C886A53201081EF00426138 /* Extension+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		1C886A572010887100426138 /* CommonWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebController.swift; sourceTree = "<group>"; };
+		1C886A592010988A00426138 /* FunJoyFoldingTabbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunJoyFoldingTabbar.h; sourceTree = "<group>"; };
+		1C886A5A2010988A00426138 /* FunJoyFoldingTabbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunJoyFoldingTabbar.m; sourceTree = "<group>"; };
 		1C8B3907200C3CE100DFB393 /* PicUrlModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicUrlModel.h; sourceTree = "<group>"; };
 		1C8B3908200C3CE100DFB393 /* PicUrlModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicUrlModel.m; sourceTree = "<group>"; };
 		1C8B390E200CA73700DFB393 /* HFStretchableTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFStretchableTableHeaderView.m; sourceTree = "<group>"; };
@@ -384,6 +409,12 @@
 			children = (
 				1C3D5BFA1CA0E74C0061D01D /* BaseViewController.h */,
 				1C3D5BFB1CA0E74C0061D01D /* BaseViewController.m */,
+				1C886A4720104C7500426138 /* FJWebViewController.swift */,
+				1C886A572010887100426138 /* CommonWebController.swift */,
+				1C47A2542011843C00601EAC /* FJNavigationController.h */,
+				1C47A2552011843C00601EAC /* FJNavigationController.m */,
+				1C47A25720118F4100601EAC /* FJTabBarViewController.h */,
+				1C47A25820118F4100601EAC /* FJTabBarViewController.m */,
 			);
 			path = basevc;
 			sourceTree = "<group>";
@@ -438,6 +469,7 @@
 		1C51F543200EE7A5006AD194 /* funswift */ = {
 			isa = PBXGroup;
 			children = (
+				1C886A49201081A400426138 /* WKWebView */,
 				1C51F544200EE7A5006AD194 /* YHAlertView.swift */,
 				1C51F546200EF271006AD194 /* FJAlertView.h */,
 				1C51F547200EF271006AD194 /* FJAlertView.m */,
@@ -502,6 +534,7 @@
 		1C58B38D1C92A52A008A2571 /* funjoy */ = {
 			isa = PBXGroup;
 			children = (
+				1C886A50201081EF00426138 /* swiftextension */,
 				1C5767022008B48D00CA3771 /* store */,
 				1CDEBB501C96F689001BB462 /* resources */,
 				1CDEBB4C1C96F326001BB462 /* processor */,
@@ -568,6 +601,8 @@
 				1CE544B21C97E3760062204E /* SIDADView */,
 				1C58B3B41C92AB53008A2571 /* FunJoyTabbar.h */,
 				1C58B3B51C92AB53008A2571 /* FunJoyTabbar.m */,
+				1C886A592010988A00426138 /* FunJoyFoldingTabbar.h */,
+				1C886A5A2010988A00426138 /* FunJoyFoldingTabbar.m */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -709,6 +744,26 @@
 				1C58B4721C92AFE6008A2571 /* PinYinForObjc.m */,
 			);
 			path = pinYin;
+			sourceTree = "<group>";
+		};
+		1C886A49201081A400426138 /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				1C886A4A201081A400426138 /* WkwebViewConfig.swift */,
+				1C886A4B201081A400426138 /* WKJSPOST.html */,
+				1C886A4C201081A400426138 /* WebView.swift */,
+			);
+			path = WKWebView;
+			sourceTree = "<group>";
+		};
+		1C886A50201081EF00426138 /* swiftextension */ = {
+			isa = PBXGroup;
+			children = (
+				1C886A51201081EF00426138 /* Extension+UIBarButtonItem.swift */,
+				1C886A52201081EF00426138 /* Extension+String.swift */,
+				1C886A53201081EF00426138 /* Extension+UIView.swift */,
+			);
+			path = swiftextension;
 			sourceTree = "<group>";
 		};
 		1C8B390D200CA73700DFB393 /* stretchTableHeader */ = {
@@ -1036,6 +1091,7 @@
 				1CDEBB5B1C96F689001BB462 /* Default-Landscape~ipad.png in Resources */,
 				1CDEBB761C96F838001BB462 /* DomobAdSDKBundle.bundle in Resources */,
 				1CE2A9C9200E1AAC00F62855 /* Contents.json in Resources */,
+				1C886A4E201081A500426138 /* WKJSPOST.html in Resources */,
 				1C58B39E1C92A52A008A2571 /* LaunchScreen.storyboard in Resources */,
 				1CE2A9CE200E1AAC00F62855 /* dropbox@2x.png in Resources */,
 				1C58B39B1C92A52A008A2571 /* Assets.xcassets in Resources */,
@@ -1068,6 +1124,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-funjoy/Pods-funjoy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FoldingTabBar/FoldingTabBar.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONKit/JSONKit.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
@@ -1082,6 +1139,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingTabBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
@@ -1157,9 +1215,11 @@
 				1C57670E2008C38100CA3771 /* HttpRequestFacade.m in Sources */,
 				1C58B3F01C92AF03008A2571 /* UINavigationController+Autorotate.m in Sources */,
 				1C93A3F2200DA41C0059EC5A /* CommonSenseController.m in Sources */,
+				1C886A582010887100426138 /* CommonWebController.swift in Sources */,
 				1CE2A9D0200E1AAC00F62855 /* GBPopMenuButtonItem.m in Sources */,
 				1C58B3F31C92AF03008A2571 /* UIViewController+Custom.m in Sources */,
 				1C58B3F51C92AF03008A2571 /* DateUtils.m in Sources */,
+				1C886A5B2010988A00426138 /* FunJoyFoldingTabbar.m in Sources */,
 				1C58B3C61C92ADCE008A2571 /* UserCenterViewController.m in Sources */,
 				1C58B3FB1C92AF03008A2571 /* UIImage+utils.m in Sources */,
 				1C58B3F61C92AF03008A2571 /* DeviceUtils.m in Sources */,
@@ -1177,12 +1237,16 @@
 				1C58B3EE1C92AF03008A2571 /* UIImage+imagePlus.m in Sources */,
 				1C58B3EC1C92AF03008A2571 /* NSString+stringPlus.m in Sources */,
 				1C58B3F41C92AF03008A2571 /* ColorUtils.m in Sources */,
+				1C886A56201081EF00426138 /* Extension+UIView.swift in Sources */,
 				1C93A3F8200DA41C0059EC5A /* TopDateView.m in Sources */,
 				1C58B3F11C92AF03008A2571 /* UIView+Custom.m in Sources */,
+				1C886A4820104C7500426138 /* FJWebViewController.swift in Sources */,
+				1C886A55201081EF00426138 /* Extension+String.swift in Sources */,
 				1C58B4261C92AF4C008A2571 /* TimeUtils.m in Sources */,
 				1CE2A9AC200DFBEC00F62855 /* WRCustomNavigationBar.m in Sources */,
 				1C93A400200DC19E0059EC5A /* CommonSenseCell.m in Sources */,
 				1C58B4B01C92AFE6008A2571 /* ChineseInclude.m in Sources */,
+				1C47A25920118F4100601EAC /* FJTabBarViewController.m in Sources */,
 				1C58B42E1C92AF4C008A2571 /* Tag.m in Sources */,
 				1C93A3F4200DA41C0059EC5A /* PlayViewController.m in Sources */,
 				1C51F548200EF271006AD194 /* FJAlertView.m in Sources */,
@@ -1200,8 +1264,10 @@
 				1C3D5C501CA0EA710061D01D /* BlurImageView.m in Sources */,
 				1C58B3931C92A52A008A2571 /* AppDelegate.m in Sources */,
 				1C8B3910200CA73700DFB393 /* HFStretchableTableHeaderView.m in Sources */,
+				1C886A4D201081A500426138 /* WkwebViewConfig.swift in Sources */,
 				1C58B4B51C92AFE6008A2571 /* PinYinForObjc.m in Sources */,
 				1C58B3F71C92AF03008A2571 /* FunctionUtils.m in Sources */,
+				1C886A54201081EF00426138 /* Extension+UIBarButtonItem.swift in Sources */,
 				1C58B3F81C92AF03008A2571 /* ImageUtils.m in Sources */,
 				1C58B3EB1C92AF03008A2571 /* NSNull+JSON.m in Sources */,
 				1C3D5BFC1CA0E74C0061D01D /* BaseViewController.m in Sources */,
@@ -1209,10 +1275,12 @@
 				1C93A3F5200DA41C0059EC5A /* ForthViewController.m in Sources */,
 				1C58B42A1C92AF4C008A2571 /* Notice.m in Sources */,
 				1C58B42D1C92AF4C008A2571 /* SessionMsg.m in Sources */,
+				1C886A4F201081A500426138 /* WebView.swift in Sources */,
 				1C57670B2008B6D300CA3771 /* YNetWorkManger.m in Sources */,
 				1C58B3ED1C92AF03008A2571 /* Toast+UIView.m in Sources */,
 				1C93A3F7200DA41C0059EC5A /* TodayHistoryController.m in Sources */,
 				1C8B3909200C3CE100DFB393 /* PicUrlModel.m in Sources */,
+				1C47A2562011843C00601EAC /* FJNavigationController.m in Sources */,
 				1C3D5C561CA0EA710061D01D /* rilegouleView.m in Sources */,
 				1C52BA23200B84B300935F4C /* HistoryDetail.m in Sources */,
 				1C58B4251C92AF4C008A2571 /* SortType.m in Sources */,
@@ -1353,6 +1421,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 475AM2DC65;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
@@ -1386,6 +1455,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 475AM2DC65;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;

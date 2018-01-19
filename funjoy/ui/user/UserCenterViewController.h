@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserCenterViewController : BaseViewController
+@interface UserCenterViewController : BaseViewController<YALTabBarDelegate>
 
 @end

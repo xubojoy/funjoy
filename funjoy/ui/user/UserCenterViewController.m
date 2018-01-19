@@ -17,8 +17,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"我";
+    self.view.backgroundColor = [ColorUtils colorWithHexString:@"#5E5C93"];
+    [self initHeaderView];
+}
+
+- (void)initHeaderView{
+    [self.view addSubview:self.customNavBar];
+    self.customNavBar.title = @"我";
+    [self.customNavBar wr_setBottomLineHidden:NO];
+    // 设置初始导航栏透明度
+    [self.customNavBar wr_setBackgroundAlpha:0];
+}
+
+
+#pragma mark - YALTabBarInteracting
+
+- (void)tabBarWillCollapse:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarWillExpand:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarDidCollapse:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
+- (void)tabBarDidExpand:(YALFoldingTabBar *)tabBar {
+    if (debug == 1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
 }
 
 - (void)didReceiveMemoryWarning {
