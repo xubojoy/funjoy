@@ -8,6 +8,8 @@
 
 #import "UIImage+imagePlus.h"
 
+//const NSString *associatedKey = @"associate_btn_key";
+
 #define navigation_height     64
 #define status_bar_height     20
 #define tabbar_height         51
@@ -37,7 +39,7 @@
 #define loading_frame         CGRectMake(0, 100, screen_width, 40)
 #define red_dot_width          7
 
-
+#define debug 1
 
 //字体大小
 #define font_10_size  10
@@ -77,6 +79,7 @@
 #define orange_order_status_backgroud_color @"#ff9933"
 #define common_btn_bg_color       @"#fc9a35"
 #define splite_vertical_line_color  @"#6c6c6c"
+#define color_c6c6c6   @"#c6c6c6"
 //#7cbb73
 #define common_splite_line_color  @"#eeeeee"
 #define green_common_color        @"#49c28d"
@@ -102,6 +105,8 @@
 #define game_type_coffee_color    @"#ab6a1a"
 #define game_type_purple_color    @"#666699"
 #define unselect_title_color  @"#818181"
+
+#define common_purple_color   @"#5E5C93"
 
 //绿色＃7cbb73
 //黑色＃000000

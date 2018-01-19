@@ -20,28 +20,32 @@
                                                        initWithRootViewController:firstViewController];
         firstNavigationController.delegate = self;
         firstNavigationController.title = @"流行语";
+        [firstNavigationController.navigationBar setHidden:YES];
         
         UIViewController *secondViewController = [[CommonSenseController alloc] init];
         UINavigationController *secondNavigationController = [[UINavigationController alloc]
                                                         initWithRootViewController:secondViewController];
         secondNavigationController.delegate = self;
         secondNavigationController.title = @"小常识";
+        [secondNavigationController.navigationBar setHidden:YES];
         
         UIViewController *thirdViewController = [[TodayHistoryController alloc] init];
         UINavigationController *thirdNavigationController = [[UINavigationController alloc]
                                                        initWithRootViewController:thirdViewController];
         thirdNavigationController.delegate = self;
         thirdNavigationController.title = @"今天";
+        [thirdNavigationController.navigationBar setHidden:YES];
         
-        UIViewController *userViewController = [[UserCenterViewController alloc] init];
-        UINavigationController *userNavigationController = [[UINavigationController alloc]
-                                                       initWithRootViewController:userViewController];
-        userNavigationController.delegate = self;
-        userNavigationController.title = @"我";
+//        UIViewController *userViewController = [[UserCenterViewController alloc] init];
+//        UINavigationController *userNavigationController = [[UINavigationController alloc]
+//                                                       initWithRootViewController:userViewController];
+//        userNavigationController.delegate = self;
+//        userNavigationController.title = @"我";
+//        [userNavigationController.navigationBar setHidden:YES];
         
         self.tabBarController = [[RDVTabBarController alloc] init];
-        [self.tabBarController setViewControllers:@[firstNavigationController, secondNavigationController,
-                                               thirdNavigationController,userNavigationController]];
+        [self.tabBarController setViewControllers:@[firstNavigationController,secondNavigationController,
+                                               thirdNavigationController]];
         self.tabBarController.delegate = self;
         
         UIView *upLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen_width, splite_line_height)];
@@ -54,11 +58,11 @@
     }
     return self;
 }
-
+//@"tabbar_private_icon", ,@"tabbar_user_icon"
 - (void)customizeTabBarForController:(RDVTabBarController *)tabBarController {
     UIImage *finishedImage = [UIImage imageNamed:@"under_bar"];
     UIImage *unfinishedImage = [UIImage imageNamed:@"under_bar"];
-    NSArray *tabBarItemImages = @[@"tabbar_news_icon",@"tabbar_private_icon",@"tabbar_game_icon",@"tabbar_user_icon"];
+    NSArray *tabBarItemImages = @[@"tabbar_news_icon",@"tabbar_private_icon",@"tabbar_game_icon"];
     NSInteger index = 0;
     for (RDVTabBarItem *item in [[tabBarController tabBar] items]) {
         [item setBackgroundSelectedImage:finishedImage withUnselectedImage:unfinishedImage];

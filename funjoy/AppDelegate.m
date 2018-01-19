@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "DomobAdProcessor.h"
-
+#import "FunJoyFoldingTabbar.h"
+#import "FJTabBarViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -26,9 +27,11 @@
     
 
     //初始化App的底栏
-    self.tabbar = [FunJoyTabbar new];
-//    [self.tabbar customizeInterface];
-    self.window.rootViewController = self.tabbar.tabBarController;
+    FJTabBarViewController *mtc = [[FJTabBarViewController alloc]init];
+    self.window.rootViewController = mtc ;
+    
+//    self.tabbar = [FunJoyTabbar new];
+//    self.window.rootViewController = self.tabbar.tabBarController;
     
 //    DomobAdProcessor *domobProcessor = [DomobAdProcessor new];
 //    [domobProcessor initDomobAd:self.window];

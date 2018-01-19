@@ -72,6 +72,26 @@
         }
     }
 }
+//计算文字的size
++(CGSize) boundingALLRectWithSize:(NSString*) txt Font:(UIFont*) font Size:(CGSize) size{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:txt];
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc]init];
+    [style setLineSpacing:6.0f];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, [txt length])];
+    
+    CGSize realSize = CGSizeZero;
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1
+    CGRect textRect = [txt boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font,NSParagraphStyleAttributeName:style} context:nil];
+    realSize = textRect.size;
+#else
+    realSize = [txt sizeWithFont:font constrainedToSize:size];
+#endif
+    
+    realSize.width = ceilf(realSize.width);
+    realSize.height = ceilf(realSize.height);
+    return realSize;
+}
 
 
 @end

@@ -16,4 +16,5 @@
 + (NSString *)getChineseNum:(int)num;
 
 + (NSString *)getChineseNumByBool:(int)num;
+
 @end
