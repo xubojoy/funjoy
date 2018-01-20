@@ -33,7 +33,7 @@
     [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"button_arrow_white_icon"]];
 //    // 设置自定义导航栏标题颜色
     self.customNavBar.titleLabelColor = [ColorUtils colorWithHexString:green_common_color];
-    self.customNavBar.titleLabelFont = [UIFont boldSystemFontOfSize:font_24_size];
+    self.customNavBar.titleLabelFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:font_18_size];
     [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
 //
 //    if (self.navigationController.childViewControllers.count != 1) {

@@ -121,32 +121,19 @@
     
     _titleLabel.text = _title;
     
-//    TYImageStorage *imageUrlStorage = [[TYImageStorage alloc]init];
-//    imageUrlStorage.imageURL = [NSURL URLWithString:picUrlModel.url];
-//    imageUrlStorage.size = CGSizeMake(CGRectGetWidth(label.frame), 343*CGRectGetWidth(label.frame)/600);
-//    [_messageLabel appendTextStorage:imageUrlStorage];
-    
-    
-//    获取所有字体
-//    NSArray *familyNames = [[NSArray alloc] initWithArray:[UIFont familyNames]];
-//    NSArray *fontNames;
-//    NSInteger indFamily, indFont;
-//    for (indFamily=0; indFamily<[familyNames count]; ++indFamily)
-//    {
-//        NSLog(@"Family name: %@", [familyNames objectAtIndex:indFamily]);
-//        fontNames = [[NSArray alloc] initWithArray:
-//                     [UIFont fontNamesForFamilyName:
-//                      [familyNames objectAtIndex:indFamily]]];
-//        for (indFont=0; indFont<[fontNames count]; ++indFont)
-//        {
-//            NSLog(@"    Font name: %@", [fontNames objectAtIndex:indFont]);
-//        }
+//    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:_message];
+//    [attributedString addAttributeFont:[UIFont fontWithName:@"HelveticaNeue" size:font_14_size]];
+//    [attributedString addAttributeTextColor:[ColorUtils colorWithHexString:white_text_color]];
+//    if ([_message containsString:@"发展经过:"] || [_message containsString:@"发展经历:"] || [_message containsString:@"出处"]) {
+//
+//        [attributedString addAttributeTextColor:[ColorUtils colorWithHexString:green_common_color] range:NSMakeRange(0, 3)];
 //    }
+//    [_messageLabel appendTextAttributedString:attributedString];
+    [self createTextContainer];
     
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:_message];
-    [attributedString addAttributeFont:[UIFont fontWithName:@"HelveticaNeue" size:font_14_size]];
-    [attributedString addAttributeTextColor:[ColorUtils colorWithHexString:white_text_color]];
-    [_messageLabel appendTextAttributedString:attributedString];
+    _messageLabel.textContainer = _textContainer;
+    
+    
     [_messageLabel sizeToFit];
     CGSize messageLabelSize = [_messageLabel getSizeWithWidth:((screen_width-2*general_margin)-20)];
     self.contentBgScrollView.contentSize = CGSizeMake((screen_width-2*general_margin),messageLabelSize.height);
@@ -164,6 +151,72 @@
         make.top.mas_equalTo(self.contentView.mas_bottom).mas_offset(15);
     }];
 }
+
+- (void)createTextContainer
+{
+    // 属性文本生成器
+    TYTextContainer *textContainer = [[TYTextContainer alloc]init];
+    textContainer.textColor = [ColorUtils colorWithHexString:white_text_color];
+    textContainer.text = _message;
+    
+    // 整体设置属性
+    textContainer.linesSpacing = 2;
+    textContainer.paragraphSpacing = 5;
+    
+    NSArray *array = @[@"发展经过:",@"发展经历:",@"出处：",@"简介：",@"词语来源：",@"引申含义：",@"由来：",@"演变：",@"发展：",@"起源：",@"引用示例：",@"APP推荐：",@"造句：",@"引用示例："];
+    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([_message containsString:obj]) {
+            // 文字样式
+            TYTextStorage *textStorage = [[TYTextStorage alloc]init];
+            textStorage.range = [_message rangeOfString:obj];
+            textStorage.font = [UIFont systemFontOfSize:font_14_size];
+            textStorage.textColor = [ColorUtils colorWithHexString:green_common_color];
+            [textContainer addTextStorage:textStorage];
+        }
+    }];
+    
+//    // 文字样式
+//    TYTextStorage *textStorage1 = [[TYTextStorage alloc]init];
+//    textStorage1.range = [_message rangeOfString:@"注解:"];
+//    textStorage1.font = [UIFont systemFontOfSize:17];
+//    textStorage1.textColor = RGB(209, 162, 74, 1);
+//    [textContainer addTextStorage:textStorage1];
+//
+//    // 下划线文字
+//    TYLinkTextStorage *linkTextStorage = [[TYLinkTextStorage alloc]init];
+//    linkTextStorage.range = [_message rangeOfString:@"《蒹葭》"];
+//    linkTextStorage.linkData = @"点击了 《蒹葭》";
+//    [textContainer addTextStorage:linkTextStorage];
+//
+//    TYLinkTextStorage *linkTextStorage1 = [[TYLinkTextStorage alloc]init];
+//    linkTextStorage1.range = [_message rangeOfString:@"《诗经·国风·秦风》"];
+//    linkTextStorage1.linkData = @"点击了 《诗经·国风·秦风》";
+//    [textContainer addTextStorage:linkTextStorage1];
+//
+//    // url图片
+//    TYImageStorage *imageUrlStorage = [[TYImageStorage alloc]init];
+//    imageUrlStorage.range = [_message rangeOfString:@"<img>"];
+//    imageUrlStorage.imageURL = [NSURL URLWithString:@"http://imgbdb2.bendibao.com/beijing/201310/21/2013102114858726.jpg"];
+//    imageUrlStorage.size = CGSizeMake(kAttrLabelWidth, 343*kAttrLabelWidth/600);
+//    [textContainer addTextStorage:imageUrlStorage];
+//
+//    // image图片
+//    TYImageStorage *imageStorage = [[TYImageStorage alloc]init];
+//    imageStorage.range = [_message rangeOfString:@"[haha]"];
+//    imageStorage.imageName = @"haha";
+//    imageStorage.size = CGSizeMake(15, 15);
+//    [textContainer addTextStorage:imageStorage];
+//
+   
+    
+    // 生成 NSAttributedString
+    //_attString = [textContainer createAttributedString];
+    
+    // 或者 生成 TYTextContainer
+    _textContainer = [textContainer createTextContainerWithTextWidth:((screen_width-2*general_margin)-20)];
+    
+}
+
 
 - (void)show{
     UIWindow *window = [UIApplication sharedApplication].keyWindow;

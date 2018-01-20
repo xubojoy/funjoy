@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) TYAttributedLabel *messageLabel;
+@property (nonatomic,strong) TYTextContainer *textContainer;
+
 
 @property (nonatomic, strong) NSString *buttonTitle;
 @property (nonatomic, strong) UIButton *closeBtn;
