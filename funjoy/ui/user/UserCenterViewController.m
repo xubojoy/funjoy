@@ -25,6 +25,7 @@
     [self.view addSubview:self.customNavBar];
     self.customNavBar.title = @"我";
     [self.customNavBar wr_setBottomLineHidden:NO];
+    self.customNavBar.leftButton.hidden = YES;
     // 设置初始导航栏透明度
     [self.customNavBar wr_setBackgroundAlpha:0];
 }

@@ -308,6 +308,7 @@
     [self.view addSubview:self.customNavBar];
     self.customNavBar.title = @"流行语";
     [self.customNavBar wr_setBottomLineHidden:YES];
+    self.customNavBar.leftButton.hidden = YES;
     // 设置初始导航栏透明度
     [self.customNavBar wr_setBackgroundAlpha:1];
 }

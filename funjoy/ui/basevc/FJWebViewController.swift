@@ -27,10 +27,9 @@ class FJWebViewController: BaseViewController,UIWebViewDelegate,WKUIDelegate,WKN
         self.view.addSubview(self.customNavBar)
         self.customNavBar.wr_setBottomLineHidden(false)
         self.customNavBar.wr_setBackgroundAlpha(1)
-        self.customNavBar.wr_setLeftButton(withNormal: UIImage.init(named: "arrow_back_icon"), highlighted: UIImage.init(named: "arrow_back_icon"))
-//        let fjWebVc : FJWebViewController = FJWebViewController() [weak fjWebVc]
-        self.customNavBar.onClickLeftButton = {() -> () in
-            self.navigationController?.popViewController(animated: true)
+        let fjWebVc : FJWebViewController = FJWebViewController()
+        fjWebVc.customNavBar.onClickLeftButton = {[weak self] in
+            self!.navigationController?.popViewController(animated: true)
         }
     }
 

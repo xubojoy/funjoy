@@ -19,6 +19,8 @@
 @property (nonatomic, strong) UIFont   *titleLabelFont;
 @property (nonatomic, strong) UIColor  *barBackgroundColor;
 @property (nonatomic, strong) UIImage  *barBackgroundImage;
+@property (nonatomic, strong) UIButton    *leftButton;
+@property (nonatomic, strong) UIButton    *rightButton;
 
 + (instancetype)CustomNavigationBar;
 

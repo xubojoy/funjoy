@@ -160,7 +160,7 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
 }
     
 - (void)setupMainView {
-    self.mainView = [[UIView alloc] initWithFrame:UIEdgeInsetsInsetRect(self.bounds, self.tabBarViewEdgeInsets)];
+    self.mainView = [[UIView alloc] initWithFrame:UIEdgeInsetsInsetRect(CGRectMake(0, -30, [UIScreen mainScreen].bounds.size.width, 80), self.tabBarViewEdgeInsets)];
     
     self.expandedFrame = self.mainView.frame;
     self.mainView.layer.cornerRadius = CGRectGetHeight(self.mainView.bounds) / 2.f;
@@ -214,6 +214,7 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
         UIImage *image = item.itemImage;
         
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(buttonOriginX, buttonOriginY, buttonWidth, buttonHeight)];
+//        button.backgroundColor = [UIColor purpleColor];
         
         if (numberOfLeftTabBarButtonItems == 1) {
             CGRect rect = button.frame;

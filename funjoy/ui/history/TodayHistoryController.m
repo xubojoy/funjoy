@@ -73,6 +73,7 @@ static NSString *cellIdentifier = @"HistoryCell";
     [self.view insertSubview:self.customNavBar aboveSubview:self.tableView];
     self.customNavBar.title = @"历史上的今天";
     [self.customNavBar wr_setBottomLineHidden:NO];
+    self.customNavBar.leftButton.hidden = YES;
     // 设置初始导航栏透明度
     [self.customNavBar wr_setBackgroundAlpha:0];
 }

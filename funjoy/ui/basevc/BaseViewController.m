@@ -30,10 +30,11 @@
     // 设置自定义导航栏背景图片
 //    self.customNavBar.barBackgroundImage = [UIImage imageNamed:@"under_bar"];
     self.customNavBar.barBackgroundColor = [ColorUtils colorWithHexString:common_purple_color];
-
+    [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"button_arrow_white_icon"]];
 //    // 设置自定义导航栏标题颜色
     self.customNavBar.titleLabelColor = [ColorUtils colorWithHexString:green_common_color];
     self.customNavBar.titleLabelFont = [UIFont boldSystemFontOfSize:font_24_size];
+    [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
 //
 //    if (self.navigationController.childViewControllers.count != 1) {
 //        [self.customNavBar wr_setLeftButtonWithTitle:@"<<" titleColor:[UIColor whiteColor]];

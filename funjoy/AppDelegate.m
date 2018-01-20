@@ -31,7 +31,6 @@
     
     [FunJoyFoldingTabbar setupYALTabBarController:self.window];
     
-    
 //    DomobAdProcessor *domobProcessor = [DomobAdProcessor new];
 //    [domobProcessor initDomobAd:self.window];
     

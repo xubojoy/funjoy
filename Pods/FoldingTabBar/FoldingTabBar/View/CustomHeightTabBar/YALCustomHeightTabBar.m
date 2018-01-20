@@ -14,7 +14,7 @@
 
 - (CGFloat)barHeight {
     if (_barHeight != 0.f) {
-        return _barHeight;
+        return 200;
     } else {
         return YALTabBarViewDefaultHeight;
     }
