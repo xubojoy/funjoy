@@ -42,7 +42,7 @@ echo ''
 
 
 #更新plist中的属性值
-./update_plist $targetName product
+# ./update_plist $targetName product
 #编译并打包ipa文件
 xcodebuild archive \
 -workspace ${targetName}.xcworkspace \
