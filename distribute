@@ -2,12 +2,10 @@
 
 # $1 = funjoy  项目名
 # $2 = Debug  模式
-# $3 = u1   环境名
 
 targetName=$1
 projectHome=`pwd`
 configuration=$2
-#env=$3
 
 currentTime=`date '+%Y-%m-%d-%H-%M'`
 
