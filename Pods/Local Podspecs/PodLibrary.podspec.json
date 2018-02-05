@@ -1,0 +1,22 @@
+{
+  "name": "PodLibrary",
+  "version": "0.1.0",
+  "summary": "My PodLibrary is a repo for AlertView assembly.",
+  "description": "My Private AlertView assembly\n* MarkDown format \n* It is a nice world!",
+  "homepage": "https://git.coding.net",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "xingqiba_2018": "xubojoy1112@163.com"
+  },
+  "source": {
+    "git": "https://git.coding.net/xingqiba_2018/MyDemoSpec.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": "*.*"
+}

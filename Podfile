@@ -14,4 +14,5 @@ target 'funjoy' do
      pod 'Masonry', '~> 1.1.0'
      pod 'SDCycleScrollView', '~> 1.75'
      pod 'FoldingTabBar', '~> 1.1.2'
+     
 end
