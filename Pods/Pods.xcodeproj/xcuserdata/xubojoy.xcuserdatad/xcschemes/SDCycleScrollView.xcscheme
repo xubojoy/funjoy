@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B8844D7DF75EDE2B0937D80E77F789F6"
+               BlueprintIdentifier = "F1A487CEC5D54E74AAC74BC10B0672DB"
                BuildableName = "SDCycleScrollView.framework"
                BlueprintName = "SDCycleScrollView"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B8844D7DF75EDE2B0937D80E77F789F6"
+            BlueprintIdentifier = "F1A487CEC5D54E74AAC74BC10B0672DB"
             BuildableName = "SDCycleScrollView.framework"
             BlueprintName = "SDCycleScrollView"
             ReferencedContainer = "container:Pods.xcodeproj">

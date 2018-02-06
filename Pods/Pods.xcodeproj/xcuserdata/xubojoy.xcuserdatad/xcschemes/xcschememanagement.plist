@@ -64,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>funjoyTest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>zhUITableViewAnimations.xcscheme</key>
 		<dict>
 			<key>isShown</key>

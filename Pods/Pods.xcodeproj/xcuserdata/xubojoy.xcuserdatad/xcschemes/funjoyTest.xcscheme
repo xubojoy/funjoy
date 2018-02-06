@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "79C05B84A2F1074E4F66B972BEEB67F0"
-               BuildableName = "zhUITableViewAnimations.framework"
-               BlueprintName = "zhUITableViewAnimations"
+               BlueprintIdentifier = "999DF7FFC0524586B0169A67FB779FDC"
+               BuildableName = "funjoyTest.framework"
+               BlueprintName = "funjoyTest"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "79C05B84A2F1074E4F66B972BEEB67F0"
-            BuildableName = "zhUITableViewAnimations.framework"
-            BlueprintName = "zhUITableViewAnimations"
+            BlueprintIdentifier = "999DF7FFC0524586B0169A67FB779FDC"
+            BuildableName = "funjoyTest.framework"
+            BlueprintName = "funjoyTest"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

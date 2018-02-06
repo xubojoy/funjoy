@@ -1,0 +1,6 @@
+framework module funjoyTest {
+  umbrella header "funjoyTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9296A446DDF0FE285997EFD1CF6D8887"
+               BlueprintIdentifier = "857731A81B5E0883F95B4AB7F478CE6C"
                BuildableName = "TYAttributedLabel.framework"
                BlueprintName = "TYAttributedLabel"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9296A446DDF0FE285997EFD1CF6D8887"
+            BlueprintIdentifier = "857731A81B5E0883F95B4AB7F478CE6C"
             BuildableName = "TYAttributedLabel.framework"
             BlueprintName = "TYAttributedLabel"
             ReferencedContainer = "container:Pods.xcodeproj">

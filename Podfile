@@ -15,4 +15,7 @@ target 'funjoy' do
      pod 'SDCycleScrollView', '~> 1.75'
      pod 'FoldingTabBar', '~> 1.1.2'
      
+     source 'https://git.coding.net/xingqiba_2018/funjoySpecs.git'
+     source 'https://github.com/CocoaPods/Specs.git'
+     pod 'funjoyTest', '~> 0.0.2'
 end
