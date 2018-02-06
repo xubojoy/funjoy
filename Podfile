@@ -1,4 +1,4 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
 use_frameworks! #个别需要用到它，比如reactiveCocoa
 
 target 'funjoy' do
@@ -17,5 +17,5 @@ target 'funjoy' do
      
      source 'https://git.coding.net/xingqiba_2018/funjoySpecs.git'
      source 'https://github.com/CocoaPods/Specs.git'
-     pod 'funjoyTest', '~> 0.0.2'
+     pod 'funjoyTest', '~> 0.0.4'
 end

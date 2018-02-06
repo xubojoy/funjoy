@@ -11,4 +11,5 @@
 @interface funjoyTest : NSObject
 @property (nonatomic, assign) int sex;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *gender;
 @end
