@@ -15,7 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - FoldingTabBar (1.1.2)
-  - funjoyTest (0.0.4)
+  - funjoyTest (0.0.5)
   - JSONKit (1.5pre)
   - Masonry (1.1.0)
   - MJExtension (3.0.13)
@@ -48,7 +48,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FoldingTabBar: 3b1e54c0dfa6103e93e8d95d1e75a22c6d8e2843
-  funjoyTest: 5ee2234b78c30c55b689cf17a52bd2047b55c85f
+  funjoyTest: 75f23d8f093eeeb43f64b8f025d12d63f4a40a7f
   JSONKit: bae313ce6a6c444f40489a6c0b023f399888871f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7

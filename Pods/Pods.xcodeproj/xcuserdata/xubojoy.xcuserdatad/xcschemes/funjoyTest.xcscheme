@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '999DF7FFC0524586B0169A67FB779FDC'
+               BlueprintIdentifier = 'C12CFC8681A9C1654B7F41AE9636C970'
                BlueprintName = 'funjoyTest'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'funjoyTest.framework'>

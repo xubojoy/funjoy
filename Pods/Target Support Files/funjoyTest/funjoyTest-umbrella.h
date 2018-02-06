@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "CustomAlertView.h"
 #import "funjoyTest.h"
 
 FOUNDATION_EXPORT double funjoyTestVersionNumber;
