@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import <funjoyTest/funjoyTest.h>
 @interface ViewController ()
 
 @end
@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    funjoyTest *funjoy = [funjoyTest new];
+    NSLog(@"--------%@",funjoy.name);
 }
 
 - (void)didReceiveMemoryWarning {
