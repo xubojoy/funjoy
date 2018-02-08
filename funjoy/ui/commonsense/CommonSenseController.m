@@ -10,7 +10,7 @@
 #import <SDCycleScrollView/SDCycleScrollView.h>
 #import "CommonSenseCell.h"
 #import "funjoy-Swift.h"
-
+#import "CategoryDetailController.h"
 #define DMPUBLISHERID        @"56OJyM1ouMGoULfJaL"
 #define DMPLCAEMENTID_INTER @"16TLwebvAchkAY6iOWkE6kpk"
 
@@ -129,12 +129,14 @@ static NSString *commonSenseIdentifier = @"CommonSenseCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 //    http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=%E9%93%B6%E9%AD%82&bk_length=600
-    FJWebViewController *fjwebvc = [[FJWebViewController alloc] init];
-    fjwebvc.htmlStr = @"https://www.baidu.com";
-    [self.navigationController pushViewController:fjwebvc animated:YES];
+//    FJWebViewController *fjwebvc = [[FJWebViewController alloc] init];
+//    fjwebvc.htmlStr = @"https://www.baidu.com";
+//    [self.navigationController pushViewController:fjwebvc animated:YES];
 //    CommonWebController *commvc = [[CommonWebController alloc] init];
 //    [self.navigationController pushViewController:commvc animated:YES];
     
+    CategoryDetailController *commvc = [[CategoryDetailController alloc] init];
+    [self.navigationController pushViewController:commvc animated:YES];
 }
 
 

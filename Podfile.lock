@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
   - FoldingTabBar (1.1.2)
   - funjoyTest (0.0.5)
   - JSONKit (1.5pre)
@@ -32,6 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - FMDB (~> 2.7.2)
   - FoldingTabBar (~> 1.1.2)
   - funjoyTest (~> 0.0.4)
   - JSONKit (~> 1.5pre)
@@ -47,6 +51,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   FoldingTabBar: 3b1e54c0dfa6103e93e8d95d1e75a22c6d8e2843
   funjoyTest: 75f23d8f093eeeb43f64b8f025d12d63f4a40a7f
   JSONKit: bae313ce6a6c444f40489a6c0b023f399888871f
@@ -60,6 +65,6 @@ SPEC CHECKSUMS:
   TYAttributedLabel: cb8fc910d97eb5224936d4f692a78e042af691b2
   zhUITableViewAnimations: 6ff53477cd4adec96384c12ebd5008748a3edf3a
 
-PODFILE CHECKSUM: 7227c934bf960db6193f1e81408f9c23695a7f82
+PODFILE CHECKSUM: 1c51b4c0fd9ef6fbcc4c0ae3ee8d67a8c39687fe
 
 COCOAPODS: 1.3.1

@@ -85,6 +85,10 @@
 		1C886A5B2010988A00426138 /* FunJoyFoldingTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C886A5A2010988A00426138 /* FunJoyFoldingTabbar.m */; };
 		1C8B3909200C3CE100DFB393 /* PicUrlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B3908200C3CE100DFB393 /* PicUrlModel.m */; };
 		1C8B3910200CA73700DFB393 /* HFStretchableTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B390E200CA73700DFB393 /* HFStretchableTableHeaderView.m */; };
+		1C90E3A7202C25D8000391A6 /* ci.db in Resources */ = {isa = PBXBuildFile; fileRef = 1C90E3A6202C25D8000391A6 /* ci.db */; };
+		1C90E3AA202C272C000391A6 /* CategoryDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C90E3A9202C272C000391A6 /* CategoryDetailController.m */; };
+		1C90E3AE202C2C90000391A6 /* CiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C90E3AD202C2C90000391A6 /* CiModel.m */; };
+		1C90E3B1202C37E3000391A6 /* SongCiDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C90E3B0202C37E3000391A6 /* SongCiDetailController.m */; };
 		1C93A3F2200DA41C0059EC5A /* CommonSenseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C93A3DE200DA41C0059EC5A /* CommonSenseController.m */; };
 		1C93A3F3200DA41C0059EC5A /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C93A3E0200DA41C0059EC5A /* NextViewController.m */; };
 		1C93A3F4200DA41C0059EC5A /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C93A3E1200DA41C0059EC5A /* PlayViewController.m */; };
@@ -288,6 +292,13 @@
 		1C8B3908200C3CE100DFB393 /* PicUrlModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicUrlModel.m; sourceTree = "<group>"; };
 		1C8B390E200CA73700DFB393 /* HFStretchableTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFStretchableTableHeaderView.m; sourceTree = "<group>"; };
 		1C8B390F200CA73700DFB393 /* HFStretchableTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFStretchableTableHeaderView.h; sourceTree = "<group>"; };
+		1C90E3A6202C25D8000391A6 /* ci.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ci.db; sourceTree = "<group>"; };
+		1C90E3A8202C272C000391A6 /* CategoryDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryDetailController.h; sourceTree = "<group>"; };
+		1C90E3A9202C272C000391A6 /* CategoryDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryDetailController.m; sourceTree = "<group>"; };
+		1C90E3AC202C2C90000391A6 /* CiModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CiModel.h; sourceTree = "<group>"; };
+		1C90E3AD202C2C90000391A6 /* CiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CiModel.m; sourceTree = "<group>"; };
+		1C90E3AF202C37E3000391A6 /* SongCiDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongCiDetailController.h; sourceTree = "<group>"; };
+		1C90E3B0202C37E3000391A6 /* SongCiDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongCiDetailController.m; sourceTree = "<group>"; };
 		1C93A3DD200DA41C0059EC5A /* CommonSenseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonSenseController.h; sourceTree = "<group>"; };
 		1C93A3DE200DA41C0059EC5A /* CommonSenseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonSenseController.m; sourceTree = "<group>"; };
 		1C93A3E0200DA41C0059EC5A /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
@@ -664,6 +675,7 @@
 		1C58B3FC1C92AF4C008A2571 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				1C90E3AB202C2C75000391A6 /* commonsense */,
 				1C51F549200F3344006AD194 /* catchword */,
 				1C57670F2008D33600CA3771 /* history */,
 				1C3D5C391CA0E9900061D01D /* everyday */,
@@ -770,12 +782,25 @@
 			path = stretchTableHeader;
 			sourceTree = "<group>";
 		};
+		1C90E3AB202C2C75000391A6 /* commonsense */ = {
+			isa = PBXGroup;
+			children = (
+				1C90E3AC202C2C90000391A6 /* CiModel.h */,
+				1C90E3AD202C2C90000391A6 /* CiModel.m */,
+			);
+			path = commonsense;
+			sourceTree = "<group>";
+		};
 		1C93A3DC200DA41C0059EC5A /* commonsense */ = {
 			isa = PBXGroup;
 			children = (
 				1C93A3FD200DC1770059EC5A /* view */,
 				1C93A3DD200DA41C0059EC5A /* CommonSenseController.h */,
 				1C93A3DE200DA41C0059EC5A /* CommonSenseController.m */,
+				1C90E3A8202C272C000391A6 /* CategoryDetailController.h */,
+				1C90E3A9202C272C000391A6 /* CategoryDetailController.m */,
+				1C90E3AF202C37E3000391A6 /* SongCiDetailController.h */,
+				1C90E3B0202C37E3000391A6 /* SongCiDetailController.m */,
 			);
 			path = commonsense;
 			sourceTree = "<group>";
@@ -841,6 +866,7 @@
 		1CDEBB501C96F689001BB462 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				1C90E3A6202C25D8000391A6 /* ci.db */,
 				1C51F54D200F4438006AD194 /* pencil.png */,
 				1C93A3FB200DA4C70059EC5A /* 1.jpg */,
 				1C52BA2E200B9ADB00935F4C /* bg.png */,
@@ -1084,6 +1110,7 @@
 				1C52BA2F200B9ADB00935F4C /* bg.png in Resources */,
 				1CE2A9CC200E1AAC00F62855 /* gallery@2x.png in Resources */,
 				1CDEBB5B1C96F689001BB462 /* Default-Landscape~ipad.png in Resources */,
+				1C90E3A7202C25D8000391A6 /* ci.db in Resources */,
 				1CDEBB761C96F838001BB462 /* DomobAdSDKBundle.bundle in Resources */,
 				1CE2A9C9200E1AAC00F62855 /* Contents.json in Resources */,
 				1C886A4E201081A500426138 /* WKJSPOST.html in Resources */,
@@ -1119,6 +1146,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-funjoy/Pods-funjoy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/FoldingTabBar/FoldingTabBar.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONKit/JSONKit.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
@@ -1135,6 +1163,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingTabBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
@@ -1202,6 +1231,7 @@
 				1C93A3F3200DA41C0059EC5A /* NextViewController.m in Sources */,
 				1C3D5C511CA0EA710061D01D /* ContentScrollView.m in Sources */,
 				1C58B42C1C92AF4C008A2571 /* ServicePicture.m in Sources */,
+				1C90E3AA202C272C000391A6 /* CategoryDetailController.m in Sources */,
 				1C58B3F21C92AF03008A2571 /* UIView+KGViewExtend.m in Sources */,
 				1C58B4231C92AF4C008A2571 /* LBSUtils.m in Sources */,
 				1C3D5C521CA0EA710061D01D /* ContentView.m in Sources */,
@@ -1229,6 +1259,7 @@
 				1C58B4291C92AF4C008A2571 /* ExpertFilter.m in Sources */,
 				1CE544B51C97E3760062204E /* SIDADView.m in Sources */,
 				1CE2A9D1200E1AAC00F62855 /* GBPopMenuButtonView.m in Sources */,
+				1C90E3AE202C2C90000391A6 /* CiModel.m in Sources */,
 				1C58B3FA1C92AF03008A2571 /* NSStringUtils.m in Sources */,
 				1C58B4221C92AF4C008A2571 /* Constant.m in Sources */,
 				1C58B3EE1C92AF03008A2571 /* UIImage+imagePlus.m in Sources */,
@@ -1278,6 +1309,7 @@
 				1C8B3909200C3CE100DFB393 /* PicUrlModel.m in Sources */,
 				1C47A2562011843C00601EAC /* FJNavigationController.m in Sources */,
 				1C3D5C561CA0EA710061D01D /* rilegouleView.m in Sources */,
+				1C90E3B1202C37E3000391A6 /* SongCiDetailController.m in Sources */,
 				1C52BA23200B84B300935F4C /* HistoryDetail.m in Sources */,
 				1C58B4251C92AF4C008A2571 /* SortType.m in Sources */,
 				1C3D5C541CA0EA710061D01D /* EveryDayTableViewCell.m in Sources */,
